@@ -36,7 +36,7 @@ class AdminManageScreen extends GetView<AdminController> {
         elevation: 0,
         title: const Text(
           'Admin Inventory',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 22),
         ),
         centerTitle: true,
         actions: [

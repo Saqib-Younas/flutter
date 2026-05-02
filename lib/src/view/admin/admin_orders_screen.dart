@@ -25,7 +25,7 @@ class AdminOrdersScreen extends StatelessWidget {
         elevation: 0,
         title: const Text(
           'All Orders',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 22),
         ),
         iconTheme: const IconThemeData(color: Colors.black),
         actions: [
