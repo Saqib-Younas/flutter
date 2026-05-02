@@ -17,11 +17,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   void initState() {
     super.initState();
-    controller.getFavoriteItems(); // ✅ Correct place to call API
+    controller.getFavoriteItems(); // API call once
   }
 
   @override
   Widget build(BuildContext context) {
+    // ✅ Responsive columns
+    int crossAxisCount = MediaQuery.of(context).size.width < 600 ? 2 : 3;
+
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
       appBar: AppBar(
@@ -29,7 +32,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         elevation: 0.5,
         title: const Text(
           'My Wishlist',
-          style: TextStyle( // ✅ Removed AppText dependency
+          style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -38,7 +41,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         centerTitle: true,
       ),
       body: Obx(() {
-        if (controller.filteredProducts.isEmpty) {
+        final products = controller.filteredProducts;
+
+        if (products.isEmpty) {
           return const EmptyState(
             icon: Icons.favorite_border_rounded,
             title: 'Your wishlist is empty',
@@ -52,25 +57,22 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           },
           color: Colors.orangeAccent,
           child: GridView.builder(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             physics: const AlwaysScrollableScrollPhysics(),
-            itemCount: controller.filteredProducts.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              childAspectRatio: 0.7,
+            itemCount: products.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              childAspectRatio: 0.78,
             ),
             itemBuilder: (context, index) {
-              final product = controller.filteredProducts[index];
+              final product = products[index];
 
               return ProductGridView(
-                items: controller.filteredProducts,
+                items: [product],
                 likeButtonPressed: (i) {
                   controller.toggleFavorite(product);
-
-                  // ❌ Removed extra API call
-                  // controller.getFavoriteItems();
                 },
                 isPriceOff: controller.isPriceOff,
               );
