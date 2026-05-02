@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/view/animation/open_container_wrapper.dart';
+import 'package:e_commerce_flutter/src/view/widget/price_text.dart';
 
 class ProductGridView extends StatelessWidget {
   const ProductGridView({
@@ -197,29 +198,14 @@ class _Footer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 4),
-          Row(
-            children: [
-              // Discounted Price (Dark/Bold)
-              Text(
-                "\$${product.discountPrice ?? product.price}",
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(width: 6),
-              // Original Price (Cut logic)
-              if (product.discountPrice != null)
-                Text(
-                  "\$${product.price}",
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                    decoration: TextDecoration.lineThrough, // Price line cut
-                  ),
-                ),
-            ],
+          PriceText(
+            price: product.price,
+            discountPrice: product.discountPrice,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+              color: Colors.black,
+            ),
           ),
         ],
       ),

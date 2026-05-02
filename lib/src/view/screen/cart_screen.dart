@@ -30,12 +30,7 @@ class CartScreen extends GetView<ProductController> {
         // Heading Text Bara aur Bold kiya gaya hai professional look ke liye
         title: const Text(
           'My Shopping Cart',
-          style: TextStyle(
-            color: Color(0xFF2D2D2D),
-            fontSize: 22,
-            fontWeight: FontWeight.w800,
-            letterSpacing: -0.5,
-          ),
+          style: AppText.headingLarge,
         ),
         centerTitle: true,
       ),
@@ -81,7 +76,8 @@ class _CartItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasDiscount = product.discountPrice != null && product.discountPrice! < product.price;
+    final hasDiscount =
+        product.discountPrice != null && product.discountPrice! < product.price;
 
     return Dismissible(
       key: ValueKey(product.id),
@@ -98,15 +94,22 @@ class _CartItemCard extends StatelessWidget {
       // Validation: Swipe karke delete karne se pehle confirm karega
       confirmDismiss: (direction) async {
         return await Get.dialog<bool>(
-          AlertDialog(
-            title: const Text('Remove Item?'),
-            content: const Text('Do you want to remove this product from cart?'),
-            actions: [
-              TextButton(onPressed: () => Get.back(result: false), child: const Text('Cancel')),
-              TextButton(onPressed: () => Get.back(result: true), child: const Text('Remove', style: TextStyle(color: Colors.red))),
-            ],
-          ),
-        ) ?? false;
+              AlertDialog(
+                title: const Text('Remove Item?'),
+                content:
+                    const Text('Do you want to remove this product from cart?'),
+                actions: [
+                  TextButton(
+                      onPressed: () => Get.back(result: false),
+                      child: const Text('Cancel')),
+                  TextButton(
+                      onPressed: () => Get.back(result: true),
+                      child: const Text('Remove',
+                          style: TextStyle(color: Colors.red))),
+                ],
+              ),
+            ) ??
+            false;
       },
       onDismissed: (_) => controller.removeFromCart(product),
       child: AppCard(
@@ -123,18 +126,23 @@ class _CartItemCard extends StatelessWidget {
                     product.name,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4),
-                  Text('Size: ${controller.getCurrentSize(product)}', style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                  Text('Size: ${controller.getCurrentSize(product)}',
+                      style: const TextStyle(color: Colors.grey, fontSize: 12)),
                   const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      PriceText(price: product.price, discountPrice: product.discountPrice),
+                      PriceText(
+                          price: product.price,
+                          discountPrice: product.discountPrice),
                       _QuantityStepper(
                         quantity: product.cartQuantity,
-                        onIncrease: () => controller.increaseItemQuantity(product),
+                        onIncrease: () =>
+                            controller.increaseItemQuantity(product),
                         onDecrease: () {
                           if (product.cartQuantity > 1) {
                             controller.decreaseItemQuantity(product);
@@ -169,10 +177,12 @@ class _ProductThumb extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: Image.asset( // Image.network ko .asset se change kiya agar assets use kar rahe hain
+        child: Image.asset(
+          // Image.network ko .asset se change kiya agar assets use kar rahe hain
           imageUrl ?? 'assets/images/placeholder.png',
           fit: BoxFit.contain,
-          errorBuilder: (_, __, ___) => const Icon(Icons.broken_image, color: Colors.grey),
+          errorBuilder: (_, __, ___) =>
+              const Icon(Icons.broken_image, color: Colors.grey),
         ),
       ),
     );
@@ -180,7 +190,10 @@ class _ProductThumb extends StatelessWidget {
 }
 
 class _QuantityStepper extends StatelessWidget {
-  const _QuantityStepper({required this.quantity, required this.onIncrease, required this.onDecrease});
+  const _QuantityStepper(
+      {required this.quantity,
+      required this.onIncrease,
+      required this.onDecrease});
   final int quantity;
   final VoidCallback onIncrease;
   final VoidCallback onDecrease;
@@ -195,7 +208,8 @@ class _QuantityStepper extends StatelessWidget {
       child: Row(
         children: [
           _StepperBtn(icon: Icons.remove, onTap: onDecrease),
-          Text('$quantity', style: const TextStyle(fontWeight: FontWeight.bold)),
+          Text('$quantity',
+              style: const TextStyle(fontWeight: FontWeight.bold)),
           _StepperBtn(icon: Icons.add, onTap: onIncrease),
         ],
       ),
@@ -247,10 +261,14 @@ class _CartBottomSection extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Subtotal', style: TextStyle(fontSize: 16, color: Colors.grey)),
+                  const Text('Subtotal',
+                      style: TextStyle(fontSize: 16, color: Colors.grey)),
                   Text(
                     'Rs. ${controller.totalPrice.value}',
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Colors.black),
+                    style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.black),
                   ),
                 ],
               ),
@@ -260,8 +278,8 @@ class _CartBottomSection extends StatelessWidget {
                 width: double.infinity,
                 child: GradientButton(
                   text: 'Proceed to Checkout',
-                  onPressed: isBtnEnabled 
-                      ? () => Get.toNamed('/payment') 
+                  onPressed: isBtnEnabled
+                      ? () => Get.toNamed('/payment')
                       : null, // null means button disabled
                 ),
               ),

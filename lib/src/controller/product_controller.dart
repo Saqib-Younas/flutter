@@ -123,10 +123,13 @@ class ProductController extends GetxController {
       allProducts.where((p) => p.isFavorite).toList();
 
   /// Used by the Favorites screen to swap the visible list.
-  void getFavoriteItems() {
-    filteredProducts.assignAll(favoriteProducts);
-    filteredProducts.refresh();
+  Future<void> getFavoriteItems() async {
+    await Future.delayed(const Duration(milliseconds: 300)); // simulate API
+
+    filteredProducts.value =
+        allProducts.where((p) => p.isFavorite).toList();
   }
+
 
   void getAllItems() {
     filteredProducts.assignAll(allProducts);
@@ -137,12 +140,6 @@ class ProductController extends GetxController {
     if (product.cartQuantity <= 0) product.cartQuantity = 1;
     if (!cartProducts.any((item) => item.id == product.id)) {
       cartProducts.add(product);
-      Get.snackbar(
-        'Added to Cart',
-        '${product.name} added successfully',
-        duration: const Duration(seconds: 2),
-        snackPosition: SnackPosition.BOTTOM,
-      );
     }
     calculateTotalPrice();
   }

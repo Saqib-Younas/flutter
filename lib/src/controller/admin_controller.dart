@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:e_commerce_flutter/src/core/services/order_service.dart';
 import 'package:e_commerce_flutter/src/core/services/product_service.dart';
@@ -75,15 +76,43 @@ class AdminController extends GetxController {
       isLoading.value = true;
       if (product.id.isEmpty) {
         await ProductService.create(product);
-        Get.snackbar('Success', 'Product added');
+        Get.snackbar(
+          'Success! ✓',
+          'Product added successfully',
+          backgroundColor: Colors.green,
+          colorText: Colors.white,
+          snackPosition: SnackPosition.TOP,
+          margin: const EdgeInsets.all(15),
+          borderRadius: 15,
+          duration: const Duration(seconds: 2),
+          icon: const Icon(Icons.check_circle_outline, color: Colors.white),
+        );
       } else {
         await ProductService.update(product);
-        Get.snackbar('Success', 'Product updated');
+        Get.snackbar(
+          'Updated! ✓',
+          'Product updated successfully',
+          backgroundColor: Colors.blue,
+          colorText: Colors.white,
+          snackPosition: SnackPosition.TOP,
+          margin: const EdgeInsets.all(15),
+          borderRadius: 15,
+          duration: const Duration(seconds: 2),
+          icon: const Icon(Icons.edit_note, color: Colors.white),
+        );
       }
       await fetchAdminProducts();
       Get.back();
     } catch (e) {
-      Get.snackbar('Save failed', e.toString());
+      Get.snackbar(
+        'Error!',
+        e.toString(),
+        backgroundColor: Colors.redAccent,
+        colorText: Colors.white,
+        snackPosition: SnackPosition.TOP,
+        margin: const EdgeInsets.all(15),
+        borderRadius: 15,
+      );
     } finally {
       isLoading.value = false;
     }

@@ -22,7 +22,7 @@ class OrdersScreen extends GetView<OrderController> {
         elevation: 0,
         title: const Text(
           'Orders',
-          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+          style: AppText.headingLarge,
         ),
         centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.black87),
