@@ -134,9 +134,6 @@ class _CartItemCard extends StatelessWidget {
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4),
-                  Text('Size: ${controller.getCurrentSize(product)}',
-                      style: const TextStyle(color: Colors.grey, fontSize: 12)),
-                  const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -181,32 +178,22 @@ class _ProductThumb extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: (imageUrl != null && imageUrl!.isNotEmpty)
-            ? Image.network(
-                imageUrl!,
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => Container(
-                  color: Colors.grey[300],
-                  child: const Icon(Icons.broken_image, color: Colors.grey),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: (imageUrl != null && imageUrl!.isNotEmpty)
+              ? Image.asset(
+                  imageUrl!,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Image.asset(
+                    'assets/images/product.png', // fallback
+                    fit: BoxFit.cover,
+                  ),
+                )
+              : Image.asset(
+                  'assets/images/product.png', // default image
+                  fit: BoxFit.cover,
                 ),
-                loadingBuilder: (_, child, progress) {
-                  if (progress == null) return child;
-                  return Container(
-                    color: Colors.grey[300],
-                    child: const Center(
-                      child: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      ),
-                    ),
-                  );
-                },
-              )
-            : Container(
-                color: Colors.grey[300],
-                child: const Icon(Icons.image, color: Colors.grey),
-              ),
+        ),
       ),
     );
   }

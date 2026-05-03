@@ -84,9 +84,8 @@ class _AdminProductFormState extends State<AdminProductForm> {
     final p = Product(
       id: widget.product?.id ?? '',
       name: _name.text.trim(),
-      description: _description.text.trim().isEmpty
-          ? null
-          : _description.text.trim(),
+      description:
+          _description.text.trim().isEmpty ? null : _description.text.trim(),
       about: _about.text.trim().isEmpty ? '' : _about.text.trim(),
       category: _category.text.trim().isEmpty ? null : _category.text.trim(),
       imageUrl: _imageUrl.text.trim().isEmpty ? null : _imageUrl.text.trim(),
@@ -101,134 +100,210 @@ class _AdminProductFormState extends State<AdminProductForm> {
   }
 
   @override
+  @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
+
     return Padding(
       padding: EdgeInsets.only(bottom: mq.viewInsets.bottom),
       child: Container(
         constraints: BoxConstraints(maxHeight: mq.size.height * 0.92),
-        padding: const EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Container(
-                    width: 40,
-                    height: 4,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  _isEdit ? 'Edit Product' : 'Add New Product',
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                _Field(
-                  controller: _name,
-                  label: 'Name',
-                  icon: Icons.shopping_bag_outlined,
-                  validator: _required,
-                ),
-                _Field(
-                  controller: _category,
-                  label: 'Category',
-                  icon: Icons.category_outlined,
-                ),
-                _Field(
-                  controller: _imageUrl,
-                  label: 'Image URL',
-                  icon: Icons.link,
-                ),
-                _Field(
-                  controller: _description,
-                  label: 'Short description',
-                  icon: Icons.short_text,
-                ),
-                _Field(
-                  controller: _about,
-                  label: 'About / Long description',
-                  icon: Icons.description_outlined,
-                  maxLines: 3,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: _Field(
-                        controller: _price,
-                        label: 'Price (Rs)',
-                        icon: Icons.attach_money,
-                        keyboardType: const TextInputType.numberWithOptions(
-                          decimal: true,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFF8F9FF), Color(0xFFFFFFFF)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+            key: _formKey,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Container(
+                      width: 50,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColor.brandIndigo,
+                            AppColor.brandIndigo.withOpacity(0.4)
+                          ],
                         ),
-                        validator: _requiredNumber,
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: _Field(
-                        controller: _stock,
-                        label: 'Stock Qty',
-                        icon: Icons.inventory_2_outlined,
-                        keyboardType: TextInputType.number,
-                        validator: _requiredNumber,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                _DiscountSelector(
-                  type: _discountType,
-                  onChanged: (t) => setState(() => _discountType = t),
-                ),
-                if (_discountType != DiscountType.none) ...[
-                  const SizedBox(height: 8),
-                  _Field(
-                    controller: _discountValue,
-                    label: _discountType == DiscountType.percentage
-                        ? 'Discount %'
-                        : 'Discount amount (Rs)',
-                    icon: Icons.percent,
-                    keyboardType: const TextInputType.numberWithOptions(
-                      decimal: true,
                     ),
                   ),
+                  const SizedBox(height: 20),
+
+                  /// 🔥 Title
+                  Text(
+                    _isEdit ? 'Edit Product' : 'Add New Product',
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black87,
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  _Field(
+                    controller: _name,
+                    label: 'Product Name',
+                    icon: Icons.shopping_bag_outlined,
+                    validator: _required,
+                  ),
+
+                  _Field(
+                    controller: _category,
+                    label: 'Category',
+                    icon: Icons.category_outlined,
+                  ),
+
+                  _Field(
+                    controller: _imageUrl,
+                    label: 'Image Asset Path',
+                    icon: Icons.image,
+                  ),
+
+                  _Field(
+                    controller: _description,
+                    label: 'Short Description',
+                    icon: Icons.short_text,
+                  ),
+
+                  _Field(
+                    controller: _about,
+                    label: 'Full Details',
+                    icon: Icons.description,
+                    maxLines: 3,
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  Row(
+                    children: [
+                      Expanded(
+                        child: _Field(
+                          controller: _price,
+                          label: 'Price (Rs)',
+                          icon: Icons.currency_rupee,
+                          keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true),
+                          validator: _requiredNumber,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: _Field(
+                          controller: _stock,
+                          label: 'Stock',
+                          icon: Icons.inventory,
+                          keyboardType: TextInputType.number,
+                          validator: _requiredNumber,
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  /// 🔥 Discount Section Card
+                  Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Discount",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        const SizedBox(height: 10),
+                        _DiscountSelector(
+                          type: _discountType,
+                          onChanged: (t) => setState(() => _discountType = t),
+                        ),
+                        if (_discountType != DiscountType.none) ...[
+                          const SizedBox(height: 10),
+                          _Field(
+                            controller: _discountValue,
+                            label: _discountType == DiscountType.percentage
+                                ? 'Discount %'
+                                : 'Discount Rs',
+                            icon: Icons.percent,
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  /// 🔥 Switches Card
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                        )
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        SwitchListTile(
+                          title: const Text('Active Product'),
+                          value: _isActive,
+                          onChanged: (v) => setState(() => _isActive = v),
+                          activeColor: AppColor.brandIndigo,
+                        ),
+                        SwitchListTile(
+                          title: const Text('Featured Product'),
+                          value: _isFeatured,
+                          onChanged: (v) => setState(() => _isFeatured = v),
+                          activeColor: AppColor.brandIndigo,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  /// 🔥 Button
+                  Obx(() {
+                    final loading = Get.find<AdminController>().isLoading.value;
+                    return GradientButton(
+                      text: _isEdit ? 'UPDATE PRODUCT' : 'CREATE PRODUCT',
+                      onPressed: loading ? null : _submit,
+                      isLoading: loading,
+                    );
+                  }),
+
+                  const SizedBox(height: 20),
                 ],
-                SwitchListTile(
-                  title: const Text('Active (visible to customers)'),
-                  value: _isActive,
-                  onChanged: (v) => setState(() => _isActive = v),
-                  activeThumbColor: AppColor.brandIndigo,
-                  contentPadding: EdgeInsets.zero,
-                ),
-                SwitchListTile(
-                  title: const Text('Featured on home'),
-                  value: _isFeatured,
-                  onChanged: (v) => setState(() => _isFeatured = v),
-                  activeThumbColor: AppColor.brandIndigo,
-                  contentPadding: EdgeInsets.zero,
-                ),
-                const SizedBox(height: 16),
-                Obx(() {
-                  final loading = Get.find<AdminController>().isLoading.value;
-                  return GradientButton(
-                    text: _isEdit ? 'UPDATE PRODUCT' : 'CREATE PRODUCT',
-                    onPressed: loading ? null : _submit,
-                    isLoading: loading,
-                  );
-                }),
-                const SizedBox(height: 16),
-              ],
+              ),
             ),
           ),
         ),

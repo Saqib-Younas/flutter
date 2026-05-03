@@ -36,7 +36,8 @@ class AdminManageScreen extends GetView<AdminController> {
         elevation: 0,
         title: const Text(
           'Admin Inventory',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 22),
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
         actions: [
@@ -145,18 +146,13 @@ class _AdminProductRow extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.network(
-                    product.imageUrl ?? '',
+                  child: Image.asset(
+                    (product.imageUrl != null && product.imageUrl!.isNotEmpty)
+                        ? product.imageUrl!
+                        : 'assets/images/product.png',
                     width: 64,
                     height: 64,
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Container(
-                      width: 64,
-                      height: 64,
-                      color: AppColor.surfaceGrey,
-                      child: const Icon(Icons.image_not_supported,
-                          color: Colors.grey),
-                    ),
                   ),
                 ),
                 const SizedBox(width: 12),

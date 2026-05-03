@@ -178,14 +178,16 @@ class _ProductImage extends StatelessWidget {
         ),
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(40),
-            child: Image.network(
-              product.imageUrl ?? '',
-              fit: BoxFit.contain,
+            padding: const EdgeInsets.all(20),
+            child: Image.asset(
+              product.imageUrl ?? 'assets/images/placeholder.png',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.contain, // ya BoxFit.cover (neeche explain)
               errorBuilder: (_, __, ___) => const Icon(
-                Icons.tablet_android,
-                size: 100,
-                color: Colors.grey,
+                Icons.image_not_supported,
+                color: Colors.white54,
+                size: 60,
               ),
             ),
           ),
