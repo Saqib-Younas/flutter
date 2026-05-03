@@ -1,209 +1,108 @@
-import 'dart:async';
-
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:e_commerce_flutter/src/core/services/product_service.dart';
+import 'package:e_commerce_flutter/src/controller/cart_controller.dart';
+import 'package:e_commerce_flutter/src/controller/favorites_controller.dart';
+import 'package:e_commerce_flutter/src/controller/product_list_controller.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 
-/// Drives the customer-facing product list, search and cart.
+/// Coordinator controller that delegates to specialized controllers.
+/// This maintains backward compatibility while keeping architecture clean.
+///
+/// Delegates:
+/// - [ProductListController] - Products list, search, filtering, featured
+/// - [CartController] - Shopping cart management
+/// - [FavoritesController] - Wishlist/favorites management
 class ProductController extends GetxController {
-  // ---- state --------------------------------------------------------------
-  List<Product> allProducts = [];
-  RxList<Product> filteredProducts = <Product>[].obs;
-  RxList<Product> featured = <Product>[].obs;
-  RxList<Product> cartProducts = <Product>[].obs;
-
-  RxInt totalPrice = 0.obs;
-  RxBool isLoading = true.obs;
-  RxString currentQuery = ''.obs;
-  RxBool isSearching = false.obs;
-
-  StreamSubscription<List<Product>>? _liveSub;
+  late final ProductListController _listCtrl;
+  late final CartController _cartCtrl;
+  late final FavoritesController _favCtrl;
 
   @override
   void onInit() {
     super.onInit();
-    fetchProducts();
-    fetchFeatured();
-    _subscribeLive();
+    _listCtrl = Get.put(ProductListController());
+    _cartCtrl = Get.put(CartController());
+    _favCtrl = Get.put(FavoritesController());
   }
 
-  @override
-  void onClose() {
-    _liveSub?.cancel();
-    super.onClose();
+  // ========== DELEGATION: ProductListController ==========================
+
+  /// Fetch active products from database
+  Future<void> fetchProducts() => _listCtrl.fetchProducts();
+
+  /// Fetch featured products
+  Future<void> fetchFeatured() => _listCtrl.fetchFeatured();
+
+  /// Remote search across multiple fields
+  Future<void> searchRemote(String query) => _listCtrl.searchRemote(query);
+
+  /// Client-side search/filter
+  void filterProductsByName(String query) =>
+      _listCtrl.filterProductsByName(query);
+
+  /// Show all products
+  void getAllItems() => _listCtrl.showAllProducts();
+
+  /// Get future list of favorite items
+  Future<void> getFavoriteItems() async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    _listCtrl.showAllProducts();
   }
 
-  void _subscribeLive() {
-    _liveSub?.cancel();
-    _liveSub = ProductService.activeStream().listen((rows) {
-      _mergeIntoCatalog(rows);
-    });
-  }
+  // Expose ProductListController observables
+  get allProducts => _listCtrl.allProducts;
+  get filteredProducts => _listCtrl.filteredProducts;
+  get featured => _listCtrl.featured;
+  get isLoading => _listCtrl.isLoading;
+  get currentQuery => _listCtrl.currentQuery;
+  get isSearching => _listCtrl.isSearching;
 
-  void _mergeIntoCatalog(List<Product> rows) {
-    // preserve isFavorite / cartQuantity flags by id
-    final favoriteIds =
-        allProducts.where((p) => p.isFavorite).map((p) => p.id).toSet();
-    final cartMap = {for (final p in cartProducts) p.id: p.cartQuantity};
+  // ========== DELEGATION: CartController ================================
 
-    for (final p in rows) {
-      if (favoriteIds.contains(p.id)) p.isFavorite = true;
-      if (cartMap.containsKey(p.id)) p.cartQuantity = cartMap[p.id]!;
-    }
+  /// Add product to cart
+  void addToCart(Product product) => _cartCtrl.addToCart(product);
 
-    allProducts = rows;
-    if (currentQuery.value.isEmpty) {
-      filteredProducts.assignAll(rows);
-    } else {
-      filterProductsByName(currentQuery.value);
-    }
-  }
+  /// Increase item quantity
+  void increaseItemQuantity(Product product) =>
+      _cartCtrl.increaseItemQuantity(product);
 
-  // ---- read ---------------------------------------------------------------
-  Future<void> fetchProducts() async {
-    try {
-      isLoading.value = true;
-      final list = await ProductService.fetchActive();
-      _mergeIntoCatalog(list);
-    } catch (e) {
-      debugPrint('fetchProducts error: $e');
-    } finally {
-      isLoading.value = false;
-    }
-  }
+  /// Decrease item quantity
+  void decreaseItemQuantity(Product product) =>
+      _cartCtrl.decreaseItemQuantity(product);
 
-  Future<void> fetchFeatured() async {
-    try {
-      final list = await ProductService.fetchFeatured();
-      featured.assignAll(list);
-    } catch (e) {
-      debugPrint('fetchFeatured error: $e');
-    }
-  }
+  /// Remove item from cart
+  void removeFromCart(Product product) => _cartCtrl.removeFromCart(product);
 
-  /// Multi-field search hitting the database (RLS-enforced).
-  Future<void> searchRemote(String query) async {
-    currentQuery.value = query;
-    try {
-      final list = await ProductService.search(query);
-      filteredProducts.assignAll(list);
-    } catch (e) {
-      debugPrint('searchRemote error: $e');
-    }
-  }
+  /// Clear entire cart
+  void clearCart() => _cartCtrl.clearCart();
 
-  /// Local fallback search (used as the user types, before remote returns).
-  void filterProductsByName(String query) {
-    currentQuery.value = query;
-    if (query.isEmpty) {
-      filteredProducts.assignAll(allProducts);
-    } else {
-      final q = query.toLowerCase();
-      filteredProducts.assignAll(
-        allProducts
-            .where((p) =>
-                p.name.toLowerCase().contains(q) ||
-                (p.description?.toLowerCase().contains(q) ?? false) ||
-                (p.category?.toLowerCase().contains(q) ?? false) ||
-                p.about.toLowerCase().contains(q))
-            .toList(),
-      );
-    }
-  }
+  /// Recalculate cart total
+  void calculateTotalPrice() => _cartCtrl.calculateTotalPrice();
 
-  // ---- favorites ----------------------------------------------------------
-  void toggleFavorite(Product product) {
-    product.isFavorite = !product.isFavorite;
-    // Trigger UI update by refreshing the filtered list
-    filteredProducts.refresh();
-  }
+  /// Get cart items (no-op, cart is reactive)
+  void getCartItems() => _cartCtrl.calculateTotalPrice();
 
-  List<Product> get favoriteProducts =>
-      allProducts.where((p) => p.isFavorite).toList();
+  // Expose CartController observables
+  get cartProducts => _cartCtrl.cartProducts;
+  get totalPrice => _cartCtrl.totalPrice;
+  bool get isEmptyCart => _cartCtrl.isEmpty;
 
-  /// Used by the Favorites screen to swap the visible list.
-  void getFavoriteItems() {
-    filteredProducts.assignAll(favoriteProducts);
-    filteredProducts.refresh();
-  }
+  // ========== DELEGATION: FavoritesController ============================
 
-  void getAllItems() {
-    filteredProducts.assignAll(allProducts);
-  }
+  /// Toggle favorite status
+  void toggleFavorite(Product product) => _favCtrl.toggleFavorite(product);
 
-  // ---- cart ---------------------------------------------------------------
-  void addToCart(Product product) {
-    if (product.cartQuantity <= 0) product.cartQuantity = 1;
-    if (!cartProducts.any((item) => item.id == product.id)) {
-      cartProducts.add(product);
-      Get.snackbar(
-        'Added to Cart',
-        '${product.name} added successfully',
-        duration: const Duration(seconds: 2),
-        snackPosition: SnackPosition.BOTTOM,
-      );
-    }
-    calculateTotalPrice();
-  }
+  /// Get all favorite products
+  List<Product> get favoriteProducts => _favCtrl.getFavorites();
 
-  void increaseItemQuantity(Product product) {
-    if (product.cartQuantity >= product.stockQuantity &&
-        product.stockQuantity > 0) {
-      Get.snackbar('Limit reached', 'Only ${product.stockQuantity} in stock');
-      return;
-    }
-    product.cartQuantity++;
-    calculateTotalPrice();
-  }
+  /// Expose favorites observable for reactive UI updates
+  get favoritesObservable => _favCtrl.favoriteProducts;
 
-  void decreaseItemQuantity(Product product) {
-    if (product.cartQuantity > 0) {
-      product.cartQuantity--;
-      if (product.cartQuantity == 0) {
-        cartProducts.removeWhere((item) => item.id == product.id);
-      }
-    }
-    calculateTotalPrice();
-  }
+  // ========== HELPER METHODS =============================================
 
-  void removeFromCart(Product product) {
-    cartProducts.removeWhere((item) => item.id == product.id);
-    product.cartQuantity = 0;
-    calculateTotalPrice();
-    Get.snackbar(
-      'Removed',
-      '${product.name} removed from cart',
-      duration: const Duration(seconds: 2),
-      snackPosition: SnackPosition.BOTTOM,
-    );
-  }
-
-  void clearCart() {
-    for (final p in cartProducts) {
-      p.cartQuantity = 0;
-    }
-    cartProducts.clear();
-    totalPrice.value = 0;
-  }
-
-  void calculateTotalPrice() {
-    double total = 0;
-    for (final item in cartProducts) {
-      total += item.effectivePrice * item.cartQuantity;
-    }
-    totalPrice.value = total.round();
-  }
-
-  bool get isEmptyCart => cartProducts.isEmpty;
-
-  void getCartItems() {
-    // Cart is held client-side; reactive variables handle UI updates.
-  }
-
+  /// Check if product has discount
   bool isPriceOff(Product product) => product.hasDiscount;
 
-  // ---- size helpers (used by detail screen / cart) ------------------------
+  /// Get current selected size for a product
   String getCurrentSize(Product product) {
     final catSize =
         product.sizes?.categorical?.firstWhereOrNull((e) => e.isSelected);

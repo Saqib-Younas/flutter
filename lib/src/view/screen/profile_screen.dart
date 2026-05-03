@@ -100,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: const Text(
                         'Logout',
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 16 ,color: Colors.black87)  ,
                       ),
                     ),
                   ),

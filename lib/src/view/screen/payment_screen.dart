@@ -145,7 +145,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       appBar: AppBar(
         title: const Text(
           'Checkout',
-          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold , fontSize: 22),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,

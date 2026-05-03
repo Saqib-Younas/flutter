@@ -7,8 +7,6 @@ import 'package:e_commerce_flutter/src/core/app_typography.dart';
 import 'package:e_commerce_flutter/src/core/services/session_service.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/view/widget/gradient_button.dart';
-import 'package:e_commerce_flutter/src/view/widget/network_image_with_fallback.dart';
-import 'package:e_commerce_flutter/src/view/widget/slide_animation_overlay.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen(this.product, {super.key});
@@ -123,6 +121,8 @@ class ProductDetailScreen extends StatelessWidget {
       borderRadius: 15,
       icon: const Icon(Icons.shopping_bag_outlined, color: Colors.white),
     );
+    // Navigate back after adding to cart
+    Get.back();
   }
 }
 

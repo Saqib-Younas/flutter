@@ -13,6 +13,13 @@ class AppText {
     color: AppColor.textPrimary,
   );
 
+  static const headingLarge = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w800,
+    color: Color(0xFF2D2D2D),
+    letterSpacing: -0.5,
+  );
+
   static const titleLarge = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w800,

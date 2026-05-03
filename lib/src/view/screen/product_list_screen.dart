@@ -14,12 +14,16 @@ class ProductListScreen extends GetView<ProductController> {
 
   @override
   Widget build(BuildContext context) {
-    // Reset search when entering screen
-    controller.isSearching.value = false;
-    controller.filterProductsByName('');
-
     final searchController = TextEditingController();
     Timer? debounce;
+
+    // Reset search when entering screen using addPostFrameCallback to avoid build conflicts
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (searchController.text.isEmpty) {
+        controller.isSearching.value = false;
+        controller.filterProductsByName('');
+      }
+    });
 
     void onSearchChanged(String value) {
       controller.isSearching.value = value.isNotEmpty;
@@ -153,6 +157,7 @@ class _SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: TextField(
           controller: searchController,
           onChanged: onChanged,
+          onSubmitted: onChanged,
           decoration: InputDecoration(
             hintText: 'Search by name, category, description…',
             hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
@@ -161,12 +166,12 @@ class _SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.search_rounded,
               color: AppColor.brandIndigo,
             ),
-            suffixIcon: GestureDetector(
-              onTap: onClear,
-              child: searchController.text.isNotEmpty
-                  ? const Icon(Icons.close_rounded, color: Colors.grey)
-                  : null,
-            ),
+            suffixIcon: searchController.text.isNotEmpty
+                ? GestureDetector(
+                    onTap: onClear,
+                    child: const Icon(Icons.close_rounded, color: Colors.grey),
+                  )
+                : null,
             contentPadding: const EdgeInsets.symmetric(vertical: 12),
           ),
         ),
