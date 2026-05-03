@@ -102,14 +102,4 @@ class ProductController extends GetxController {
   /// Check if product has discount
   bool isPriceOff(Product product) => product.hasDiscount;
 
-  /// Get current selected size for a product
-  String getCurrentSize(Product product) {
-    final catSize =
-        product.sizes?.categorical?.firstWhereOrNull((e) => e.isSelected);
-    if (catSize != null) return catSize.categorical.name;
-    final numSize =
-        product.sizes?.numerical?.firstWhereOrNull((e) => e.isSelected);
-    if (numSize != null) return numSize.numerical;
-    return '-';
-  }
 }

@@ -5,36 +5,31 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:e_commerce_flutter/src/core/app_theme.dart';
 import 'package:e_commerce_flutter/src/core/services/auth_service.dart';
 import 'package:e_commerce_flutter/src/core/services/session_service.dart';
-import 'package:e_commerce_flutter/src/controller/auth_controller.dart';
-import 'package:e_commerce_flutter/src/controller/product_controller.dart';
-import 'package:e_commerce_flutter/src/controller/order_controller.dart';
-import 'package:e_commerce_flutter/src/controller/admin_controller.dart';
-import 'package:e_commerce_flutter/src/view/admin/admin_dashboard_screen.dart';
-import 'package:e_commerce_flutter/src/view/screen/auth_screen.dart';
-import 'package:e_commerce_flutter/src/view/screen/home_screen.dart';
-import 'package:e_commerce_flutter/src/view/screen/payment_screen.dart';
+import 'package:e_commerce_flutter/src/constants/supabase_config.dart';
+import 'package:e_commerce_flutter/src/config/app_routes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize Supabase
   await Supabase.initialize(
-    url: 'https://szfepoggnmgnydvpiunm.supabase.co',
-    anonKey: 'sb_publishable_yh20i_HzG0EWXRNU8XY1TA_yEPnyBCV',
+    url: SupabaseConfig.url,
+    anonKey: SupabaseConfig.anonKey,
   );
 
   await SessionService.init();
 
-  // If we have a live Supabase session, refresh the cached profile so we can
-  // honour role-based routing on cold start.
+  // Refresh profile for role-based routing
   if (AuthService.isLoggedIn) {
     try {
       await AuthService.currentProfile();
     } catch (_) {}
   }
 
-  String initialRoute = '/auth';
+  // Determine starting point
+  String initialRoute = AppRoutes.auth;
   if (AuthService.isLoggedIn) {
-    initialRoute = SessionService.isAdmin ? '/admin' : '/home';
+    initialRoute = SessionService.isAdmin ? AppRoutes.admin : AppRoutes.home;
   }
 
   runApp(MyApp(initialRoute: initialRoute));
@@ -55,33 +50,12 @@ class MyApp extends StatelessWidget {
           PointerDeviceKind.touch,
         },
       ),
-      initialRoute: initialRoute,
-      getPages: [
-        GetPage(
-          name: '/auth',
-          page: () => const AuthScreen(),
-          binding: BindingsBuilder(() {
-            Get.lazyPut<AuthController>(() => AuthController());
-          }),
-        ),
-        GetPage(
-          name: '/home',
-          page: () => const HomeScreen(),
-          binding: BindingsBuilder(() {
-            Get.lazyPut<ProductController>(() => ProductController());
-            Get.lazyPut<OrderController>(() => OrderController());
-          }),
-        ),
-        GetPage(name: '/payment', page: () => const PaymentScreen()),
-        GetPage(
-          name: '/admin',
-          page: () => const AdminManageScreen(),
-          binding: BindingsBuilder(() {
-            Get.lazyPut<AdminController>(() => AdminController());
-          }),
-        ),
-      ],
       theme: AppTheme.lightAppTheme,
+      
+      // CORRECTED SECTION:
+      // Use the static constants and list defined in your AppRoutes class
+      initialRoute: initialRoute,
+      getPages: AppRoutes.pages, 
     );
   }
 }

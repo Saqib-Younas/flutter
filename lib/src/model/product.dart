@@ -1,5 +1,4 @@
 import 'package:e_commerce_flutter/src/core/app_data.dart';
-import 'package:e_commerce_flutter/src/model/product_size_type.dart';
 
 enum ProductType { all, watch, mobile, headphone, tablet, tv }
 
@@ -36,7 +35,6 @@ class Product {
     this.createdAt,
     this.updatedAt,
     // local-only / UI fields
-    this.sizes,
     this.isAvailable = true,
     int cartQuantity = 0,
     this.images = const [],
@@ -61,7 +59,6 @@ class Product {
   DateTime? updatedAt;
 
   // ----- local UI state (not persisted) -----
-  ProductSizeType? sizes;
   bool isAvailable;
   int _cartQuantity;
   List<String> images;

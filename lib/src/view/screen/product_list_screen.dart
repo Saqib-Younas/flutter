@@ -294,7 +294,6 @@ class _FeaturedCard extends StatelessWidget {
               ),
             ),
 
-            /// ✅ ASSET IMAGE FROM DB PATH
             Image.asset(
               product.imageUrl ?? 'assets/images/placeholder.png',
               width: 100,
