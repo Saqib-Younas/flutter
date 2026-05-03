@@ -42,6 +42,7 @@ class OrdersScreen extends GetView<OrderController> {
                     horizontal: 30,
                     vertical: 12,
                   ),
+                  
                 ),
               ),
             )

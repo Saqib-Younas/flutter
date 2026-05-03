@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:e_commerce_flutter/src/model/product_category.dart';
+import 'package:e_commerce_flutter/src/core/app_color.dart';
 
 class ListItemSelector extends StatefulWidget {
   const ListItemSelector({
@@ -29,7 +30,7 @@ class _ListItemSelectorState extends State<ListItemSelector> {
         decoration: BoxDecoration(
           color: item.isSelected == false
               ? const Color(0xFFE5E6E8)
-              : const Color(0xFFf16b26),
+              : AppColor.primary,
           borderRadius: BorderRadius.circular(10),
         ),
         child: IconButton(

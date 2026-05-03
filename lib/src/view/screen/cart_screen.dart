@@ -5,7 +5,7 @@ import 'package:e_commerce_flutter/src/core/app_color.dart';
 import 'package:e_commerce_flutter/src/core/app_typography.dart';
 import 'package:e_commerce_flutter/src/model/product.dart';
 import 'package:e_commerce_flutter/src/view/widget/app_card.dart';
-import 'package:e_commerce_flutter/src/view/widget/empty_cart.dart';
+import 'package:e_commerce_flutter/src/view/widget/empty_state.dart';
 import 'package:e_commerce_flutter/src/view/widget/gradient_button.dart';
 import 'package:e_commerce_flutter/src/view/widget/price_text.dart';
 
@@ -39,7 +39,11 @@ class CartScreen extends GetView<ProductController> {
           Expanded(
             child: Obx(
               () => controller.cartProducts.isEmpty
-                  ? const EmptyCart()
+                  ? const EmptyState(
+                      icon: Icons.shopping_cart_outlined,
+                      title: 'Your cart is empty',
+                      subtitle: 'Add products to get started',
+                    )
                   : _CartListView(controller: controller),
             ),
           ),
@@ -177,13 +181,32 @@ class _ProductThumb extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: Image.asset(
-          // Image.network ko .asset se change kiya agar assets use kar rahe hain
-          imageUrl ?? 'assets/images/placeholder.png',
-          fit: BoxFit.contain,
-          errorBuilder: (_, __, ___) =>
-              const Icon(Icons.broken_image, color: Colors.grey),
-        ),
+        child: (imageUrl != null && imageUrl!.isNotEmpty)
+            ? Image.network(
+                imageUrl!,
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => Container(
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.broken_image, color: Colors.grey),
+                ),
+                loadingBuilder: (_, child, progress) {
+                  if (progress == null) return child;
+                  return Container(
+                    color: Colors.grey[300],
+                    child: const Center(
+                      child: SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                    ),
+                  );
+                },
+              )
+            : Container(
+                color: Colors.grey[300],
+                child: const Icon(Icons.image, color: Colors.grey),
+              ),
       ),
     );
   }

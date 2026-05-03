@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:e_commerce_flutter/src/core/app_color.dart';
 
 class AppTheme {
   const AppTheme._();
@@ -7,7 +8,7 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.all(12),
-        backgroundColor: const Color(0xFFf16b26),
+        backgroundColor: AppColor.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),

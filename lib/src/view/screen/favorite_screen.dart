@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:e_commerce_flutter/src/controller/product_controller.dart';
+import 'package:e_commerce_flutter/src/controller/favorites_controller.dart';
 import 'package:e_commerce_flutter/src/view/widget/empty_state.dart';
 import 'package:e_commerce_flutter/src/view/widget/product_grid_view.dart';
 
@@ -12,12 +13,14 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
-  final ProductController controller = Get.find<ProductController>();
+  late final ProductController _productCtrl;
+  late final FavoritesController _favCtrl;
 
   @override
   void initState() {
     super.initState();
-    controller.getFavoriteItems(); // API call once
+    _productCtrl = Get.find<ProductController>();
+    _favCtrl = Get.find<FavoritesController>();
   }
 
   @override
@@ -41,7 +44,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         centerTitle: true,
       ),
       body: Obx(() {
-        final products = controller.filteredProducts;
+        final products = _favCtrl.favoriteProducts;
 
         if (products.isEmpty) {
           return const EmptyState(
@@ -53,7 +56,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
 
         return RefreshIndicator(
           onRefresh: () async {
-            await controller.getFavoriteItems();
+            // Refresh is automatic via Rx observables
+            return Future.value();
           },
           color: Colors.orangeAccent,
           child: GridView.builder(
@@ -72,9 +76,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               return ProductGridView(
                 items: [product],
                 likeButtonPressed: (i) {
-                  controller.toggleFavorite(product);
+                  _favCtrl.toggleFavorite(product);
                 },
-                isPriceOff: controller.isPriceOff,
+                isPriceOff: _productCtrl.isPriceOff,
               );
             },
           ),
