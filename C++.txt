@@ -1,0 +1,1713 @@
+ low-level-lnguage
+🧠 Definition:
+Ye woh languages hoti hain jo machine ke bilkul qareeb hoti hain. Ye CPU ke instructions ko directly samajhti hain.
+
+⚙ Examples:
+Assembly Languaga 
+Machine Language (binary 0s aur 1s
+
+
+High-Level Language (High-level zubaan)
+
+Ye woh languages hoti hain jo human ke qareeb hoti hain. Inko samajhna, likhna aur maintain karna aasaan hota hai.
+💻 Examples:
+Python
+JavaScript
+C++
+Java
+PHP
+
+✅ Features:
+Easy to read/write (insaan ki language ke qareeb)
+Machine ko directly samajh nahi aati, pehle compile ya interpret hoti hai
+
+
+english version
+Sir, low-level languages are closer to the machine. The CPU can directly understand and execute instructions written in these languages. 
+Examples include machine language (0s and 1s) and assembly language.
+
+On the other hand, high-level languages are closer to human language. They are easier to write, read, and maintain. Examples include JavaScript and Python.
+
+
+
+
+🖥️ 1. System Software
+Software jo computer hardware ko control karta hai aur basic functions provide karta hai.
+
+Examples:
+Operating System (Windows, Linux, macOS
+Device Drivers (Printer driver, Graphic card driver)
+Utility Programs (Antivirus, Disk Cleanup)
+
+📱 2. Application Software
+Software jo user ke specific task ya kaam ke liye bana hota hai.
+
+Examples:
+MS Word (Typing ke liye)
+Adobe Photoshop (Image editing ke liye)
+VLC Media Player (Video chalane ke liye)
+Web browsers (Google Chrome, Firefox)
+
+🧠 3. Compiler
+Pura program ek sath translate karta hai high-level language se machine code mein.
+
+Examples:
+Turbo C++ (C++ compiler)
+javac (Java compiler)
+GCC (C compiler)
+
+🟢 Fast Execution
+🔴 Error baad mein batata hai (sab compile hone ke baad)
+
+🧠 4. Interpreter
+Program ko line-by-line run karta hai aur translate karta hai.
+
+Examples:
+Python Interpreter (CPython)
+JavaScript (Browser interpreter)
+
+Ruby Interpreter
+
+🟢 Error turant batata hai
+🔴 Execution slow hoti hai (line by line)
+
+. Assembler
+Assembler ek program hota hai jo Assembly Language (low-level human-readable language) ko machine code (binary format) mein convert karta hai.
+
+📶 5. Analog Signal
+Continuous hoti hai, smooth curve wali signal.
+
+A compiler translates the entire source code into machine language at once. It shows all the errors after the compilation process is complete. For example, Turbo C++ uses a compiler.
+
+An interpreter, on the other hand, reads and executes the code line by line. If there’s an error in one line, it stops execution and does
+ not move to the next line until the error is fixed. Most browsers use interpreters for JavaScript.
+
+An assembler is a program that converts assembly language into machine code so that the CPU can understand and execute it.
+
+
+
+
+Examples:
+
+Human voice (microphone input)
+Temperature sensor readings
+
+Old radio signals
+
+🔢 6. Digital Signal
+Discrete hoti hai (0s and 1s), step-wise.
+Examples:
+Computer data (binary code)
+Digital clock
+USB communication
+MP3 songs (converted to digital)
+
+
+Preprocessor :
+Preprocessor C/C++ compiler ka pehla step hota hai jo source code compile hone se pehle hi process karta hai.
+Yeh # (hash) se shuru hone wale commands ko handle karta hai — inhein hum preprocessor directives kehte hain.
+
+
+Source Program
+Jo code programmer likhta hai (high-level ya assembly language mein), usey Source Program kehte hain.\
+
+⚙️ 3. Object Program
+Jab Source Program ko compile ya assemble kiya jata hai, to jo machine code file banti hai, usey Object Program kehte hain.
+
+Example:
+
+Source: program.c
+Compile hone ke baad: program.obj ya program.o
+
+
+. Linker
+Linker ek software tool hai jo multiple object files ko combine karta hai ek complete executable file banane ke liye.
+
+Kaam:
+External functions (like printf()) ko connect karna
+Library files add karna
+Final .exe ya executable banana
+
+
+📦 5. Loader
+Loader ek system utility hai jo executable file ko RAM mein load karta hai taake program run ho sake.
+
+until (taky)
+
+Kaam:
+Executable file ko memory mein load karna
+Execution start karwana
+Example:
+Jab aap kisi app par double-click karte ho (chrome.exe), Loader usay RAM mein load karta hai aur run karta hai.
+
+
+Source Code (.c, .asm)
+      ↓
+Compiler / Assembler
+      ↓
+Object Code (.obj, .o)
+      ↓
+Linker
+      ↓
+Executable (.exe)
+      ↓
+Loader
+      ↓
+Program Runs in RAM
+
+
+
+ Algorithm: A step-by-step problem-solving process in which a solution is arrived at 
+in a finite amount of time.
+
+
+
+Structured Programming: Sirf functions aur procedures hotay hain. Focus logic pe hota hai.
+OOP: Har cheez object ke through hoti hai. Data aur behavior dono object me hotay hain.
+
+Procedure aik aisa function hota hai jo kuch kaam karta hai — jaise message print karna, number add karna — aur usay bar-bar call kiya ja sakta hai.
+
+
+
+🔢 No.	🧱 Aspect	🧩 Structured Programming	                                                                                   🧱 Object-Oriented Programming (OOP)
+1	Definition	Functions aur procedures ka use kar ke program banaya jata hai		   Objects aur classes ka use hota hai
+2	Focus	Logic aur process pe focus karta hai				   Data aur objects pe focus karta hai
+3	Structure	Top-down approach						  Bottom-up approach
+4	Main Units	Functions / Procedures					  Classes / Objects
+5	Data Handling	Data global hoti hai, koi protection nahi			   Data encapsulated hoti hai, access modifiers ka use hota hai
+6	Reusability	Reusability limited hoti hai					   Code reuse inheritance aur polymorphism se possible hoti hai
+7	Ease of Maintenance	Maintenance mushkil ho sakti hai large programs me		  Maintenance asaan hoti hai due to modularity
+8	Real World Modeling	Real world systems ka modeling mushkil			 Real world modeling asaan hota hai
+9	Examples of Languages C, Pascal, FORTRAN				C++, Java, Python, C#
+10	Example Program	void greet() function					class Greet { void sayHello(); }
+
+
+
+
+1. Reserved Words (Keywords)
+Definition:
+Reserved words ya keywords woh lafz hain jo programming language (jaise C++, Java, Python) ke apnay special meaning ke liye hotay hain. 
+Inhein aap variable, function, ya class name ke tor par use nahi kar saktay.
+
+🔸 Ye language ke rules aur syntax ka part hotay hain.
+🔸 Ye already reserved hain compiler ke liye.
+
+
+ 2. Identifiers
+Definition:
+Identifiers woh names hote hain jo programmer khud banata hai kisi variable, function, class, object, etc. ke liye.
+
+🔹 Ye user-defined hote hain
+🔹 Inka use data ko naam dene ke liye hota hai
+
+Rules for Identifiers:
+Letters (A-Z, a-z), digits (0-9), and underscore (_) use ho sakta hai
+Kisi digit se start nahi ho sakta
+Keyword (reserved word) ka naam nahi ho sakta
+Case-sensitive hotay hain (e.g., value aur Value alag hain)
+
+
+
+ Data type: A set of values together with a set of allowed operations.
+ C11 data types fall into the following three categories:
+ ? Simple data type
+ ? Structured data type
+ ? Pointers
+ For the next few chapters, you will be concerned only with simple data types
+
+"A data type tells the computer what kind of value is stored in a variable, like a number, text, or true/false."
+
+
+
+
+ What is Casting in Programming?
+Casting ka matlab hota hai:
+🔁 Ek data type ko doosray data type mein convert karna.
+Jaise:
+float ko int mein
+
+Types of Casting
+🔹 1. Implicit Casting (Type Promotion)
+Automatically done by the compiler.
+No need to manually convert
+Safe conversions (e.g., int → float)
+
+
+int a = 10;
+float b = a;  // int automatically converted to float
+
+
+2. Explicit Casting (Type Casting)
+Manually done by the programmer.
+
+Syntax: (newType)variable
+
+Use when precision loss ho sakta hai (e.g., float → int)
+
+Example:
+
+float pi = 3.14;
+int value = (int)pi;  // value = 3
+
+
+Varibale
+Variable aik memory ka hissa hota hai jisme program chalne ke dauran (execution ke waqt) value badal sakti hai.
+
+"A variable is a container that holds data or information which can change during the execution of a program."
+
+ A memory location whose content may change during program execution.
+Term	Explanation
+Variable	Naam diya gaya memory location
+Memory Location	Computer ke memory ka aik address ya jagah
+Content may change	Us jagah ki value bar-bar badli ja sakti hai
+During Program Execution	Jab tak program chal raha hota hai
+
+
+Pre-increment: ++variable
+ Post-increment:  variable++
+ The syntax of the decrement operator is:
+ Pre-decrement: --variable
+ Post-decrement: variable-
+
+
+
+C++ mein bohat saare standard libraries hoti hain, jaise cout, cin, string, vector waghera.
+Yeh sab std namespace ke andar defined hoti hain.
+
+C++ mein agar aap input/output (jaise cout, cin) ka use karna chahte hain, to aapko iostream header file include karni padti hai.
+
+
+
+hat is a Control Structure in Programming?
+Control structure wo logical structure hoti hai jo program ko batati hai kis sequence mein code execute hoga.
+Matlab: Kis line pehle chalegi, kaun si baad mein, aur kab repeat hoga ya skip hoga.
+
+
+
+"A control structure is a logical structure that determines the flow of a program — whether it runs in sequence, repeats actions, or makes decisions based on conditions."
+
+
+
+✅ 1. Sequence Control Structure
+Code ek ke baad ek line run hota hai.
+
+cout << "Hello";
+cout << "World";
+
+
+
+2. Selection / Decision Making
+Jab program condition check karta hai.
+
+
+
+🔹 if-else Example:
+
+
+if (marks >= 50) {
+    cout << "Pass";
+} else {
+    cout << "Fail";
+}
+
+3. Looping / Iteration/Repetion
+Jab koi kaam bar-bar repeat karwana ho.
+
+🔹 for loop:
+
+for(int i = 0; i < 5; i++) {
+    cout << i << " ";
+}
+
+4. Jump / Branching Statements
+Code execution kisi aur jagah jump kar jata hai.
+
+Keyword	Use
+break	Loop ya switch se bahar nikalna
+continue	Loop ka current iteration skip karna
+goto	Direct jump to label (not recommended)
+return	Function end karna aur value wapas den
+
+
+While loop
+counter controlled loop
+sential control loop Aisi special value jo loop ko rokne ke liye use hoti hai
+ Flag Variable
+Flag ka matlab hota hai:
+Ek bool (true/false) type variable jo batata hai ke koi condition meet hui ya nahi.
+
+"A while loop is used when you don't know in advance how many times the loop should run."
+
+
+bool found = false;
+int arr[] = {1, 2, 3, 4, 5};
+int key = 3;
+
+for (int i = 0; i < 5; i++) {
+    if (arr[i] == key) {
+        found = true;
+        break;
+    }
+}
+
+if (found)
+    cout << "Element found!";
+else
+    cout << "Element not found!";
+
+
+Functions
+Predefined Functions
+abs ceil floor
+User defined Function
+jo ham deifned krty
+The name of the function
+ 2. The parameters, if any
+ 3. The data type of each parameter
+ 4. The data type of the value computed (that is, the value returned) by 
+
+the function, called the type of the functio Two- and Multidimensional Arrays
+Two-dimensional array: A collection of a fixed number of components arranged 
+in rows and columns (that is, in two dimensions), wherein all components are of the 
+same type.
+ The syntax for declaring a two-dimensional array is:
+ dataType arrayName[intExp1][intExp2]
+
+int board[4][3] = {{2, 3, 1},
+                   {15, 25, 13},
+                   {20, 4, 7},
+                   {11, 18, 14}}
+
+ for (row = 0; row < NUMBER_OF_ROWS; row++)
+ {
+ for (col = 0; col < NUMBER_OF_COLUMNS; col++)
+        cout << setw(5) << matrix[row][col] << " ";
+    cout << endl
+formal parameter actual paramter
+function overloading
+
+
+
+
+
+Structures (struct) in C++
+Structure C++ mein ek user-defined data type hota hai jisme aap multiple variables (of different types) ek group mein rakh sakte ho.
+
+🔸 Structure = Data container
+🔸 Jaise ek box ke andar naam, age, ID sab kuch ek saath ho sakta hai.
+
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Student {
+    string name;
+    int age;
+    float gpa;
+};
+
+int main() {
+    Student s1;  // 👈 structure ka object banaya
+
+    // Values assign karna
+    s1.name = "Ali";
+    s1.age = 20;
+    s1.gpa = 3.5;
+
+    // Output
+    cout << "Name: " << s1.name << endl;
+    cout << "Age: " << s1.age << endl;
+    cout << "GPA: " << s1.gpa << endl;
+
+    return 0;
+}
+
+
+Arrays of strutre
+#include <iostream>
+using namespace std;
+
+struct Student {
+    string name;
+    int age;
+    float gpa;
+};
+
+int main() {
+    const int N = 3;
+    Student students[N] = {
+        {"Ali", 20, 3.4},
+        {"Sana", 19, 3.8},
+        {"Bilal", 21, 3.2}
+    };
+
+    for (int i = 0; i < N; i++) {
+        cout << students[i].name << ", Age: " << students[i].age
+             << ", GPA: " << students[i].gpa << endl;
+    }
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+struct Address {
+    string city;
+    string country;
+};
+
+struct Student {
+    string name;
+    int age;
+    Address addr;  // Nested struct
+};
+
+int main() {
+    Student s = {"Ali", 22, {"Lahore", "Pakistan"}};
+
+    cout << "Name: " << s.name << "\n"
+         << "Age: " << s.age << "\n"
+         << "City: " << s.addr.city << "\n"
+         << "Country: " << s.addr.country << endl;
+
+    return 0;
+}
+
+
+Objects: Ye real-world entities hote hain jaise Car, Student, Mobile.
+Class: Ye blueprint hoti hai jo define karti hai ke object ka structure aur behavior kaisa hoga.
+
+Example:
+
+
+Classes
+
+. Class – Blueprint (Design)
+A class is a user-defined data type that acts as a blueprint for creating objects.
+
+💬 Roman Urdu:
+Class ek design ya template hota hai jisme aap variables (data) aur functions (actions) define karte ho.
+
+
+. Object – Real instance of class
+An object is a real version of the class. Class sirf design hoti hai, object us design ka practical use hota hai.
+
+💬 Roman Urdu:
+Object class ka actual item ya copy hota hai jo memory mein create hota hai.
+💬 Roman Urdu:
+Object class ka asli istemal hota hai – yaani ek copy jo memory mein banti hai aur kaam karti hai.
+
+Acess Modifiers
+In C11, private, protected, and public are reserved words and are called 
+member access specifiers
+
+member access operator (.)
+
+scope resolution operator, :: 
+
+
+
+ Accessor function: A member function of a class that only accesses (that is, does not 
+modify) the value(s) of the member variable(s).
+ Mutator function: A member function of a class that modifies the value(s) of the 
+member variable(s).
+
+
+The constructor without parameters is called the default constructor
+
+Destructors
+~classname
+
+Abstract data type (ADT): A data type that separates the logical properties from the 
+implementation details.
+
+Static Members of a Class
+static int count;   
+static void incrementY();
+
+
+class A {
+public:
+    static int count;
+};
+A::count = 0;
+static int count → sirf ek baar memory mein allocate hota hai.
+
+Ye sabhi objects ke liye shared hota hai.
+Har object A::count ko same jagah se access karta hai.
+
+
+Concept	Explanation
+Default Constructor	Compiler banata hai agar aap na likho
+Parameterized Constructor	Aap likho to compiler default nahi banata
+Object Memory	Har object ka alag memory block hota hai
+Static Member	Sirf ek memory block, sab objects share karte hain
+Static value	Pichli value retain karti hai (shared)
+
+
+
+Inheritance (“is-a” relationship)
+Composition (aggregation) (“has-a” relationship)
+
+
+
+
+
+Inheritance – "is-a" relationship
+🔹 Definition (English):
+Inheritance is a mechanism in object-oriented programming where a child class (derived class) inherits the properties and behaviors (data members and functions) from a parent class (base class).
+
+💬 Roman Urdu:
+Inheritance ek aisa concept hai jahan ek class doosri class se properties aur functions inherit (waraasat mein) leti hai.
+
+class Animal {
+public:
+    void eat() { cout << "Eating\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void bark() { cout << "Barking\n"; }
+};
+
+
+2. Composition – "has-a" relationship
+🔹 Definition (English):
+Composition is a design principle where one class contains an object of another class as its member. It represents a "has-a" relationship.
+
+💬 Roman Urdu:
+Composition ka matlab hai ke ek class ke andar doosri class ka object hona — yaani, ek class doosri class ka hissa hoti hai.
+
+
+class Engine {
+public:
+    void start() { cout << "Engine started\n"; }
+};
+
+class Car {
+public:
+    Engine eng;  // 👈 Composition
+    void drive() {
+        eng.start();
+        cout << "Car is driving\n";
+    }
+};
+
+
+Encapsulation—The ability to combine data and operations on that 
+data in a single unit.
+ ? Inheritance—The ability to create new objects (classes) from existing 
+objects (classes).
+ ? Polymorphism—The ability to use the same expression to denote 
+different operations.
+
+
+
+
+✅ Types of Inheritance in C++
+#	Type			Explanation (English)	Roman Urdu
+1	Single Inheritance		One derived class inherits from one base class		Ek class sirf ek class se inherit karti hai
+2	Multiple Inheritance		One derived class inherits from two or more base classes	Ek class do ya zyada classes se inherit karti hai Person and Employee → Teacher
+3	Multilevel Inheritance		One class is derived from a class which is also derived	Inheritance chain banti hai: A → B → C
+4	Hierarchical Inheritance	Multiple classes inherit from a single base class	Ek base class se kai derived classes  Vehicle → Car, Bike, Bus
+5	Hybrid Inheritance		Combination of two or more types of inheritance	Multiple + Multilevel ya aur koi mix
+
+Inheritance Type	Real-World Example	Diagram Shape
+Single	Animal → Dog	Line
+Multilevel	LivingThing → Animal → Dog	Vertical chain
+Multiple	Person + Employee → Teacher	V shape
+Hierarchical	Vehicle → Car, Bike, Bus	Tree branches
+Hybrid	Mix of multiple + multilevel	Diamond/mixed
+
+
+
+🔶 1. Inheritance ka Matlab Kya Hai?
+Jab ek class, doosri class se inherit karti hai, to:
+Us parent class ke members (functions aur variables) child class mein copy nahi hote,
+Balki child class ka object us memory area ko include karta hai jo parent class ke liye reserved hota hai.
+
+🔍 Question	✅ Answer
+Child ko kya milta hai?	Parent ka memory block (object ke andar) + uske accessible members
+Copy hota hai?	Nahi, inheritance mein copy nahi hoti, sirf access hota hai
+Kaise access karti hai?	Access specifier (public, protected) ke zariye
+Private members?	❌ Direct access nahi hota (sirf friend ya getter se access ho sakta)
+
+
+1. Single Inheritance
+
+class A {
+public:
+    void show() { cout << "A class\n"; }
+};
+
+class B : public A {
+    // inherits show()
+};
+➡ B inherits from A
+
+🔍 2. Multiple Inheritance
+
+class A {
+public:
+    void showA() { cout << "Class A\n"; }
+};
+
+class B {
+public:
+    void showB() { cout << "Class B\n"; }
+};
+
+class C : public A, public B {
+    // inherits showA() and showB()
+};
+➡ C inherits from both A and B
+
+🔍 3. Multilevel Inheritance
+
+class A {
+public:
+    void showA() { cout << "A\n"; }
+};
+
+class B : public A {
+public:
+    void showB() { cout << "B\n"; }
+};
+
+class C : public B {
+    // inherits showA() and showB()
+};
+➡ C → B → A 
+
+Child class ka object (e.g., C obj) uske parent classes ka memory block bhi hold karta hai.
+
+🔍 4. Hierarchical Inheritance
+
+class A {
+public:
+    void show() { cout << "Base A\n"; }
+};
+
+class B : public A {};
+class C : public A {};
+➡ B and C both inherit from A
+
+🔍 5. Hybrid Inheritance
+
+class A {
+public:
+    void show() { cout << "A\n"; }
+};
+
+class B : public A {};
+class C {
+public:
+    void display() { cout << "C\n"; }
+};
+
+class D : public B, public C {};
+➡ Combination of multiple + multilevel
+
+
+
+Pointer variable aik aisa variable hota hai jo kisi aur variable ke memory address ko store karta hai. Is liye kaha jata hai ke ye aik address ko point karta hai.
+Matlab ye ke pointer khud value store nahi karta — ye us jagah ka address store karta hai jahan value rakhi hoti hai.
+
+
+ dataType *identifier;
+Address of Operator (&)
+Dereferencing Operator (*)
+member access operator arrow, ->.
+
+
+ Dynamic Variables
+ new dataType;          
+//to allocate a single variable
+ new dataType[intExp];  //to allocate an array of variables
+
+
+bad_alloc
+ Urdu mein asaan explanation:
+Jab aap program mein new keyword se memory allocate karne ki koshish karte hain (jaise dynamic array banate hain), 
+aur computer ke paas itni memory available nahi hoti, to program crash kar jaata hai aur ek error deta hai jisko bad_alloc kehte hain.
+
+
+ Memory Leak kya hota hai? (Asaan zabaan mein)
+Memory leak ek aisi problem hoti hai jab aap program mein memory allocate to kar lete hain, lekin us memory ko baad mein free nahi karte —
+ jiske wajah se woh memory permanently reserve ho jaati hai, aur system ke paas kam memory bachti hai.
+
+ delete p; 
+delete [] name;
+ delete str;
+
+
+🔸 -> Member Access Operator ka Use kab karte hain? (C++ mein)
+-> (arrow operator) ka use tab kiya jata hai jab aap pointer ke through kisi object ke member (function ya variable) ko access karna chahte hain.
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int** p;                    // double pointer
+    p = new int*[10];           // 10 rows
+
+    for (int i = 0; i < 10; i++) {
+        p[i] = new int[15];     // 15 columns for each row
+    }
+
+    // Example: Fill array
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 15; j++) {
+            p[i][j] = i + j;
+        }
+    }
+
+    // Example: Print array
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 15; j++) {
+            cout << p[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    // Memory cleanup (important!)
+    for (int i = 0; i < 10; i++) {
+        delete[] p[i];
+    }
+    delete[] p;
+
+    return 0;
+}
+
+
+Dangling Pointer ek aisa pointer hota hai jo kisi aisi memory location ko point karta hai jo ab valid nahi rahi — yaani jise delete/free kar diya gaya ho.
+int* ptr = new int(10);
+delete ptr;       // memory free
+cout << *ptr;     // ❌ Dangling pointer (undefined behavior)
+
+
+🔴 Important Point:
+delete kisi pointer ka sirf naam delete nahi karta — wo us pointer ke through jis memory ko point kiya gaya hai, us memory ko free karta hai.
+
+👉 Iska matlab:
+delete a; ka matlab hai:
+→ Jo address a mein stored hai, us address wali heap memory ko free kar do.
+
+Ab kyunki a aur p dono same address ko point karte hain, to delete a → delete p bhi ho gaya indirectly.
+
+
+ 1. Shallow Copy (سطحی نقل / upar upar ka copy)
+Shallow copy sirf pointers ya references ko copy karta hai — actual data share hota hai, copy nahi hoti.
+
+✅ Matlab:
+Dono objects same memory location ko point karte hain.
+
+Ek object mein change dusre object ko bhi affect karta hai.
+
+🔸 Example:
+
+int* a = new int(10);
+int* b = a;  // shallow copy
+
+*b = 20;
+cout << *a << endl;  // Output: 20 (same memory)
+❗Problem:
+Agar aap ek object delete karo, dusre mein dangling pointer ban jata hai (dangerous!).
+
+
+
+2. Deep Copy (گہری نقل / naya data bhi copy)
+Deep copy mein actual data bhi copy hota hai, sirf pointer nahi.
+
+✅ Matlab:
+Nayi memory allocate hoti hai.
+
+Har object ka apna independent copy hota hai.
+Ek object mein change dusre ko affect nahi karta.
+
+🔸 Example:
+
+int* a = new int(10);
+int* b = new int(*a); // deep copy
+
+*b = 20;
+cout << *a << endl;   // Output: 10 (separate memory)
+
+
+
+Copy Constructor
+ Urdu mein asaan explanation:
+Jab aap ek object ko dusre object ke barabar karte hain (obj2 = obj1;) ya pass by value karte hain function mein, to compiler default copy constructor banata hai.
+Lekin agar aapka object pointer ya dynamic memory use karta hai, to default copy constructor galat copy karega (shallow copy) — isliye humein apna khud ka copy constructor banana padta hai (deep copy ke liye).
+
+
+
+class MyClass {
+public:
+    int* data;
+
+    MyClass(int val) {
+        data = new int(val);
+    }
+
+    // No copy constructor
+    void show() {
+        cout << *data << endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);
+    MyClass obj2 = obj1;  // ❌ default shallow copy
+
+    *obj2.data = 20;
+
+    obj1.show();  // Output: 20 ❌ (should be 10)
+}
+
+
+
+class MyClass {
+public:
+    int* data;
+
+    MyClass(int val) {
+        data = new int(val);
+    }
+
+    // ✅ Deep Copy Constructor
+    MyClass(const MyClass& other) {
+        data = new int(*other.data);
+    }
+
+    void show() {
+        cout << *data << endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);
+    MyClass obj2 = obj1;
+
+    *obj2.data = 20;
+
+    obj1.show();  // Output: 10 ✅
+    obj2.show();  // Output: 20
+}
+
+
+
+
+🔸 1. Virtual Function
+🔹 Definition:
+Virtual function wo function hota hai jo base class mein define hota hai lekin hum chahte hain ke uska actual version derived class se call ho at runtime.
+
+✅ Purpose:
+Runtime polymorphism allow karta hai.
+
+Jab hum base class pointer se derived class ka function call karte hain.
+
+🔸 Example:
+
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {   // 👈 virtual function
+        cout << "Base class\n";
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {  // 👈 overrides base version
+        cout << "Derived class\n";
+    }
+};
+
+int main() {
+    Base* ptr = new Derived;
+    ptr->show();   // ✅ Output: Derived class (due to virtual function)
+}
+
+
+
+Pure Virtual Function
+🔹 Definition:
+Aisa virtual function jiska base class mein koi body nahi hoti, aur usse sirf derived class mein implement karna mandatory hota hai.
+
+✅ Syntax:
+
+virtual void functionName() = 0;
+✅ Use:
+Force karta hai derived class ko us function ko implement karne ke liye.
+
+Base class ban jati hai abstract class.
+
+
+
+ 3. Abstract Class
+🔹 Definition:
+Abstract class wo class hoti hai jisme kam az kam ek pure virtual function hota hai.
+Abstract class ka object banaya nahi ja sakta.
+Use sirf base class banane ke liye use kiya jata hai.
+
+🔸 Example with Pure Virtual and Abstract Class:
+
+#include <iostream>
+using namespace std;
+
+class Shape {  // 👈 Abstract class
+public:
+    virtual void draw() = 0;  // 👈 Pure virtual function
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle\n";
+    }
+};
+
+int main() {
+    Shape* s = new Circle;  // ✅ allowed through base class pointer
+    s->draw();              // Output: Drawing Circle
+}
+
+
+Daimond Problem
+
+Jab ek class do classes se inherit karti hai, aur wo dono classes ek same parent class se inherit karti hain, to grandchild class ke paas parent class ka duplicate copy aa jata hai.
+Isse jab aap parent class ka member access karte ho to compiler ko samaj nahi aata kis copy se kare — isey kehte hain diamond problem.
+
+
+Use Virtual Inheritance
+🔸 Virtual Inheritance se sirf ek hi copy share hoti hai:
+
+class A {
+public:
+    void show() {
+        cout << "Class A" << endl;
+    }
+};
+
+class B : virtual public A {};
+class C : virtual public A {};
+class D : public B, public C {};
+
+int main() {
+    D obj;
+    obj.show();   // ✅ Now works perfectly, only one shared A
+}
+
+
+Without virtual	With virtual
+D ke paas A ki 2 copies	D ke paas A ki sirf 1 copy (shared)
+Function call ambiguous	Function call clear and safe
+
+B aur C dono A ki ek hi shared copy use karte hain.
+D mein sirf ek copy of A hoti hai.
+To obj.show(); ab clear hai — confusion khatam ✅
+
+
+Operator Overloading
+returnType operator operatorSymbol(formal parameter list)
+
+
+bool clockType::operator==(...) **const**
+✅ Iska matlab:
+Yeh function current object (this) ko modify nahi karega
+
+Yaani agar aap class ke andar kuch aise members hain jinko function ke andar accidentally change karne ki koshish ho, to compiler error dega.
+
+
+🔹 Friend Function in C++ (Urdu + English)
+Friend function C++ ka ek special concept hai jo kisi class ke private members ko access karne ki permission deta hai — bina class ka member hone ke!
+Friend function wo function hota hai jo kisi class ka member nahi hota, lekin usse us class ke private aur protected members ko access karne ki ijazat hoti hai.
+
+ostream& operator<<(ostream& out, const Student& s);
+Yeh function class ke andar nahi hota, balkay global function hota hai.
+
+Aur name aur age private members hain — directly access nahi ho sakte.
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    Student(string n, int a) : name(n), age(a) {}
+
+    // Declare friend function
+    friend ostream& operator<<(ostream& out, const Student& s);
+};
+
+// Define outside
+ostream& operator<<(ostream& out, const Student& s) {
+    out << "Name: " << s.name << ", Age: " << s.age;
+    return out;
+}
+
+Student s("Ali", 20);
+cout << s;  // ✅ Output: Name: Ali, Age: 20
+
+Jab aap cout << object likhte hain, to cout aapki class ka member nahi hota.
+Aur aapka object private members rakhta hai — isliye << wale function ko friend banaya jata hai taake wo class ke andar jhaankh sake.
+
+
+#include <iostream>
+using namespace std;
+
+class geet {
+private:
+    int a;
+    int b;
+
+public:
+    geet() {
+        a = 10;
+        b = 20;
+    }
+
+    // Friend function
+    friend void helo(geet f);
+};
+
+// Friend function defined outside
+void helo(geet f) {
+    cout << "Private value a = " << f.a << endl;
+}
+
+int main() {
+    geet obj;
+    helo(obj);  // ✅ Correct call
+}
+
+    }
+bool operator==(const geet& other)const {
+	return a==other.a&&b==other.b;
+}
+
+    
+
+#include <iostream>
+using namespace std;
+
+class Counter {
+private:
+    int value;
+
+public:
+    Counter() : value(0) {}
+
+    // ✅ Prefix ++
+    Counter operator++() {
+        ++value;          // Pehle increment
+        return *this;     // Return updated object
+    }
+
+    // ✅ Postfix ++ (int dummy parameter)
+    Counter operator++(int) {
+        Counter temp = *this;  // Save current state
+        value++;               // Phir increment
+        return temp;           // Return old value
+    }
+
+    // ✅ Prefix --
+    Counter operator--() {
+        --value;
+        return *this;
+    }
+
+    // ✅ Postfix --
+    Counter operator--(int) {
+        Counter temp = *this;
+        value--;
+        return temp;
+    }
+
+    void show() const {
+        cout << "Value = " << value << endl;
+    }
+};
+
+
+Jab aap ++obj likhte hain, to aap pehle object ka value barhate ho, fir uska result use karte ho (prefix).
+Aur jab obj++ likhte ho, to pehle purana value use hota hai, aur baad mein increment hota hai (postfix).
+Postfix ko differentiate karne ke liye aap int dummy parameter dete ho.
+
+
+
+
+rectangleType operator+(const rectangleType&) const;
+rectangleType operator*(const rectangleType&) const;
+
+
+Kyunki + ya * operator do rectangleType objects ko combine karke ek naya rectangle object return karta hai.
+Sirf int return karne ka koi faida nahi jab aapka result bhi ek rectangle ho.
+
+
+
+
+class rectangleType {
+private:
+    int length;
+    int width;
+
+public:
+    rectangleType(int l = 0, int w = 0) : length(l), width(w) {}
+
+    // ✅ Overload + operator
+    rectangleType operator+(const rectangleType& other) const {
+        return rectangleType(length + other.length, width + other.width);
+    }
+
+    // ✅ Overload * operator
+    rectangleType operator*(const rectangleType& other) const {
+        return rectangleType(length * other.length, width * other.width);
+    }
+
+    void show() {
+        cout << "Length = " << length << ", Width = " << width << endl;
+    }
+};
+
+
+OOP (Object-Oriented Programming) mein interface ek aisa blueprint hota hai jo sirf method signatures (function names) define karta hai — lekin unki implementation (logic) nahi deta.
+
+🔹 Simple lafzon mein:
+
+Interface batata hai:
+👉 “kya karna hai”
+lekin yeh nahi batata:
+👉 “kaise karna hai”
+
+🔹 Example (TypeScript / Java style):
+interface Animal {
+  makeSound(): void;
+}
+
+class Dog implements Animal {
+  makeSound() {
+    console.log("Bark");
+  }
+}
+
+
+
+🔷 What are Templates in C++?
+Template ek generic tool hota hai jisse aap reusable code likh sakte ho multiple data types ke liye.
+Yani aapko har data type ke liye alag function/class likhne ki zarurat nahi hoti.
+
+
+
+template <typename T>
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    cout << add(2, 3) << endl;        // int
+    cout << add(2.5, 3.7) << endl;    // float
+    cout << add('A', 2) << endl;      // char + int => char
+}
+
+
+
+
+ Class Templates
+Class template ka matlab hai ek aisi class jo generic data type ke liye kaam kar
+
+template <typename T>
+class Box {
+private:
+    T value;
+
+public:
+    void setValue(T val) {
+        value = val;
+    }
+
+    T getValue() {
+        return value;
+    }
+};
+
+int main() {
+    Box<int> b1;
+    b1.setValue(10);
+    cout << b1.getValue() << endl;
+
+    Box<string> b2;
+    b2.setValue("Hello");
+    cout << b2.getValue() << endl;
+}
+
+✅ Urdu Mein Samjhaawat:
+Template ek "aik hi code ko har data type ke liye chalane ka tareeqa" hai.
+Function Template: aap add, max, swap jese functions ko generic bana sakte ho.
+Class Template: aap Box, Stack, List jaise data containers ko har data type ke liye reuse kar sakte ho.
+
+
+
+
+ya hoti hai Exception?
+Exception wo unexpected error hota hai jo program ke dauraan chalne (runtime) ke waqt hota hai — jese:
+
+0 se divide karna
+File na milna
+Memory alloation failure
+Invalid user input
+Array bounds exceed
+
+
+int a = 5, b = 0;
+int c = a / b;   // ❌ program crash ho jayega
+
+try {
+    // code that might throw error
+    int x = 5 / 0;
+}
+catch (exceptionType e) {
+    // error handle yahan hoga
+    cout << "Error: Division by zero";
+}
+
+try {
+    // risky code
+}
+catch (type1 e1) {
+    // handle error 1
+}
+catch (type2 e2) {
+    // handle error 2
+}
+catch (...) {
+    // handle unknown error
+}
+
+
+jes tra ka erorr thorw kr rhy wohi catch ma aye ga object bny ga uska
+
+ Concrete Class – kya hoti hai?
+🔹 Ek normal class jisme saare methods ka implementation hota hai
+🔹 Iska object directly bana sakte ho
+🔹 Abstract class ko inherit karke uska method complete karti hai
+
+
+
+
+
+What is Polymorphism?
+Polymorphism ka matlab hota hai:
+"One name, many forms" — yani ek hi function ya operator ka different behavior hona depending on context.
+
+📌 Real Life Example:
++ ka matlab numbers mein add karna hota hai, strings mein join karna hota hai.
+
+ Types of Polymorphism in C++
+Type	Name	Handled At
+1️⃣ Compile-time	Function Overloading / Operator Overloading	Compile Time
+2️⃣ Run-time	Virtual Functions / Function Overriding Run Time
+
+
+Polymorphism ka matlab hai "ek hi naam ke zariye mukhtalif kaam karna".
+Compile-time pe: function/operator overload ho ke alag kaam karta hai.
+Run-time pe: base class ka pointer derived class ka function call karta hai.
+
+
+🔶 1. Compile-Time Polymorphism
+✅ A. Function Overloading:
+
+void show(int a) {
+    cout << "Integer: " << a << endl;
+}
+
+void show(string s) {
+    cout << "String: " << s << endl;
+}
+🧠 Same function name — different parameters.
+
+✅ B. Operator Overloading:
+
+class Point {
+public:
+    int x, y;
+    Point(int a, int b): x(a), y(b) {}
+
+    Point operator+(const Point& p) {
+        return Point(x + p.x, y + p.y);
+    }
+};
+🧠 + operator is behaving differently for Point objects.
+
+🔷 2. Run-Time Polymorphism
+Jab base class ka pointer/reference derived class ke function ko run-time par call kare — use runtime polymorphism kehte hain.
+
+✅ Virtual Function Example:
+
+class Animal {
+public:
+    virtual void speak() {
+        cout << "Animal speaks" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void speak() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+int main() {
+    Animal* a;
+    Dog d;
+    a = &d;
+
+    a->speak();  // ✅ Output: Dog barks (runtime pe decide hota hai)
+}
+🧠 speak() function ka actual version run-time par decide hota hai, not compile-time.
+
+#include <iostream>
+using namespace std;
+
+class Parent {
+public:
+    virtual void show() {
+        cout << "Parent version of show()" << endl;
+    }
+};
+
+class Child : public Parent {
+public:
+    void show() override {  // overriding
+        cout << "Child version of show()" << endl;
+    }
+};
+
+int main() {
+    Parent* p;       // pointer of Parent class
+    Child c;         // object of Child class
+    p = &c;          // base class pointer pointing to derived class
+
+    p->show();       // 🔥 Output: Child version of show()
+}
+
+
+
+Recursion ek technique hai jisme function apne aap ko hi call karta hai, jab tak koi base condition milti hai.
+
+📌 Simple Words:
+Function khud ko bar bar call karta hai, har baar ek step chhota ho jata hai, jab tak rukne ka signal mil jaye.
+
+
+
+
+
+
+
+
+ Recursion kya hoti hai?
+Recursion ek technique hai jisme function apne aap ko hi call karta hai, jab tak koi base condition milti hai.
+
+📌 Simple Words:
+Function khud ko bar bar call karta hai, har baar ek step chhota ho jata hai, jab tak rukne ka signal mil jaye.
+
+🔸 Real Life Example:
+Mirror ke saamne mirror rakh do — reflections infinite nazar aati hain.
+Same goes for recursive functions — khud ko call karti hai.
+
+🔶 Basic Example:
+✅ C++ mein factorial (5!) ka example:
+
+int factorial(int n) {
+    if (n == 0 || n == 1)       // 🔸 Base case
+        return 1;
+    else
+        return n * factorial(n - 1);   // 🔁 Recursive call
+}
+factorial(5) ka flow:
+
+5 * factorial(4)
+  → 4 * factorial(3)
+    → 3 * factorial(2)
+      → 2 * factorial(1)
+        → 1 → Base case → returns 1
+🔷 Types of Recursion
+1️⃣ Direct Recursion
+Jab ek function khud ko hi call kare directly.
+
+✅ Example:
+
+void fun() {
+    cout << "Hello" << endl;
+    fun();  // 🔁 Direct call to itself
+}
+2️⃣ Indirect Recursion
+Jab ek function doosray function ko call kare, aur wo function pehle wale ko wapas call kare — chain ban jaye.
+
+✅ Example:
+
+void A();  // forward declaration
+
+void B() {
+    cout << "Inside B" << endl;
+    A();  // 🔁 B calls A
+}
+
+void A() {
+    cout << "Inside A" << endl;
+    B();  // 🔁 A calls B
+}
+Yahan A → B → A → B … ek loop ban jaata hai = Indirect recursion
+
+🧠 Base Case (Bohat Important)
+Har recursive function ke paas base condition (rukne ka signal) hona zaroori hai.
+Warna program infinite loop mein chala jaayega ya stack overflow error dega.
+
+📌 Step 2: Return (Bottom to Top)
+Return Step	Result Calculation
+factorial(1) returns 1	base case hit
+factorial(2) returns 2 * 1 = 2	
+factorial(3) returns 3 * 2 = 6	
+factorial(4) returns 4 * 6 = 24	
+factorial(5) returns 5 * 24 = 120
+
+
+
+
+
+
+
+DSA
+
+
+"Data and Structure" ya Data Structures ka matlab hota hai:
+"Data ko store karne, organize karne aur access karne ka tariqa."
+
+
+ Data:
+Wo information hoti hai jise program handle karta hai.
+Example: numbers, names, scores, email addresses, etc.
+
+Structure:
+Wo tariqa (structure) hai jisme data ko arrange kiya jata hai taake use efficiently access aur modify kiya ja sake.
+
+
+✅ Arrays → ✅ Strings → ✅ Linked List → ✅ Stack/Queue → ✅ Trees → ✅ Graphs
+
+
+
+
+ Exponential Recursion (O(2ⁿ)) kab hoti hai?
+Jab function har call mein 2 ya zyada bar khud ko call karein, without halving work, to calls explode exponentially.
+
+
+
+ADT 
+ak blue print hota jo minum requirment hoti jo data type flow kry
+ak modle hai data sturectre ko bnanay ka 
+
+abstract ka mtlb hiding detils
+kha insert istmal 
+ham ohone lety khol kr nhi dkehty daby ma prty ap kam kro instagram chalo youtube dekho abstract detial hai chupa hoive 
+hiding the details
+collection of data  acess by index contigues memeory allocate
+
+ADT wo hota hai jo aapko batata hai data k sath kya kya kaam ho sakta hai (insert, delete, search), lekin yeh nahi batata ke andar code kis tarah likha gaya hai."
+Jab bhi interviewer bole: "Implement a stack" — wo ADT ki baat kar raha hota hai. Aap usay array ya linked list se implement kar sakte hain.
+
+  In Urdu (Programming kya hoti hai?)
+Programming ka matlab hota hai ke aap computer ko ek language mein instructions dete ho taa ke wo koi kaam kar sake.
+Jaise aap ek robot ko batate ho ke "yeh karo, phir yeh karo", waisa hi hota hai computer ke sath.
+
+✅ Operand kya hota hai?
+Operand programming mein wo value hoti hai jiske upar koi operation perform hota hai.
+
+🔧 Simple Definition:
+Operand is the value or variable that an operator works on.\
+let result = 5 + 3;
+Yahaan:
+
+5 operand hai
+3 operand hai
++ operator hai
+
+
+Agar output 24 bytes aye to samajh jao:
+Either compiler ne alignment padding diya
+Ya array structure/class ka part hai
+
+
+
+ O(log n) – Log arithmic Time
+🔹 Kab hota hai?
+Jab problem size har step pe aadha (half) hota hai.
+
+🔍 Examples:
+Algorithm / Task	Description
+Binary Search	Array har step pe half hota hai
+Balanced BST Search	e.g. AVL Tree or Red-Black Tree
+Heap Insert/Delete	Because heap is a binary tree
+
+
+O(n log n) – Linearithmic Time
+🔹 Kab hota hai?
+Jab har level pe O(n) ka kaam hota hai, aur total levels O(log n) hotay hain.
+
+🔍 Examples:
+Algorithm	Description
+Merge Sort	Divide array in 2, merge takes O(n)
+Quick Sort (avg)	Divide array via pivot
+Heap Sort	Heapify (log n), n elements
+Balanced BST Build	Insert n nodes each in log n
+
+
+
+Segmentation fault (ya "segfault") aik runtime error hota hai jo tab aata hai jab aapka program:
+
+Invalid memory ko access karta hai — jahan aapko permission nahi hoti.
+
+🧠 Simple Urdu Explanation:
+Jab aap kisi pointer ke through uninitialized ya galat memory address access karne ki koshish karte ho, toh system aapko rokta hai aur "Segmentation Fault" de deta hai.
+
+Yahan humne stack memory use ki hai (local variables j and g), koi new (dynamic memory) nahi
+#include<iostream>
+using namespace std;
+
+struct node {
+    int data;
+    node* next;
+};
+int main(){
+	node j;
+	j.data=3;
+	node g;
+	j.next=&g;
+}
+
+
+
+backtraking ka mtlb wapis ana jes rasty sy gye thy ham recursion ma jab return hota usko backtracking khty hai
+jab dleete hota stack frame delete hota wapis aty waqt 
+
+
+Fibonacci
+
+
+full Binary Tree	Each node has 0 or 2 children
+Complete Binary Tree	All levels full except last, filled left to right
+Perfect Binary Tree	All internal nodes have 2 children, leaves at same level
+Balanced Tree	Height difference between left & right subtree ≤ 1
+Skewed Tree	Each node has only one child (left or right)
+left sekewed right sekwed
+
+Balanced binary tree woh hota hai jahan har node ke left aur right subtree ki height ka difference zyada se zyada 1 hota hai.
+
+
+
+Acollection of graphs conectd in edges and nodes
+tree b ak tara ka groah hota hai
+
+
+nodes ko verteces b khty graph ma
+jaisy linked ma ak person usky connectetion hai kasy connected hai 
+enky connection kya hogy edges hogi kis tra sy connected hai
+edges nodes ko connected krti hai
+
+do nodes ko jo connected krti edges khalti hai
+
+ak graph of conection of vertices and edges connecting these vertices
+
+ka pr istml hai
+
+agr google map k se hai grpah theory smjhni pry gi
+model paths in city social network model krny k liya
+website backlinks w1 website ak w2 sy link krti w2 w3 ko link krti 
+
+
+directed edge one way connection
+underiected edges two way connection
+kya ap kisi k friend hai dosra b hai apka ya ak underict connection
+follow krty ham unfollow kr skty hai one way connection
+
+directed graph jes ki sary edges direct hoti
+undirected grpah ma sari edges undirected hoti
+
+agr koi arrao nhi garph ma tu wo undriected hoga grpah
+
+indegree outdgree
+kisi node ma kitni edges arhi indegree
+kitni edges jarhi outdegree node
+
+
+grpah k liya 2 implememtaion hoti
+adjecny list or adjency matrix
+
+ak self loop hota ak node khud sy connected hai
+
+adjency list implemetaion ma jo list bnti kintny edges coneccted 
+ham ak array bna skty us index ma apny link k head ko store kry ga 
+
+
+adjecny Matrix 
+ma ak matrix bnaye ga ktiny nodes hai 
+jo connected hai wha 1 warna 0
+
+cost adjency 
+ma 1 ki jga cost ajaye gi
+
+ak lahore sy ki matrix ka row tu ak row ka dossry row tk jana uska detence store kry ga 
+ak grpah ma cost likhi hai 0 sy 4 tk cost 4 hai 
+tu ab matrix ma cost likhy kis sy connectd hai wo 
+2 kis sy connected unki cost matrix ma likhy gy
+
+jha or cost 0 hogi wha ham -1 fill krdyga 
+agr ma 0 fill kro tu pata nhi lga 0 khali ya cost hai 
+
+
+
+edge set hota ak {(0,1}.(1,2)} estra b krty ya zayda use nhi human k liya readbale zayda hai
+
+
+cost adjancy list
+ak link list ma 2 value hogi kis node sy connectd or us node ki cost kya hai 
+zayda use nhi hoti 
+
+
+
+ak tree usmy n nodes usmy n-1 edges
+grph ma aisa nhi
+tree ma loop nhi graph ma loops hai
+tree ma root or grph ma root nhi hota 
+ak child ka ak prent tree ma graph ma aisa nhi 
+
+ak node k zayda parent hoskty grpah ma
+
+jab ak user aya wo kisis sy connted nhi 10 user hai ak dosry sy connected nhi hai
+ma folowo kr rha ak ko dosra mujhe folow kr rha
+
+span walo ko phncha indegree 10 hai outdegree 10000 hai ban kr dy ga
+indegree foloowers 
+outdregree ma kin ko follow kr rha
+
+
+indegree kitni edges rhi 
+
+
+
+compact list implemnation
+
+
+
+
