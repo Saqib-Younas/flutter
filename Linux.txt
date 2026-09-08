@@ -1,0 +1,1852 @@
+Linux course
+
+What is linux.
+open source kernal hai direclty hardware k sath bat krny deta
+ya os hai 
+pr ya kernal hai jab b linux ka bat krty 
+linux distributer khty
+linux kernal large collection ka combiation hota 
+jo software jo contorl krny ma mdad krta hai
+unbuntu linux ka distrbutor hai
+
+linux
+ya decide krta storage manage krna program ko mb dena ram 
+manage krta hai kernal krta hai
+
+unbuntu kali linux hai ya distribuotrion ki
+ya kernal hai linux esko os khty hai
+wo os ki bat krty wo linux distributors ki bat krta hai
+
+Kernel woh core software hai jo:
+
+CPU ko manage karta hai
+RAM/memory manage karta hai
+hard disk/storage se deal karta hai
+processes/programs ko manage karta hai
+hardware aur programs ke darmiyan connection banata hai
+
+Linux mein kernel operating system ka core (main part) hota hai.
+
+Simple words mein:
+
+Kernel hardware aur software ke darmiyan bridge ka kaam karta hai.
+Ye CPU, RAM, hard disk, network waghera ko manage karta hai.
+Programs ko hardware resources use karne deta hai.
+Processes ko manage karta hai aur decide karta hai ke kis program ko CPU kab milega.
+Linux mein isi core ko Linux Kernel kehte hain.
+Example:
+Aap browser open karte ho → browser RAM aur CPU use karna chahta hai → Linux Kernel browser ko ye resources provide/manage karta hai.
+
+Ek line mein: Kernel = Linux system ka manager/core.
+
+hisotry
+unix bna rhy hai sab sa phyl
+wha sy fundemanetal sy os ka idea shoru hova
+multi user ko use 
+
+1991 linux tools ny mini banaya 
+
+september 17 1991 ma bna open source bnaya diya
+
+phr log linux ka use krkry distributor banay lg ga
+andiord na b linux pr build start krdiya
+
+ya proivacy dy rha hai
+
+
+getting an online server
+
+kistra online server la skta hai 
+hosting ptovider vps deta
+virtualy linux deta hai
+secure hai open source hai linux 
+
+
+hostinger ma vps setup
+
+virtual box
+ham pc ma virtualizion krty hai
+
+virtual box ka use krty ham ya sofrware hamy pc 
+ma virtulization bnany ma madad krta hai
+window ma virtualization kry ga new pc banaye ga
+uska rma hogi hardisk hogi indpeendt hoga host sa
+
+ya sab ham vierutual box ma krta ya help ma krta 
+ya easy krta process oko
+
+ham univuntu desktop ko download kro ga ham
+virtual box ma other pr lcick unignut add kry ga
+
+terminal kya hota
+apko commadn ksath kam krny ma madad krta hai
+
+Virtualization ka simple matlab hai: ek physical computer ke resources ko use karke multiple virtual computers/machines banana.
+
+Example: Tumhare paas ek laptop hai jisme Windows chal raha hai. Virtualization ki help se tum usi laptop ke andar:
+
+🖥️ Windows
+🐧 Linux
+🐳 ya doosra operating system
+virtual machine (VM) ke form mein chala sakte ho.
+
+
+  Physical Computer
+              │
+       ┌──────┴──────┐
+       │ Hypervisor  │
+       └──────┬──────┘
+          ┌───┴───┐
+          ↓       ↓
+       VM 1      VM 2
+      Windows    Linux
+
+Hypervisor wo software/layer hota hai jo physical hardware (CPU, RAM, storage) ko virtual machines ke beech manage karta hai.
+
+
+Hypervisor ki 2 main types hoti hain:
+
+Type 1 — Bare-Metal Hypervisor
+
+Directly physical hardware par install hota hai.
+Beech mein host operating system nahi hota.
+Performance aur security generally better hoti hai.
+Examples: VMware ESXi, Microsoft Hyper-V, Xen, KVM
+
+Type 2 — Hosted Hypervisor
+
+Pehle host operating system (Windows/Linux/macOS) install hota hai, phir uske upar hypervisor chalta hai.
+Personal computers aur testing ke liye common hai.
+Examples: Oracle VirtualBox, VMware Workstation, Parallels Desktop
+
+Real-life example
+
+WSL linux
+window system for linux ak tool hai
+linux enviorment la skty hai bina vm create kiya na linux install kiya
+
+wsl --install
+window ma rkh kr linux use krna wsl kr skty use ham
+
+wsl --install unbuntu
+
+history commadn sy previous dekh skta commadns apni
+
+sudo apt update
+ya sirf window k andr wls use krny ka triak
+virtual ma sai chalt aentriee pc hot networkignuski apni hoti
+
+
+Basic commands Linux
+pwd 
+present working directoly
+
+cd 
+change direcitory bahir andr la jany ma help kry ga
+
+cd ...
+ak kadam pichy ..
+
+ls
+all show lisitng directry
+
+jasy window ma c drive hota
+/ sy bahir nhi hota
+terminal ps ko contirll krny ka twrika hora
+
+cd k sath tap tabaye ga wo ajaye gi
+automtaiclly auto complete krta
+
+mkdir myweb
+create foder k liya
+
+mkdir -p nestd/my/ /slash k bad name
+nested folder bnanay k liya
+
+touch
+file create krnu k liya
+
+copy krna file
+vim 1.txt
+ya text editor hot terminal sa hanlde krna hota
+nsert mod ema ajye ga i dobaye ga ham
+:wq bahir any k liya
+
+copy file
+cp filename /root/saqib.txt
+ab wha copy hoajye gi file 
+cd /root direct wha ana
+
+cat saqib.txt
+content nazr ajaye ga choti file ko iew krny k luya
+cat -n taxt.st
+-n number dkehny k liya
+
+less saqib.txt
+pori file dkehny k liya large 
+
+less bari file k liya search kr skty bari file ma
+/also jha jah hai dkeh skta
+
+clear krlyn k liya
+clear command
+history k zariya ajaye gi sab comamdsn hsotory k liya
+
+ap chaty user ma chaly jaye
+cd ~ 
+ap home ma ajey ga ma root user hn esliya root
+tilda user k home ma poncha detacd 
+# start folder ma 
+
+vim ./harry.text
+specinal usko refer kr rha
+
+cd ../temp
+parent k adnr usky and jao
+.. ak pihy /temp usky andr jana
+
+su 
+how to create new user in linux
+root user by defualt hota
+root use k pas sab acess hota kuch b kr skta ya
+ham user baney ga wo machine use kry machine ki confirgation usko khrab na kry esliya user baty ha
+cd s	cd 
+whoami
+pta lga ga name apka user login hai root user sa ap
+
+sudo adduser saqibsaqib
+sudo sari preelis k sath chala kr dn sary prelivis k sath chala o
+
+su -  saqoib
+ab user ajaye ga 
+wo sab kam nhi kr skta
+
+sudo apt update 
+package update krta ya
+nhi chlay sudogi access nhi uska
+
+exit sy root mawpais aja ao ga ma
+
+ab ma usermode run kro ga
+sudo usermod -aG sudo saqib
+wo suod user bn gya hai
+ab sudo commadn chal jaye gi
+
+
+Package Management
+
+jo b install krna unbujtu ma package sa krt
+apt install krky us pakcgae ka name isntall hojaye ga
+
+dabin porna hai os ya unubut
+1991 ma linux debin b open source ai kernal ma run hota
+unbutu debian pr run krta open soruce 
+
+unbuntu dabiean base or dabin linux base
+
+sudo apt install apacahe2
+html file host krny k liya use hota
+sudo apt update
+ya upadte krta jitny b pakcgae un sab ko
+software updgragde kry ga jo apki machine ma unko
+ 
+apcahe remoe krna
+sudo apt remove appache
+
+suod apt install niginx
+sudo apt show nginx
+version informaiton dkehni hn package 
+
+sudo apt install 1 2 3 
+estra multiple rk skty ak ak hogy install ya
+
+jab ham remoe command run ktrty kuch files remove hota files congiration
+sudo apt puge appache
+
+apt list --listed
+sab packages ajaye ga jo jo isntalverison k sath apky pc ma
+
+sudo apt-get update
+ya phly use hota tha ab update koya
+sudo apt update modern hai commadn ya krna
+
+
+Groups and permissions
+
+2 developers hai 
+unko permisison dani hai 200 ko dani same permisison
+esliya bnaty ham groups
+
+user level pr permisison
+group level permission
+
+
+sudo groupadd developers
+group create command hai ya
+sudo useradd -m name (-m home decotry bna deta name k sath usmy rkhu ga users)
+sudo useradd -m name 2
+sudo password name
+
+sudo usermod -aG developers name
+
+-a append krdu wha usko
+groups name
+kha kha add ya user
+
+ls -l 
+tab permission nazr ati hai
+name group hoga jab same hoga
+
+drwx d tlb direcotry
+
+3 parts ma spilt permisisons
+first 3 owner
+secoind group
+third 3 other k
+
+ham chakty group change krna
+sudo chow lovish dev
+ya owner change ki
+sudo chgrp deeloper devs
+owner or group change hojaye ga
+
+chmod g+2 devs
+permission dany k liya
+
+
+
+Conceptually object heap mein stored hota hai.
+
+Note: JavaScript ki exact memory implementation engine-dependent hoti hai; stack/heap ko conceptual model samjho.
+
+20. Basic Linux Commands
+
+Web developer ke liye ye commands useful hain:
+
+pwd       # current directory
+ls        # files list
+cd        # directory change
+mkdir     # directory create
+touch     # file create
+cp        # copy
+mv        # move/rename
+rm        # remove
+cat       # file content
+grep      # search text
+
+Server par:
+
+ps
+top
+htop
+df -h
+free -h
+ss -tulpn
+
+Useful examples:
+
+ps aux
+
+running processes dekhne ke liye.
+
+ss -tulpn
+
+listening network ports dekhne ke liye.
+
+21. Environment Variables
+
+Configuration/secrets ko code se separate rakhne ke liye environment variables use hote hain.
+
+Example:
+
+DATABASE_URL=...
+PORT=3000
+JWT_SECRET=...
+
+Node.js:
+
+process.env.PORT
+process.env.DATABASE_URL
+
+Production mein passwords/API keys ko source code mein hardcode nahi karna chahiye.
+
+22. File Permissions
+
+Linux mein permissions commonly:
+
+r = read
+w = write
+x = execute
+
+Example:
+
+-rwxr-xr--
+
+Teen groups:
+
+Owner
+Group
+Others
+
+Example:
+
+chmod 755 script.sh
+
+
+
+
+
+1. Sab se pehle ls -l
+
+Agar tum run karo:
+
+ls -l
+
+Example:
+
+-rwxr-xr-- 1 ali developers 1200 Aug 14 app.sh
+
+Iska first part:
+
+-rwxr-xr--
+
+isko break karo:
+
+- | rwx | r-x | r--
+    |      |      |
+   User   Group  Others
+rwx ka matlab
+r = read
+w = write
+x = execute
+
+2. User, Group, Others
+
+Har file ke 3 permission groups hote hain:
+
+rwx | r-x | r--
+ ↑      ↑      ↑
+User   Group  Others
+User / Owner
+
+File ka owner kya kar sakta hai.
+
+Group
+
+Jis group ko file assign hai, us group ke members kya kar sakte hain.
+
+Others
+
+Baaki sab users kya kar sakte hain.
+
+3. Text wali permissions
+
+Suppose:
+
+rwxr-xr--
+
+Break karo:
+
+rwx | r-x | r--
+Owner = rwx
+r = read
+w = write
+x = execute
+
+Owner ko read + write + execute sab allowed.
+
+Group = r-x
+r = read
+- = write nahi
+x = execute
+
+Group read aur execute kar sakta hai, write nahi.
+
+Others = r--
+
+Sirf read allowed.
+
+So:
+
+rwxr-xr--
+
+means:
+
+Owner: read/write/execute
+Group: read/execute
+Others: read
+
+4. Number wali permissions
+
+Linux mein:
+
+r = 4
+w = 2
+x = 1
+
+Bas ye 3 numbers yaad rakho:
+
+r = 4
+w = 2
+x = 1
+
+Agar permission rwx hai:
+
+r + w + x
+4 + 2 + 1
+= 7
+
+Agar:
+
+r-x
+
+to:
+
+4 + 0 + 1 = 5
+
+Aur:
+
+r--
+
+to:
+
+4 + 0 + 0 = 4
+5. 755 ka matlab
+755
+
+isko 3 parts mein dekho:
+
+7 | 5 | 5
+↑   ↑   ↑
+U   G   O
+7
+4 + 2 + 1
+r + w + x
+
+Owner:
+
+rwx
+5
+4 + 0 + 1
+r + - + x
+
+Group:
+
+r-x
+doosra 5
+
+Others:
+
+r-x
+
+Therefore:
+
+755
+
+=
+
+rwxr-xr-x
+6. Common permissions
+644
+644
+
+means:
+
+6 = rw-
+4 = r--
+4 = r--
+
+So:
+
+rw-r--r--
+
+Usually normal files ke liye common hai.
+
+Owner → read/write
+Group → read
+Others → read
+
+755
+rwxr-xr-x
+
+Usually executable files/scripts aur directories mein common.
+
+Owner → read/write/execute
+Group → read/execute
+Others → read/execute
+
+700
+rwx------
+
+Sirf owner ko access.
+
+777
+rwxrwxrwx
+
+Everyone ko read/write/execute.
+
+Isko generally avoid karo jab tak genuinely required na ho.
+
+7. chmod se permissions change
+
+Text method:
+
+chmod u+x app.sh
+
+u = user/owner
+
++x = execute add karo.
+
+Example:
+
+chmod u+x app.sh
+
+Number method:
+
+chmod 755 app.sh
+8. u, g, o
+
+Text permissions mein ye important hain:
+
+u = user/owner
+g = group
+o = others
+a = all
+
+Examples:
+
+chmod u+x file
+
+Owner ko execute permission do.
+
+chmod g+w file
+
+Group ko write permission do.
+
+chmod o-r file
+
+Others se read permission hatao.
+
+chmod a+x file
+
+Sabko execute permission do.
+
+9. File vs Directory mein x ka thora different meaning
+
+File ke liye:
+
+r = file read karna
+w = file modify karna
+x = file execute karna
+
+Directory ke liye:
+
+r = directory ke contents/listing dekhna
+w = files create/delete/rename karna
+x = directory ke andar access/traverse karna
+
+Ye distinction Linux permissions samajhne mein bohat important hai.
+
+Ek line mein yaad rakho:
+r = 4
+w = 2
+x = 1
+
+
+755 = rwxr-xr-x
+644 = rw-r--r--
+700 = rwx------
+
+
+chown → Owner/Group change
+
+WHO owns the file?
+
+chown ali:developers app.txt
+
+Iska matlab:
+
+Owner = ali
+Group = developers
+
+Check:
+
+ls -l app.txt
+
+
+Agar aap Linux mein group create karna chahte ho, command hai:
+
+sudo groupadd groupname
+
+Example:
+
+sudo groupadd developers
+
+Check karne ke liye:
+
+getent group developers
+
+sudo usermod -aG developers ahmad
+
+
+ka matlab hai user ahmad ko developers group mein add karna.
+
+Breakdown:
+
+sudo → command ko administrator/root permission se chalata hai.
+usermod → existing user ki settings modify karta hai.
+-a → append karta hai, yani user ke existing groups ko remove nahi karta.
+-G developers → developers group specify karta hai.
+ahmad → jis user ko group mein add karna hai.
+Simple example
+
+Agar ahmad pehle se in groups mein hai:
+
+ahmad : ahmad, sudo
+
+Command chalane ke baad:
+
+ahmad : ahmad, sudo, developers
+
+Yani developers group extra add ho gaya, purane groups nahi hate.
+
+
+
+
+mutiple ko ak commadn sy dena permisison user group other ko
+
+chmod u=rw,g=r,o= file.txt
+
+
+23. Ports / Processes in OS
+
+Server par multiple processes/services chal sakti hain:
+
+Nginx  → 443
+Node   → 3000
+Postgres → 5432
+SSH    → 22
+
+Check:
+
+ss -tulpn
+
+Tum dekh sakte ho kaunsa process kis port par listen kar raha hai.
+
+
+
+
+Processes and Services
+
+process program run krna 
+ls -l kry process hota
+linux ma PID hoti har process ki
+
+ps
+kry gam PID ajaye gi uski
+
+ps aux
+sa proces mil jaye ga ids mil jaye gi uski user konsa name kya chalay wo sab
+
+ps aux | grep nginx
+jha jha ya hai filter hokr jaye gi chezy
+
+top 
+ya chala o ga real time ma jo resources kah rhi zadya 
+wo arhi hai
+
+htop
+ya optput ma mmenroy deta kya use horha sab kuch detila ma
+sort krna hn wo dkeh skta
+
+sudo apt install htop 
+install kr skty agr ni chlta ya
+
+prociess kill krna
+& es sy bagrgorund ma chalni process ya program
+
+kill 30414 
+proces id daly ga wo iband haojey gi
+
+kill -9 
+-9 forcefully khty hai kill kro
+kabi kabr kam kr rha hota proram wo khta sabr kr
+-9 forcesfullt imedatiry kill krdu
+
+pkill python
+matching process kill hojaye gi sab
+
+Services
+ak sofetware hota background ma run krta kuch kr rha hot
+nigix ak serice run horha background ma chal rha manage horha user ko nhi krna prta manage
+ap chaye ga nigix ko asa process nhi balky serices as a chalye ga
+
+ap symctl use krty hai
+systemctl status nginx
+
+ap apni serice ban skty 
+start kr skty restart kr skrty serice ko apni
+
+systemctl stop nginx
+systemctl status nginx
+systemctl start nginx
+systemctl restart nginx
+
+configraito chnage krna usko restart krna prta hai us web ko
+sudo k sath chal o comamdn sai rhta ya
+
+reload and reasatr ma differnce
+reload mtlb ak second k liya b don nhi jaye ga reload kro confogration
+reload kro chlty rhu bina stop hovy
+
+enable 
+systemctl enable nigix
+jab b ak serice ko start krna kr du
+jab kab saerice bot hn ab enable commadn use krty hai
+
+jab sytem bot hoga enable hoga bot hoga
+disbale commadn use kry ga agr enable nhi krna
+systemctl sidable 
+
+
+Environement and shell variables
+
+variable named refernce hota alue ka
+echi $Home
+enviorment name hai HOME jesko rpint kiya echo prnt krta
+echo "Hello"
+string print hota
+$ mtlb variable home ki valeu dn ap
+
+enioremtn varibale 
+globally avaible hota proces ko milty 
+shell wo steiclty sirf es shell k liuya hota globally nhi
+
+printenv
+sab mil jaye ga varibales jo print kr skty ham
+
+path ka mtlb jo hai usko excute kr sktt dal kr
+
+name="saqib"
+variable bna ny k liya ya ham
+by defualt shell hota create kry varibale ham
+
+export friend='huraira'
+ya enviorment varbaoe hai
+
+ap env ko handle krty eniorment varibale k zairuya ham chnage krny k liya
+
+PATH enviroemnt varibale kya
+echo $PATH
+ya binaries k path hai 
+ls
+main.py run krna
+which ls
+kis path ki wja sy path sa run kr rha ls
+kyo k path path varibal ma added hai esliya eski hbinary
+ap full likhy run kr ksty hai ap
+
+bash file asi hoti jo excute hoti
+jo shell ma likhty wo ham yha likhty hai
+programming langauge ki tra likhty hai bash ma
+ya bash scripting hoti
+
+chmod +x harry.sh dyga
+harry.sh eslia nhi chla kyo k current fdicrotyr path ma nhi hai
+esliya ./harry.sh kry ga ham
+jo printenv path ma add nhi wo
+mv haary.sh devs/harry.sh
+ya move hogya hai wha 
+
+es folder ko path ma add krna many 
+ma chta hn colon lga kr add krdu path ma
+
+export PATH="$PATH:path jo add krna"
+echo #path print kry ga wo add hoajye ga
+ab harry.sh chal jaye ga 
+kyo chla path folder ma hai
+aisa folder ma jo path ma hai
+
+which harry.sh
+kyo  chla rha dekh skta kis fodler ma ya
+
+new terminal session open kry ga ham
+us ma 
+echo $PATH kry ga
+dev wla nhi aye ga wo wla path
+jab b en update krty perist krny k liya bash ma ddlana prta 
+shell session ma banya tha end hogay wo varibale pp chla jata
+
+bashrc k name s hoti fil
+ls -lart dkehny k liuya
+.bashlrc
+end ma aye ga varibale banaye ga ham
+
+export friend=Saqib
+:wq daly ga bahir jayega
+ab mily ga resatre ya dobra login k bad
+source .bashrc reload kiya confiragraiton ko
+
+bashrc jab b sesison new open kry wo run hota
+jab b serer pr login krta hn tab bashrc automatically run krta
+agr manulaly kiya current ma source lga kr load krna
+wo permanaet hojata hn
+
+vim .bashrc
+vim ~/.bashrc mery home folder k adnr usko khul dn
+i doba kr insert kry ga ham
+export Path='$PATH:/home/devs"
+
+
+
+
+Archives and Compression
+bahut sari fiels ko ak continer ma dlan ak file bn jaye wo
+ak folder ma bhut nests file sfolder hai usko ham 
+ak archives kry ga ham
+jasy window ma zip bnaty hai
+ak conitner ka dnr lati necessary kam nhi krti kr b skti
+
+compression
+compression file size ko kam krana hai
+
+touch utls.py
+
+tar -cf filename foldername
+-cf creare 
+foldername kisko bna na apny
+
+rm -rf fodlername
+usky andr folder delte hoajti hai
+
+tar ma dkehan kya kya hai usmy
+tar -rf filenmetar
+nazr ajaey ga apko
+
+extract krna
+tar -xf filename
+project create hojaye ga ab dobra
+
+tar -xvf filename
+kon c filse extract jr rhy termianl ma baat o v likhy x f k damtyan
+ for verbform
+
+zip
+
+gzup use krty hai ham
+tar ko compressd krna gzip use jry ga ham
+gzip ptrhon.tar
+es file ko compressed kiyatar kkry archives kiya phr compressdkiya us size ko kam kiya
+ak file ko bna na archives khty 
+or compress krna usko compressed krty hai
+
+sudo apt install gzip gunzip tar zip unzip
+ya install kry ga
+
+zip files 
+
+zip
+zip -r pythoin.zip khakrnafoldername
+wo zip ban di kisi b os ma kr skty
+ya zip archives and compresed donu kr deta ahia
+unzip folename
+
+tar archving krta compression nhi krta
+uzip
+gzip 
+zip
+
+
+Cron jobs
+
+ak prticular time ma run krna code ak backup
+lena databse ka ham setup kry ga cors pros k sath
+
+Cron ak serice hai 
+ya run krti linux ma ya cron ko schdules ma run krti
+ak databse ka job cron job haoi wo
+schduel krty hai har week pr b kr skty hai
+
+crontab -l
+koib task schudle nhi agr agya kuya
+
+sudo systemctl status cron
+ya service actively run hai
+sudo systemctl start cron 
+
+crontab -e
+nano b text editor hota
+cron job likhy ga
+
+first minute hota 0-59
+hour 0-23
+day of month  1-31
+day of week 1-12
+* * * * *
+
+crontap ma jakr kr kstya website ma set crons
+
+crontap -e
+* * * * *   /bin/usr/python3
+crontap -l
+ya file banaye 
+ls
+
+
+
+File system in LINUX
+
+cd /
+ls
+ma outerfoder ma hn
+
+/ outer direcltory jesinti fles / yha pri hai
+/ linux ka root hai 
+root folder root userka folder hai ya
+/root yha sorf root ja skta or koi nhi
+
+/home ma hoti har user ki hone dorectory
+
+etc ma configraiton files hoti system ki
+
+tail /etx/host
+ip mily ga
+
+cd /var
+yha changes foiles hoti logs hoty var ma
+ya log ma hogi www ma wbsites hoti
+
+srv usr 
+unix system resources
+yha softwares commands hoti hai
+
+tmp direcotry
+esmy temrpory files hoti
+apko khai store krni temprotay files apko
+wha rk skty hai ap
+whi files rkhni jo temporay rkhni
+
+
+Nginx
+
+
+sudo systemlctl status nginx
+
+cd /var/www
+
+port 80 pr clti hai webste
+sudo ufw 
+ya network traffic ko filrer krny ma help krta
+
+ls
+cd html
+
+cd etc/nginx/
+ls
+cp defualt wrbsite
+vim websote
+edit kr ksty hai
+
+
+
+Filezilla to transfer files
+
+local file ko server pr move krny k liya apny server ,a
+downlaod kry ga ham ya
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. SSH — Server ko Remotely Access Karna
+SSH = Secure Shell
+
+SSH ka use apne computer se kisi remote Linux server mein securely login karne ke liye hota hai.
+
+Example:
+
+ssh saqib@192.168.1.50
+
+Iska matlab:
+
+ssh       → SSH program
+saqib     → server ka username
+192.168.1.50 → server ka IP
+
+Aapke computer par terminal hai aur server kahin internet par hai:
+
+Your PC
+   |
+   | SSH
+   ↓
+Linux VPS
+
+Login ke baad aap server ka terminal use kar sakte ho.
+
+SSH Key
+Password se login karne ke bajaye SSH key use karna zyada secure/common hai.
+
+Do keys hoti hain:
+
+Private Key → sirf aapke computer mein
+Public Key  → server par
+
+Key generate:
+
+ssh-keygen
+
+Usually keys yahan hoti hain:
+
+~/.ssh/id_ed25519
+~/.ssh/id_ed25519.pub
+
+.pub = public key.
+
+Private key kisi ko nahi deni.
+
+authorized_keys
+Server par:
+
+~/.ssh/authorized_keys
+
+mein authorized public keys rakhi ja sakti hain.
+
+Concept:
+
+Your PC
+Private Key
+    ↓
+    SSH
+    ↓
+Server
+Public Key
+authorized_keys
+
+Agar matching key ho to server authentication allow kar sakta hai.
+
+SCP
+SCP = Secure Copy
+
+Computer se server par file bhejna:
+
+scp app.zip saqib@server-ip:/home/saqib/
+
+Server se computer par:
+
+scp saqib@server-ip:/home/saqib/app.zip .
+
+rsync
+rsync files/folders synchronize karne ke liye useful hai.
+
+rsync -av project/ saqib@server-ip:/var/www/project/
+
+Large projects ya repeated transfers mein useful hai kyunki zaroorat ke mutabiq changed data transfer kar sakta hai.
+
+2. Pipes & Redirection
+Ye Linux commands ko combine karne ke liye bohat important hai.
+
+Pipe |
+Ek command ka output doosri command ko de deta hai.
+
+ps aux | grep nginx
+
+Flow:
+
+ps aux
+  ↓
+all processes
+  ↓
+grep nginx
+  ↓
+sirf nginx wali lines
+
+>
+Output ko file mein write/overwrite karta hai.
+
+echo "Hello" > test.txt
+
+Agar test.txt pehle se hai to purana content overwrite ho jayega.
+
+>>
+Output ko file ke end mein append karta hai.
+
+echo "World" >> test.txt
+
+Purana content rahega aur World add ho jayega.
+
+<
+File ko input ke taur par use karta hai.
+
+Concept:
+
+command < file.txt
+
+2>
+Errors ko alag file mein bhejta hai.
+
+command 2> error.txt
+
+Linux mein generally:
+
+0 = stdin
+1 = stdout
+2 = stderr
+
+2>&1
+Error aur normal output dono ko same destination par bhejne ka common syntax.
+
+Example:
+
+command > output.txt 2>&1
+
+Matlab:
+
+normal output → output.txt
+error          → output.txt
+
+3. Text Processing
+Server par logs aur files search/analyze karne ke liye bohat useful.
+
+grep
+Text search karta hai.
+
+grep "ERROR" app.log
+
+Matlab app.log mein jahan ERROR hai woh lines dikhao.
+
+Example:
+
+grep "404" /var/log/nginx/access.log
+
+sed
+Text ko modify/replace karne ke liye.
+
+sed 's/old/new/g' file.txt
+
+Matlab:
+
+old → new
+
+awk
+Structured text/data process karne ke liye.
+
+Example:
+
+awk '{print $1}' access.log
+
+Ye har line ka first field print kar sakta hai.
+
+cut
+Text ka specific part nikalne ke liye.
+
+cut -d: -f1 /etc/passwd
+
+: separator hai aur first field nikal raha hai.
+
+sort
+Lines ko sort karta hai:
+
+sort names.txt
+
+uniq
+Duplicate adjacent lines remove/count karne ke liye.
+
+sort names.txt | uniq
+
+wc
+Count karta hai.
+
+wc -l file.txt
+
+-l = lines count.
+
+4. File Searching
+find
+Files/directories search karne ke liye.
+
+find . -name "*.js"
+
+Current directory ke andar .js files find karega.
+
+Example:
+
+find /var/www -name "index.html"
+
+locate
+File ka naam quickly search karne ke liye:
+
+locate nginx.conf
+
+which
+Batata hai command actually kahan se execute ho rahi hai.
+
+which node
+
+Output example:
+
+/usr/bin/node
+
+whereis
+Program ki binary aur related locations find karne mein help karta hai.
+
+whereis nginx
+
+5. DNS
+DNS = Domain Name System
+
+DNS domain name ko IP address se connect karta hai.
+
+Aap browser mein likhte ho:
+
+google.com
+
+DNS us domain ke corresponding IP address ko resolve karne mein help karta hai.
+
+Concept:
+
+example.com
+     ↓
+    DNS
+     ↓
+Server IP
+
+A Record
+A record domain ko IPv4 address se point karta hai.
+
+Example:
+
+example.com → 203.0.113.10
+
+CNAME
+CNAME ek domain/subdomain ko doosre hostname par point karta hai.
+
+Example:
+
+www.example.com
+       ↓
+example.com
+
+Nameserver
+Nameserver DNS records ko manage/serve karne wali authority hoti hai.
+
+Simple concept:
+
+Domain
+  ↓
+Nameserver
+  ↓
+DNS Records
+  ↓
+IP
+
+Web Developer ko DNS mein kya karna aana chahiye?
+Usually:
+
+Domain
+   ↓
+A Record
+   ↓
+VPS IP
+   ↓
+Nginx
+   ↓
+Website
+
+6. HTTP / HTTPS
+Browser aur server ke darmiyan communication ke liye HTTP use hota hai.
+
+Example:
+
+Browser
+   ↓ HTTP Request
+Server
+   ↓ HTTP Response
+Browser
+
+Request
+Browser server ko request bhejta hai.
+
+Example:
+
+GET /users
+
+Response
+Server response deta hai:
+
+200 OK
+
+Aur data:
+
+{
+  "name": "Saqib"
+}
+
+7. HTTP Methods
+GET
+Data lene ke liye.
+
+GET /users
+
+POST
+New data create/send karne ke liye.
+
+POST /users
+
+PUT
+Existing resource ko update/replace karne ke liye.
+
+PUT /users/10
+
+DELETE
+Resource delete karne ke liye.
+
+DELETE /users/10
+
+Web API development mein ye concepts bohat important hain.
+
+8. HTTP Headers
+Headers request/response ke saath additional information dete hain.
+
+Example:
+
+Content-Type: application/json
+Authorization: Bearer token
+
+Browser/server ko pata chal sakta hai data kis type ka hai, authentication information kya hai, etc.
+
+9. HTTP Status Codes
+Important codes:
+
+200 → Success
+201 → Created
+301 → Permanent redirect
+302 → Temporary redirect
+400 → Bad request
+401 → Unauthorized
+403 → Forbidden
+404 → Not found
+500 → Server error
+502 → Bad gateway
+503 → Service unavailable
+
+Web Developer ko especially:
+
+200, 201, 400, 401, 403, 404, 500, 502, 503
+
+achhi tarah samajhne chahiye.
+
+10. Cookies
+Cookie browser mein chhota data store kar sakti hai.
+
+Example:
+
+Browser
+   ↓
+Cookie: session_id=abc123
+   ↓
+Server
+
+Common uses:
+
+Login sessions
+Preferences
+Authentication-related state
+Important terms:
+
+Cookie
+Session
+Secure
+HttpOnly
+SameSite
+11. HTTPS
+HTTP ka secure version HTTPS hai.
+
+HTTP
+ ↓
+unencrypted communication
+
+HTTPS
+ ↓
+TLS encryption
+
+Normally:
+
+HTTP  → port 80
+HTTPS → port 443
+
+12. Nginx Reverse Proxy
+Ye Web Developer ke liye bohat important hai.
+
+Suppose Node.js application:
+
+localhost:3000
+
+par chal rahi hai.
+
+User browser mein:
+
+example.com
+
+open karta hai.
+
+Hum Nginx ko beech mein rakhte hain:
+
+Browser
+   ↓
+example.com
+   ↓
+Nginx :80/:443
+   ↓
+Node.js :3000
+
+Nginx request ko Node.js application tak forward karta hai.
+
+Isko reverse proxy kehte hain.
+
+Nginx configuration mein commonly:
+
+location / {
+    proxy_pass http://localhost:3000;
+}
+
+13. Static Files vs Backend
+Nginx directly static files serve kar sakta hai:
+
+HTML
+CSS
+JS
+Images
+
+Lekin dynamic backend request Node.js ko bhej sakta hai.
+
+Example:
+
+GET /logo.png
+       ↓
+Nginx → static file
+
+GET /api/users
+       ↓
+Nginx → Node.js
+
+14. SSL/TLS + Let's Encrypt
+Website ko HTTPS par chalane ke liye certificate chahiye.
+
+Concept:
+
+example.com
+     ↓
+HTTPS
+     ↓
+TLS Certificate
+     ↓
+Secure connection
+
+Let's Encrypt free TLS certificates provide karta hai.
+
+Certbot certificate obtain/configure karne ke common tools mein se ek hai.
+
+Basic flow:
+
+Domain
+  ↓
+DNS → VPS
+  ↓
+Nginx
+  ↓
+Certbot / Certificate
+  ↓
+HTTPS :443
+
+15. Actual Web Application Deployment
+Ab ye sab concepts practically connect hote hain.
+
+Suppose aapki Node.js application hai.
+
+Flow:
+
+GitHub
+   ↓
+Linux VPS
+   ↓
+Clone project
+   ↓
+npm install
+   ↓
+.env configure
+   ↓
+npm run build
+   ↓
+Application start
+   ↓
+Nginx
+   ↓
+Domain
+   ↓
+HTTPS
+
+Example:
+
+git clone <repository>
+cd project
+npm install
+npm run build
+
+Phir application ko process manager/service ke through run karte ho.
+
+16. PM2
+Node.js application ko manage karne ke liye PM2 use kiya ja sakta hai.
+
+Normal:
+
+node app.js
+
+Terminal close karoge to application stop ho sakti hai.
+
+PM2:
+
+pm2 start app.js
+
+Check:
+
+pm2 status
+
+Logs:
+
+pm2 logs
+
+Restart:
+
+pm2 restart app
+
+Concept:
+
+Node.js App
+     ↓
+    PM2
+     ↓
+running + monitoring + restart
+
+17. Database + Application Connection
+Suppose:
+
+Node.js
+   ↓
+PostgreSQL
+
+Database ke liye information chahiye:
+
+Host
+Port
+Username
+Password
+Database name
+
+Example:
+
+Host: localhost
+Port: 5432
+User: appuser
+Database: myapp
+
+Connection string:
+
+DATABASE_URL=postgresql://...
+
+Application:
+
+process.env.DATABASE_URL
+
+Isliye database credentials ko source code mein hardcode nahi karte.
+
+18. localhost / 127.0.0.1
+localhost ka matlab generally current machine.
+
+localhost
+    ↓
+127.0.0.1
+
+Suppose:
+
+Frontend → localhost:5173
+Backend  → localhost:3000
+Database → localhost:5432
+
+Ye teen different services hain, ports ki wajah se distinguish hoti hain.
+
+19. CORS
+CORS = Cross-Origin Resource Sharing
+
+Suppose frontend:
+
+http://localhost:5173
+
+Backend:
+
+http://localhost:3000
+
+Dono ka origin same nahi hai because ports different hain.
+
+5173 ≠ 3000
+
+Browser security rules ki wajah se backend ko appropriate CORS policy configure karni pad sakti hai.
+
+Concept:
+
+Frontend
+localhost:5173
+     ↓
+     API Request
+     ↓
+Backend
+localhost:3000
+
+CORS decide karta hai browser ko ye cross-origin request allow karni hai ya nahi.
+
+20. Basic Server Security
+Root vs Normal User
+Root ke paas bohat high privileges hote hain.
+
+Isliye daily application work ke liye normal user use karna better practice hai.
+
+Administrative kaam:
+
+sudo command
+
+SSH Security
+Better practice:
+
+SSH key authentication
+
+rather than relying only on passwords.
+
+Private key:
+
+DO NOT SHARE
+
+Firewall
+Firewall network traffic control karta hai.
+
+Example UFW:
+
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+
+Concept:
+
+22  → SSH
+80  → HTTP
+443 → HTTPS
+
+Agar Node.js application internally 3000 par Nginx ke peeche hai, to normally 3000 ko public internet par open karna zaroori nahi.
+
+Internet
+   ↓
+80/443
+   ↓
+Nginx
+   ↓
+localhost:3000
+
+21. Secrets
+Ye Web Developer ke liye bohat important security rule hai.
+
+❌ Code mein:
+
+const password = "mypassword123";
+
+❌ GitHub par:
+
+DATABASE_PASSWORD=secret
+
+Better:
+
+.env
+
+Example:
+
+DATABASE_URL=...
+JWT_SECRET=...
+API_KEY=...
+
+Aur .gitignore mein:
+
+.env
+
+22. File Permissions in Deployment
+Suppose Nginx ko website files read karni hain.
+
+Aapko ensure karna hota hai ke appropriate user ko required access ho.
+
+Check:
+
+ls -l /var/www/project
+
+Example:
+
+-rw-r--r-- index.html
+
+Yahan:
+
+Owner  → rw-
+Group  → r--
+Others → r--
+
+Web server ko file read karni ho to unnecessarily 777 dena bad practice hai.
+
+Final Web Developer Linux Roadmap
+Aapke already completed topics + Docker + GitHub ko hata kar, remaining topics ka best order ye hai:
+
+1. SSH
+      ↓
+2. Pipes & Redirection
+      ↓
+3. grep / sed / awk / find
+      ↓
+4. DNS
+      ↓
+5. HTTP / HTTPS
+      ↓
+6. localhost / Ports / CORS
+      ↓
+7. Nginx Reverse Proxy
+      ↓
+8. SSL/TLS + Certbot
+      ↓
+9. PM2
+      ↓
+10. Database Connection
+      ↓
+11. Actual Deployment
+      ↓
+12. Server Security
+
+
+
+
+

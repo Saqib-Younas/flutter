@@ -1,0 +1,2263 @@
+It is a reverse proxy.
+it is load balance.
+
+Nginx is a lightweight ,high performance,web server and reserve proxy.
+Appche is thread base model
+Nginx is Event driven model asychronous model.
+static contne tko in memoery rkhta or in delverd ktny ki koiss krta nginx.
+
+forward proxy client to internet
+reverse proxy internet to server
+
+Proxy
+vpn ma kya hota apko ak webiste acess krni hai jo restricted hai.
+wo apki country ma avaible nhi hai.hamny ak vpn select krty hai.ya server pr hota hai ham vpn sy connection bnaty ya
+vpn hoskta usa country ya or country pr avaible hai it is a normal proxy app or server k bich ma bhta hai
+
+Rerver proxy
+hamry pass node js k server hai 4 server hai ya same exact kam kr rha hai ham production server pr ak server ko
+deploy kry gy hamra ya server down chala gya hmari pori application beht jaye gi ham kya krty 
+multiple instances pin kr ksty ak server ky en ma same code hoty hai pr ya alg alg server pr run krty hai
+ya ak single database sy connect hogy ya fault talut k koi b ak instance down jata 3 hai more
+
+hamry pas ak domain hai www.sqi.com ya backon ka url hai hai esko kha point krna chaye ya port particular kha point 
+kry ga ya ham kasy deside kry kya ham user ko decide krny dy k ap 800 8001 pr run kro hamy koi chez chaye jo
+enky beach ma load balance kr paye ma chata hn mere pas estra k algorithm hn jo khud decide kry kis user ko kha bhjna
+wha hamy revrse proxy chaye hota hai expamle:8001 ya load balace hau reverse proxy ya  ham kya kry gy ham domain
+ko es rervse proxy k opr point kry gy ya jo reverse proxy hai ya internally ya kya kry gi ham esko bataye gy ya hamry 4 
+avaible servers hai tum enky beach ma load balance kro tu user ko nhi pata backend pr kitny instance konsyy 
+port or kon c servercie chal rhi hai user ko sirf request krn hai es particular k opr chez k opr domain pr
+ya beach k reverse proxy this will decide k mujhe user ko kon sy route pr krna chaye ya round robin use kr skty
+load balance kr ksty 
+
+esko reverse proxy kyo khty proxy ma kya hota ham ak sever sy connect krty multiple website run krny k liya
+multiple user internally apsy server sy bat krti
+reverse proxy apky or or user k beach ma hai  ssl termiantion krti ya bhut sy chez kr skti zayda load balance
+
+ham servers pr multiple servers ko run krty wha ham nginx insrance ko run rty port 80 pr
+ham domain ko port 80 pr point krty ham rervse proxy k andr configration likhty hai k kitny servers hai
+jha tumny route krna hai 
+
+
+ya revser proxy configration file lati request arhi ww.saqib.com esko phly route pr kro server pr 
+ww.saqib.com/admin sy arhi esko next pr ham route define kr skty hai 
+agr alg domain sy request ati hai v2.ww.saqib.com  ham esko redirect kr skty hai alg server hai 
+k kis sy reuqest arhi domain sy esko es server pr lykr jao eska ya path hai esko es server pr lykr ja o ham por configration kr skty hai
+
+agr ya fail kr gya tu bhut zayda request i ya proy bht gya phr lakin actually ma isa nhi hota ya bhut scalble hota hai jes ra sy ya likha gya hai 
+ya scable hai ya powefull hai eska architecture secondly esmy applictaion code tu nhi hai crash nhi krskty ya db k sath interct kr rha incming
+request ko acsept kr rha ya crash kr skta ya nhi kry ga ya revser proxy hai it is.zayda request ko handle krny k liya kuch
+machinism chaye
+
+Forward proxy = User internet par jaata hai → User ki IP chhupati hai
+Reverse proxy = Internet se aayi request andar jaati hai → Server ki IP chhupati hai
+
+🔁 Reverse Proxy kya hota hai?
+Reverse proxy ek server hota hai jo client (jaise browser) ki request ko pehle leta hai, phir us request ko
+ kisi backend server tak forward karta hai. Client ko directly backend ka pata nahi hota.
+
+Example:
+Client → Reverse Proxy → Backend Server
+Use Case:
+Backend servers ko hide karna
+Security dena
+Caching karna
+SSL handle karna
+
+⚖️ Load Balancer kya hota hai?
+Load balancer ka kaam hota hai incoming traffic ko multiple servers mein evenly distribute karna taake koi ek server overload na ho.
+Example:
+Client → Load Balancer → Server 1 / Server 2 / Server 3
+
+Use Case:
+High traffic websites
+Performance improve karna
+Downtime avoid karna
+
+
+
+ya scable kyo hai ya agr ak bari ma user aye gy ya hanlde kr ksta unko event driven architecture ko 
+use krky 
+
+hmary pas ak master process hai tu ya master process hai jo user ny configration file likhi ham read kry gy user ny likhi jo
+ham es master process ko port 80 pr bind kry gy rerves proxy b server hai ya b kisi port pr chly ga
+master process ko run krta or number of worker nad helper process ko 
+ya nigx ma ak matser process ata ak chache manager ak chance loader hota hamry pass 4 worker process hai 
+worker process hamry pass incomiing requets ati ya worker process handle kry gy 
+
+ngix ki master process hai wo hamri machine 4 core hai ya 4 worker process ko use kry ga
+process ahi thred consuem resiureces zyada tr apllcation ya use krti 
+agr hamko kuch b krna paraklles ham thread use krty ak point k bad efficnty decreas hoti 
+
+nginx kya krta
+ya cahce loader chance manager worker process\\
+
+cache loader kya krta hamny apni secondary memory pr usky opr kuch rkha hai first time jab chahce ati ahia 
+wo pry cahce ko load krta ram ma 
+
+cache manager 
+woker processers jo apny configration di usko dekhta
+
+one worker process one core used 4 hai 4 worker process chly gy
+master process cache mamnger cache loader 4 worker process  ya upstarem server k pas jati or kis tra data lykr ati hai
+jo apka worker hai wait krty event ka new incming cinncetio aya ga	
+
+Aapka device (let's say phone or computer) ek domain name (like www.google.com) ko input karta hai.
+DNS us domain name ko Google ka IP address (e.g., 142.250.72.14) mein convert karta hai.
+Phir browser Google ka server se IP address ke through data request karta hai
+Google server aapke browser ko response bhejta hai, aur aapko Google ka page dikhai deta hai.
+🔒 Isliye SSL + IP ka use hota hai:
+SSL (https://) aapki data ko encrypt karta hai.
+IP address identify karta hai kaun user hai.
+Agar aap VPN use karo, to aapka real IP chhup jata hai, aur website ko VPN ka IP dikhai deta hai.
+
+
+
+NGINX mein do types ke processes hote hain:
+
+✅ Master Process
+✅ Worker Processes
+🔹 Master Process kya karta hai?
+Configuration files read karta hai
+
+Worker processes ko start karta hai
+Unko monitor karta hai (agar koi worker crash ho jaye to naya start kare) 
+Signal handling karta hai (jaise server ko restart ya reload karna)
+
+Think of it like:
+🧠 Master process = Dimaag (Brain)
+💪 Worker processes = Haath pair (Workers)
+
+🔹 Worker Process kya karta hai?
+Client ki request handle karta hai (like HTTP request)
+Web page serve karta hai
+Load manage karta hai
+
+
+ 1. Cache Loader (Startup Time)
+Jab Nginx restart ya reload hota hai, to cache loader:
+Disk par already saved cache files ko scan karta hai
+Unko memory mein register karta hai taake woh accessible ho sakein
+
+✅ Purpose:
+Purani cache files ko wapas load karna (cache loss se bachao)
+Fast access ke liye memory map banana
+📦 Real-life analogy:
+Jab aap computer restart karte ho aur browser already cached images ko dobara load karta hai taake woh jaldi show ho sakein.
+
+🔸 2. Cache Manager (Runtime Periodically)
+cache manager ek background process hai jo:
+
+Cache directory ko monitor karta hai
+Old cache ko delete karta hai agar:
+Uski age purani ho gayi ho
+Size cache limit se zyada ho gaya ho
+
+✅ Purpose:
+Disk space manage karna
+Expired ya invalid cache ko cleanup karna
+Performance maintain rakhna
+
+📦 Real-life analogy:
+Aapka mobile automatic purani images delete karta hai jab storage full hone lage — waise hi cache manager Nginx mein karta hai.
+
+
+Component	Kya karta hai	Kab chalta hai
+Cache Loader	Nginx start/reload par purani cache ko memory mein load karta hai	Start/Reload time
+Cache Manager	Background mein monitor karta hai aur expired ya over-sized cache ko delete karta hai	Runtime (automatic)
+
+✅ Short Answer:
+Caching har jagah zaroori nahi hoti.
+Lekin jahaan real-time update important nahi hoti, wahan caching kaafi useful hoti hai.
+Nginx cache ka faida tab hai jab aapko har user ke liye har waqt fresh data ki zarurat nahi hoti.
+Agar aapki route ya feature sensitive hai (e.g., login, profile, admin), to cache ko disable kar dena best practice hai.
+
+proxy_cache_valid 200 10m;
+Agar user /products page pe aata hai aur backend 200 OK deta hai:
+Nginx us page (/products) ka response cache karega.
+Agli baar jab same URL aaye aur backend down ho ya slow ho:
+Nginx cached page return karega (agar valid ho).
+
+
+✅ Jab Nginx caching ka faida hota hai:
+🔹 Static content (e.g. /about, /blog, /products)
+🔹 Public APIs jinke response sab users ke liye same hain
+🔹 Reduce backend hits before Node.js / Redis tak request aaye
+✅ Jab Redis better hota hai:
+🔸 Dynamic content (e.g. user dashboard, cart, auth info)
+🔸 Personalized API data (e.g. JWT user data, user-specific dashboards)
+🔸 You want to cache programmatically from your backend
+
+
+
+
+✅ proxy_cache_path — cache ka setup:
+nginx
+Copy
+Edit
+  proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m inactive=60m max_size=100m;
+🔍 Yeh line caching ke liye storage area aur rules define karti hai.
+
+Part	Kya karta hai (Urdu mein)
+/var/cache/nginx	Cache files disk par is path par store hongi
+levels=1:2	Folder structure: e.g., a/ab12345.cache (performance ke liye)
+keys_zone=my_cache:10m	my_cache naam ka memory zone banata hai jo 10MB metadata (cache keys) store karega
+inactive=60m	Agar 60 minutes tak koi request na aaye to woh cache expire ho jaye
+max_size=100m	Total cache size agar 100MB se zyada ho jaye to old cache delete hoga
+
+  server {
+    listen 80;
+🔹 Yeh ek web server block hai jo port 80 pe traffic sunta hai (HTTP).
+
+  location /api/ {
+🔹 Is block ka matlab hai:
+Sirf wo requests jo /api/ se start hoti hain (e.g., /api/users, /api/posts) un par caching apply hogi.
+
+✅ proxy_pass — backend service ka connection:
+      proxy_pass http://localhost:3000;
+🔍 Iska matlab:
+
+Jab /api/ pe request aayegi, to Nginx us request ko backend Node.js server (localhost:3000) tak forward karega.
+
+✅ proxy_cache — actual caching trigger:
+
+      proxy_cache my_cache;
+🔍 Yeh line bolti hai:
+
+Yeh location /api/ caching zone my_cache ka use kare — jo aapne proxy_cache_path mein define kiya tha.
+
+✅ proxy_cache_valid — kab cache valid rehegi:
+
+      proxy_cache_valid 200 302 10m;
+🔍 Matlab:
+
+Agar response status 200 (OK) ya 302 (redirect) hai to us response ko 10 minutes tak cache karo.
+
+✅ proxy_cache_use_stale — stale (expired) cache kab use ho:
+      proxy_cache_use_stale error timeout updating;
+🔍 Iska matlab:
+
+Agar backend:
+
+❌ error de
+
+❌ timeout ho jaye
+
+❌ updating ho rahi ho cache ki
+
+To Nginx purani cache dikhaye, taake user ko error na mile
+
+
+✅ 2. Generated Static Pages (via backend)
+(e.g., Next.js SSR or HTML generated from DB)
+
+Pages backend se generate hote hain
+Content static lagta hai, but DB se aata hai
+Har request backend tak jati hai → slow & heavy load
+🟢 Yahan Nginx caching ka faida:
+location /blog/ {
+  proxy_pass http://localhost:3000;
+  proxy_cache my_cache;
+  proxy_cache_valid 200 10m;
+}
+✔️ Nginx yeh "static-looking" page ko cache karega
+✅ Next request direct cache se aayegi (super fast)
+❌ No backend hit = performance boost
+
+
+
+
+intor 2
+hamry pas ak server hai ak http request 
+vpn ma hay website ko acess krna ham request ko vpn koi send krty tu vpn 
+usko send krta sevver ko ya proxy server hai foward proxy hai multiu-le clint vpn k throw
+server k pas jati
+jab ak multiple clinet ko vpn k sath connect krty  hai wo vpn ak server k sath connect krty 
+
+revser proxy hmary pass client ak hai pr server ka sy zayda 
+foward ma sserver ko nhi pata konsa client arha hai sever ak hai cleint azyda ahai 
+user ko nhi pata hota kis server k pass request jaye gi damrmyan vpn hai ya kis server
+ko hamri requets dy ga 
+
+basically ham main server ko apni dirctlty connect nhi ktyu nhi daty ham darmyan ma 
+ak middle server ko dety ya decide krta apki request kis particular server k pass lykr jani hai
+configration file ki base pr ham decide krty kis tra ki request kis server k apss jani hai
+hamry pass options hoti hai 
+wo serve rjo response dy wo ngix ko deta wo client ko
+
+HTTP cahche
+ak clent ny reqest ki image ki usny server sy mangwa k de next time agr koi or user 
+usi image ko acess krna chaty wo http chacne sy dyda es sy fast hojata 
+loadbalnce 
+reverse proxy
+http chache
+
+/admin server 1 handle kry ga
+/setting k liya sevrer 2 us ekrna estra ham configartion dy skta nigix ko
+
+advantages
+can handle 10000 concurest request hanldes
+chache http request
+Acts a revrse proxy
+load balcnser muktipl serve rhai 
+Api gateway (riute wali exmpale)
+serve and chance static files (hmary serve rpr static file hai ham node js k pas jany k zaroryta nhi server k pas ya deh ksta kon c image kha or kha dani hai )
+Handle SSL certificate
+
+
+🔐 SSL Certificate Kya Hota Hai?
+SSL (Secure Sockets Layer) certificate ek digital certificate hota hai jo ensure karta hai ke:
+
+Website aur user ke beech jo data ja raha hai, wo secure (encrypted) hai.
+Koi third party (jaise hacker) us data ko nahi dekh sakta.
+
+✅ SSL Certificate Ka Faida – Simple Example ke Sath
+🔍 Example:
+Aap online ek shopping website pe ja kar credit card number enter karte ho.
+
+🔓 Without SSL (http://):
+Aapka card number plain text mein internet ke through ja raha hota hai.
+Koi bhi hacker aapka data intercept karke aapka card number chura sakta hai.
+
+🔐 With SSL (https://):
+Jab aap form fill karte ho, SSL certificate aapka data encrypt karta hai.
+Hacker agar beech mein data capture bhi kare, usay sirf encrypted (meaningless) characters milenge.
+Sirf website server hi us data ko decrypt kar sakta hai.
+
+📌 SSL Certificate Ke Key Faide:
+Benefit	Explanation
+🔒 Data Encryption	User aur server ke beech ka data secure hota hai.
+✅ Trust & Credibility	https:// aur padlock icon user ko batata hai website secure hai.
+🛡 Protection from Hackers	Man-in-the-middle attacks se bachata hai.
+🔍 SEO Advantage	Google secure sites ko ranking mein priority deta hai.
+💳 E-commerce Required	Payment gateway integration ke liye SSL must hota hai.
+
+
+
+
+
+
+
+Docker used
+
+install nginx
+by defualt ya 80 port pr chlta nginx
+
+event{
+}
+http{
+	server{
+	listen:80
+	server_name_
+	location /admin route wali
+	return 200status code "Hello from"	}
+}
+
+confiq.yaml
+server:
+    
+
+
+Serve Static Content
+ngix ak serve rhai ya apki static file server kr paye static file js html css files wagira
+ya jitni images enko chance krna kis ka kam  server ka kam hota
+
+
+Server{
+	root /ww/data
+	
+server{}
+root{mtlb hamri website kha exist krti path dety
+./website 
+}
+
+}
+ 
+freenom 
+yha sy ham free domain lyskty hai 
+
+
+Ye commands aap Nginx ki config file (nginx.conf ya /etc/nginx/sites-available/default) mein likhte hain.
+
+Command / Directive	Kya karti hai (Roman Urdu)
+server	Ek virtual server define karta hai (jaise ek website).
+listen	Kis port pe request sunni hai (usually 80 for HTTP, 443 for HTTPS).
+server_name	Domain name define karta hai (jaise: example.com).
+location	Kis URL path pe kya kaam hoga usko handle karta hai.
+proxy_pass	Request ko aage kis server pe bhejna hai (reverse proxy).
+root	HTML files ya static files ka folder set karta hai.
+index	Default file set karta hai (jaise index.html).
+ssl_certificate	SSL certificate ka path batata hai.
+ssl_certificate_key	SSL private key ka path batata hai.
+
+
+install nginx
+koi pr request ati serve rpr wo nignix pr jaye ya internally root kry ga root 8001 jo haoga
+
+server_name doman ka name dena (enhi sy acspt kry ga request kis or sy aye rejct krdy ga requets);
+proxy_pass: jo b requts aye usko pass krdu jo port dy ham
+proxy_http:version
+proxy_set_header jkuch header set krty hai ham
+
+
+sll certoificate
+certbort install
+Animation showing 'install certbot' typed at a commandline
+ya sll serficate ka kam kry ga
+npm certbort --ngix -d domainname 
+
+nginx.conf 
+file name rkhty
+
+
+evnets{
+Ek waqt mein kitne users (connections) handle karne hain.
+Kis tarah ka connection model use karna hai (like epoll, kqueue, etc.).
+Worker processes kis tarah connections accept karein.
+
+events {
+    worker_connections 1024;
+    use epoll;
+    multi_accept on;
+}
+
+✅ worker_connections 1024;
+Matlab: Har ek worker process ek waqt mein maximum 1024 connections handle kar sakta hai.
+📌 Agar 4 worker processes hain:
+Total max theoretical connections = 4 x 1024 = 4096 connections.
+💡 Note: Agar keepalive connections enable hain, to ek user bhi ek connection block kar sakta hai jab tak wo close na ho.
+
+ use epoll;
+Matlab: NGINX Linux system par epoll I/O model use karega.
+📌 epoll ek high-performance event notification system hai jo Linux mein hota hai.
+Yeh zyada traffic ko asynchronous (non-blocking) tareeqay se efficiently handle karta hai.
+
+ multi_accept on;
+Matlab: Jab ek naye connection ki notification aaye, to NGINX ek saath multiple connections accept kar sakta hai.
+📌 Isse performance improve hoti hai jab bahut saare users ek saath connect karne ki koshish karte hain (like high-traffic websites).
+
+
+http:
+Server ka setup kaise hoga
+Static files kahaan se serve hongi
+Proxy kaise hoga (Node.js ke liye)
+Compression, logging, timeout, etc. kaise kaam karein
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout 65;
+
+    gzip on;
+
+    server {
+        listen 80;
+        server_name example.com;
+
+        location / {
+            proxy_pass http://localhost:3000;
+        }
+    }
+}
+
+
+# HTTP se HTTPS redirect
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    # Force redirect to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+# Main SSL Server
+server {
+    listen 443 ssl http2;
+    server_name example.com www.example.com;
+
+    # SSL Certificates (Let’s Encrypt)
+    ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+    # SSL Security Options
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # 🔒 HSTS (optional)
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    # 🔄 Caching Setup
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m inactive=60m max_size=100m;
+
+    # 🔁 Reverse Proxy Microservices
+    location /auth/ {
+        proxy_pass http://auth_service:3001;
+        proxy_cache my_cache;
+        proxy_cache_valid 200 10m;
+        proxy_cache_use_stale error timeout updating;
+    }
+
+    location /product/ {
+        proxy_pass http://product_service:3002;
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 5m;
+    }
+
+    location /order/ {
+        proxy_pass http://order_service:3003;
+        proxy_cache my_cache;
+        proxy_cache_valid 200 5m;
+    }
+
+    # ⚙️ Static content (HTML, CSS, JS)
+    location /static/ {
+        root /var/www/html;
+        expires 30d;
+    }
+
+    # 📦 General Proxy Settings
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+
+
+Directive	Kya karta hai
+include mime.types;	Ye file define karti hai kis file type ka kya content-type hoga (HTML, CSS, JS etc.)
+default_type application/octet-stream;	Agar koi file type na mile to default type binary data set karta hai
+sendfile on;	Static files efficiently serve karta hai (like images, CSS, JS)
+keepalive_timeout 65;	Ek connection ko kitni der tak zinda rakhna hai
+gzip on;	Response ko compress karta hai jisse site fast load hoti hai
+server { ... }	Server block ke andar aap ek website configure karte ho
+
+Line	Matlab
+listen 80;	NGINX HTTP port 80 par sun raha hai (jo default hota hai websites ke liye).
+server_name example.com;	Ye block tab kaam karega jab koi request example.com ke naam se aaye (domain name).
+location / { ... }	Jab bhi koi request aaye root / ke liye (yaani homepage ya koi bhi path)
+proxy_pass http://localhost:3000;	To us request ko aage forward (proxy) kar do localhost:3000 pe (yaani backend server — jaise Node.js server).
+
+
+  upstream my_app {
+        server 127.0.0.1:3000;
+        server 127.0.0.1:3001;
+        server 127.0.0.1:3002;
+    }
+Block	Kya karta hai
+upstream my_app { ... }	Ye ek group of servers banata hai jinko NGINX rotate karke use karega
+server 127.0.0.1:3000;	Node.js server 1
+server 127.0.0.1:3001;	Node.js server 2
+server 127.0.0.1:3002;	Node.js server 3
+proxy_pass http://my_app;	Ab request kisi bhi available server ko jayegi randomly ya round-robin ke through
+
+Microservices + NGINX Architecture ke Faide (2 Lines Mein):
+
+Scalability: Services ko independently scale kar sakte ho, har service ko alag resources milte hain.
+
+Fault Isolation: Agar ek service fail ho, toh baaki services unaffected rehti hain.
+
+Better Performance: NGINX load ko distribute karta hai, isse performance improve hoti hai.
+
+Easier Maintenance & Updates: Har service ko independently update ya maintain kiya ja sakta hai.
+
+Clear Separation of Concerns: Har service apna specific kaam karti hai, jisse development easy hota hai.
+
+Technology Agnostic: Har service alag technologies me likhi ja sakti hai.
+
+Security: Services ko alag security layers diye ja sakte hain, jo unki needs ke hisaab se hoti hai.
+
+Faster Development & Deployment: Small teams easily develop kar sakti hain aur quickly deploy kar sakti hain.`	`	
+
+Better Fault Tolerance: Multiple instances hone se service fail hone par dusra instance available hota hai.
+
+Easy to Monitor & Debug: Har service ko alag se monitor karke issues ko quickly identify kiya ja sakta hai.
+
+
+1. SSL Certificate aur Private Key Ko Prepare Karein
+Aapko SSL certificate aur private key file ki zaroorat hogi. Agar aap Let's Encrypt ya koi aur certificate provider use kar rahe hain, toh aapko unse yeh files milengi.
+
+Example files:
+fullchain.pem: SSL certificate chain.
+privkey.pem: Private key.
+
+server {
+    listen 443 ssl;
+    server_name example.com;
+
+    # Path to your SSL certificate and key
+    ssl_certificate /etc/ssl/certs/fullchain.pem;
+    ssl_certificate_key /etc/ssl/private/privkey.pem;
+
+    # SSL settings (optional but recommended)
+    ssl_protocols TLSv1.2 TLSv1.3;  # Disable older protocols
+    ssl_ciphers 'HIGH:!aNULL:!MD5'; # Specify which ciphers to allow
+    ssl_prefer_server_ciphers on;  # Server preference over client ciphers
+
+    location / {
+        proxy_pass http://localhost:3000; # Backend Node.js application
+    }
+}
+
+# HTTP to HTTPS redirect
+server {
+    listen 80;
+    server_name example.com;
+    return 301 https://$server_name$request_uri;
+}
+listen 443 ssl;: Yahan par 443 port pe SSL ke saath listen kiya gaya hai.
+
+ssl_certificate: Yeh directive aapke SSL certificate ka path batata hai (for example: fullchain.pem).
+
+ssl_certificate_key: Yeh directive aapke SSL private key ka path batata hai (for example: privkey.pem).
+
+ssl_protocols TLSv1.2 TLSv1.3;: Yeh ensure karta hai ke purani SSL/TLS protocols disable ki jayein aur sirf secure versions (TLSv1.2 aur TLSv1.3) allow hon.
+
+ssl_ciphers: Yeh specify karta hai ki kaunse encryption ciphers ko allow karna hai.
+
+ssl_prefer_server_ciphers on;: Yeh server ko ciphers ke selection mein preference deta hai, jo security ke liye achha hota hai.
+
+HTTP to HTTPS Redirect: Pehle server ka configuration (port 80) redirect karta hai kisi bhi incoming HTTP request ko HTTPS (port 443) par.
+
+
+cerbot ak tool hai jo ssl certifcate insta;ll krta free apki domain ma
+
+
+1. Server Block
+Purpose: Ye ek virtual server ko define karta hai jahan se ek specific domain ya subdomain ka traffic handle hota hai.
+
+Example:
+
+server {
+    listen 80;
+    server_name example.com;
+    location / {
+        root /var/www/html;
+    }
+}
+Use: Is block ka use websites ya applications ko route karne ke liye hota hai.
+
+2. Listen Directive
+Purpose: Ye specify karta hai ke Nginx kis port pe requests sunega (usually port 80 for HTTP, 443 for HTTPS).
+
+Example:
+
+listen 80;
+listen 443 ssl;
+Use: HTTP aur HTTPS traffic ko separate karna, ya multiple IP addresses ya ports pe Nginx ko listen karana.
+
+3. Server Name
+Purpose: Ye domain name ya subdomain ko define karta hai jise server handle karega.
+
+Example:
+
+Edit
+server_name example.com;
+Use: Nginx ko batata hai ke kis domain ke liye traffic handle karna hai.
+
+4. Location Block
+Purpose: Ye request ke specific URL path ke liye configuration define karta hai (e.g., /images/ or /api/).
+
+Example:
+
+location /images/ {
+    root /var/www/images;
+}
+location /api/ {
+    proxy_pass http://localhost:3000;
+}
+Use: Request ke path ke mutabiq different actions perform karna, jaise static files serve karna ya backend ko proxy karna.
+
+5. Proxy Pass
+Purpose: Ye reverse proxy ko configure karta hai, jisme incoming requests ko kisi aur server ko forward kiya jata hai.
+
+Example:
+
+location /api/ {
+    proxy_pass http://localhost:3000;
+}
+Use: Backend applications ko handle karna, jese Node.js, Django, etc. ko reverse proxy karna.
+
+6. SSL/TLS Configuration
+Purpose: HTTPS traffic ko enable karna aur SSL certificate ko configure karna.
+
+Example:
+
+listen 443 ssl;
+ssl_certificate /path/to/certificate.crt;
+ssl_certificate_key /path/to/private.key;
+Use: Websites ko secure banane ke liye SSL/TLS encryption ko enable karna.
+
+7. Root Directive
+Purpose: Ye directory ko define karta hai jahan se static files serve karni hoti hain.
+
+Example:
+
+location / {
+    root /var/www/html;
+    index index.html;
+}
+Use: Static content jaise HTML, CSS, images, etc., ko serve karne ke liye.
+
+8. Index Directive
+Purpose: Ye default file ko define karta hai jo folder ke request par serve hoti hai (e.g., index.html).
+
+Example:
+ 
+index index.html index.htm;
+Use: Default index file ko serve karne ke liye.
+
+9. Redirects (301, 302)
+Purpose: Ye URLs ko redirect karta hai, jaise old URLs ko new URLs pe forward karna.
+
+Example:
+
+server {
+    listen 80;
+    server_name old-example.com;
+    return 301 http://new-example.com$request_uri;
+}
+Use: SEO ke liye ya domain change hone pe old URLs ko new URLs pe redirect karna.
+
+10. Load Balancing
+Purpose: Ye multiple backend servers ko traffic distribute karta hai, load balancing ke liye.
+
+Example:
+
+upstream myapp {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+}
+server {
+    location / {
+        proxy_pass http://myapp;
+    }
+}
+Use: Traffic ko multiple servers ke beech distribute karna taake server ka load balance ho jaye.
+
+11. Error Pages
+Purpose: Ye custom error pages ko define karta hai jo specific HTTP error codes ke liye show hoti hain.
+
+Example:
+error_page 404 /404.html;
+location = /404.html {
+    root /usr/share/nginx/html;
+}
+Use: User-friendly error pages ko display karna, jaise 404 page not found.
+
+12. Caching
+Purpose: Static content ko cache karna taake performance improve ho sake.
+
+Example:
+location /images/ {
+    expires 30d;
+    add_header Cache-Control "public";
+}
+Use: Static assets ko cache karna jisse website ki speed improve ho.
+
+13. Access Control (Allow/Deny)
+Purpose: Ye requests ko specific IP addresses ya networks se allow ya deny karta hai.
+
+Example:
+
+location /admin/ {
+    allow 192.168.1.0/24;
+    deny all;
+}
+Use: Security reasons ke liye restrict access, jaise admin panel ko sirf ek specific IP range se allow karna.
+
+14. Logging
+Purpose: Ye requests aur errors ke logs ko store karta hai.
+
+Example:
+
+access_log /var/log/nginx/access.log;
+error_log /var/log/nginx/error.log;
+Use: Nginx server ke traffic aur errors ka record rakhna.
+
+15. Rate Limiting
+Purpose: Ye requests ki rate ko limit karta hai taake DoS (Denial of Service) attacks ko prevent kiya ja sake.
+
+Example:
+
+limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
+location / {
+    limit_req zone=one burst=5;
+}
+Use: Server ko unnecessary overload hone se bachana aur malicious requests ko limit karna.
+
+16. Gzip Compression
+Purpose: Ye responses ko compress karta hai taake network bandwidth save ho aur response time improve ho.
+
+Example:
+gzip on;
+gzip_types text/plain text/css application/javascript;
+Use: Website ke content ko compress karke load speed improve karna.
+
+
+
+
+# HTTP block, request handling aur dusre settings
+http {
+    # Load balancing configuration (3 servers)
+    upstream my_app {
+        server 127.0.0.1:3000;
+        server 127.0.0.1:3001;
+        server 127.0.0.1:3002;
+    }
+
+    # Enable gzip compression
+    gzip on;
+    gzip_types text/plain text/css application/javascript application/json;
+
+    # Access aur error logs ka path define karna
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    # Main server block jo traffic ko handle karega
+    server {
+        listen 80;
+        server_name example.com;
+
+        # HTTP se HTTPS me redirect karna
+        location / {
+            return 301 https://$server_name$request_uri;
+        }
+    }
+
+    # SSL configuration (secure traffic ke liye)
+    server {
+        listen 443 ssl;
+        server_name example.com;
+
+        # SSL certificate aur key ka path
+        ssl_certificate /etc/nginx/ssl/example.com.crt;
+        ssl_certificate_key /etc/nginx/ssl/example.com.key;
+
+        # Secure headers aur protocol ko enable karna
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256';
+
+        # Backend services ko proxy karna
+        location /auth/ {
+            proxy_pass http://my_app;  # Yahan load balancing hoga
+        }
+
+        location /products/ {
+            proxy_pass http://my_app;
+        }
+
+        location /orders/ {
+            proxy_pass http://my_app;
+        }
+
+        # Static files serve karna (HTML, CSS, JS)
+        location / {
+            root /var/www/html;
+            index index.html;
+            expires 30d;  # Static files ko 30 din tak cache karna
+            add_header Cache-Control "public";
+        }
+
+        # Error handling (404 aur dusre errors ke liye custom pages)
+        error_page 404 /404.html;
+        location = /404.html {
+            root /usr/share/nginx/html;
+            internal;
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+            root /usr/share/nginx/html;
+            internal;
+        }
+    }
+}
+
+
+
+Is Configuration ka Explanation:
+Upstream Block (Load Balancing):
+
+upstream my_app mein 3 backend servers define kiye gaye hain (ports 3000, 3001, aur 3002). Yeh servers load balancing ke liye use honge.
+
+Jab bhi koi request /auth/, /products/, ya /orders/ pe aayegi, woh in 3 servers mein distribute hogi.
+
+Gzip Compression:
+
+gzip on; se text-based responses (HTML, CSS, JS) ko compress kiya jayega, jo page load speed ko improve karega.
+
+Access aur Error Logs:
+
+access_log aur error_log se request aur error logs ko specific files mein store kiya jayega, jo debugging aur performance analysis mein madadgar hote hain.
+
+HTTP se HTTPS Redirect:
+
+Pehla server block port 80 (HTTP) pe sun raha hai aur saari HTTP traffic ko HTTPS pe redirect kar raha hai (security ke liye).
+
+SSL Configuration:
+
+Doosra server block port 443 (HTTPS) pe sun raha hai aur SSL certificates ka use kar raha hai taake traffic ko secure kiya ja sake.
+
+ssl_certificate aur ssl_certificate_key mein SSL certificate aur private key ka path diya gaya hai.
+
+Proxy Requests:
+
+/auth/, /products/, aur /orders/ requests ko my_app upstream block ki taraf forward kiya jaayega. Yahan load balancing hoga jo ki in 3 backend servers mein request ko distribute karega.
+
+Static Files Serve Karna:
+
+location / block mein static files jaise index.html, CSS, aur JS serve kiye ja rahe hain /var/www/html directory se.
+
+expires 30d; se yeh static files 30 din tak cache ho jayengi taake baar-baar server se request na karni pade.
+
+Error Handling:
+
+Agar koi user 404 error (page not found) ka samna karta hai, to ek custom error page (404.html) dikhaya jayega.
+
+Agar 50x errors aate hain (server errors), to custom error page (50x.html) dikhaya jayega.
+
+Deployment Steps:
+SSL Certificates: Make sure aapka SSL certificate (example.com.crt) aur private key (example.com.key) /etc/nginx/ssl/ folder mein maujood ho.
+
+Static Files: Aapki website ki static files (jaise index.html) /var/www/html/ directory mein hone chahiye.
+
+Backend Servers: Aapke Node.js applications (ya kisi bhi backend service) ko ports 3000, 3001, aur 3002 pe run karna hoga.
+
+Nginx Ko Reload Karna: Configuration file ko save karne ke baad, Nginx ko reload karen:
+
+
+
+
+
+
+CDN (Content Delivery Network) caching ka matlab hai aapke website ka static content (jaise images, CSS, JS files, videos, etc.) ko worldwide distributed servers pe cache karna, taake jab koi user aapki site ko access kare to usse content nearest server se mile — jisse speed fast ho jaati hai aur server load kam ho jaata hai.
+
+🔹 CDN Kya Karta Hai? (Simple Explanation)
+Imagine karein aapki website Pakistan mein host hai, lekin ek user USA se visit kar raha hai. Agar CDN nahi use karenge, toh data Pakistan ke server se USA jaana padega (slow).
+
+Lekin agar CDN use karte hain (jaise Cloudflare, AWS CloudFront, Fastly), toh:
+
+➡️ Jab first time koi user aapki site ka static file access karta hai (like image, CSS),
+➡️ CDN us file ko apne server pe cache kar leta hai (jo user ke kareeb hota hai).
+➡️ Next time ya koi aur user wahi file chahta hai, toh wo directly CDN se serve hoti hai, fast and efficient.
+
+🔹 CDN Caching Kaise Karte Hain? (Basic Steps)
+✅ Step 1: CDN Service Choose Karein
+Popular CDNs:
+
+Cloudflare (Free plan bhi available)
+
+Amazon CloudFront
+
+Akamai
+
+Fastly
+
+Google Cloud CDN
+
+✅ Step 2: Domain ko CDN ke sath Connect Karein
+Aapko CDN provider pe account banana hota hai.
+
+CDN aapko nameservers dega (jaise ns1.cloudflare.com), jo aapko apne domain ke DNS settings mein replace karne hote hain.
+
+✅ Step 3: CDN Cache Settings Configure Karein
+Aap set karte hain kya cache hoga:
+
+Static files only (images, CSS, JS)
+
+Dynamic pages (optional, less common)
+
+Cache expiration time set karte hain (e.g., 30 days, 1 hour).
+
+You can also purge (clear) cache manually.
+
+✅ Step 4: HTTPS (SSL) Enable Karein (usually free with CDN)
+SSL certificate bhi milta hai CDN ke sath (Cloudflare auto issue karta hai).
+
+🔹 Example with Cloudflare (Most Common)
+Sign up on https://cloudflare.com
+
+Add your domain (e.g., example.com)
+
+Cloudflare will scan DNS records
+
+Change your domain’s nameservers to Cloudflare’s
+
+CDN active ho jaata hai, aur aapka content cache hone lagta hai
+
+🔹 CDN Cache Headers Example
+CDN cache control headers ko follow karta hai:
+Cache-Control: public, max-age=86400
+public: anyone can cache
+
+max-age=86400: cache for 24 hours (in seconds)
+
+🔹 CDN Caching ke Fayde
+Feature	Benefit
+🌍 Global Servers	Fast loading worldwide
+⚡ Reduced Latency	Fast user experience
+📉 Lower Origin Server Load	Server crash risk reduces
+🔒 Free SSL	HTTPS easily enable
+📊 Analytics	Track traffic and attacks
+
+
+
+
+
+
+1. ✅ DNS (Domain Name System)
+Kya karta hai:
+DNS aapke domain name (e.g. example.com) ko uske IP address (e.g. 192.168.1.1) me convert karta hai.
+
+Example:
+Jab aap www.google.com likhte hain browser me, DNS usko us IP address me convert karta hai jahan Google ki website chal rahi hoti hai.
+
+2. 🚀 CDN (Content Delivery Network)
+Kya karta hai:
+CDN aapki website ke static content (images, videos, CSS, JS, etc.) ko duniya bhar ke servers pe copy karta hai. Jahan user hota hai, wahan ke closest server se data load hota hai — isse website fast load hoti hai.
+
+Example:
+Agar aap Pakistan me hain aur kisi US server se image load karni ho — to CDN usi image ki copy Lahore ya Karachi ke server se load karwa dega.
+
+3. 🛡️ DDoS Protection (Distributed Denial of Service)
+Kya karta hai:
+DDoS attacks me hazaron fake users ek sath aapki website pe request bhejte hain takay wo crash ho jaye.
+DDoS protection in fake requests ko block karta hai, taake real users access kar saken.
+
+Example:
+Agar kisi ne aapki site ko slow ya down karne ke liye bot se thousands of requests bhejein — Cloudflare jese tools in requests ko detect karke rok dete hain.
+
+4. 🔐 Free SSL Certificate (HTTPS)
+Kya karta hai:
+SSL (Secure Sockets Layer) aapki website aur user ke browser ke beech ki communication ko encrypt karta hai.
+Isse data secure rehta hai (e.g. passwords, payment info).
+
+Example:
+Agar aapki site https:// se start hoti hai, to user ka data secure rehta hai. Cloudflare aur Let's Encrypt aapko free SSL certificates dete hain.
+
+
+
+Nginx ip_hash ke zariye same client ki request hamesha same backend process (worker) ko bhejta hai
+Us worker mein agar CPU-heavy task ho, toh wo Worker Thread mein chala jata hai (non-blocking)
+
+upstream backend {
+    ip_hash;  # 👈 Sticky session based on IP
+    server 127.0.0.1:3001;
+    server 127.0.0.1:3002;
+    server 127.0.0.1:3003;
+}
+
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://backend;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+    }
+}
+
+
+
+File	Purpose
+nginx.conf	Define karo ke NGINX request kis server ko forward kare
+Dockerfile	NGINX image build karo
+fly.toml	Fly.io config for deploy
+flyctl deploy	Push to Fly.io and run NGINX
+
+
+
+
+
+
+
+
+
+Again Repeat Nginx
+
+what is nginx
+web server hai web serve krna
+ya cahing laod balaner handle krta
+
+apny html file bana e code likha
+jab sochty esko internet pr kasy acess kry ga usky liya web serer use hota
+
+serer nginx install kro ya kam deliery ka rkta
+nngix chekc krta har time koi requetd tu nhi arhi 
+cinfigration hoti kya krna request ka ham khta website ko user tk ponchana   wo bhjta hai
+
+
+
+Installing nginx
+
+install
+sudo apt install nginx
+
+start
+systemlctl start/stop/enable/disbale/status
+staus ma active nazr ana chaye
+
+enable http serer in firewall
+sudo firewall-cmd-permanent-add-service=http
+
+cd /etc/nginx
+by defualt path eska nginx
+
+vi nginx/config
+etc/nginx/nginx.config
+
+
+sudo firewall-cmd --permanent --add-service=http
+
+Ye kya karti hai?
+Maan lo aapka web server Nginx/Apache port 80 par website chala raha hai:
+
+Internet
+   ↓
+Port 80 (HTTP)
+   ↓
+Firewall
+   ↓
+Nginx / Apache
+   ↓
+Website
+
+Firewall agar port 80 ko block kar raha ho, to internet se website access nahi hogi.
+
+sudo firewall-cmd --permanent --add-service=http
+
+ka matlab:
+
+Firewall ko bolo ke HTTP traffic allow karo.
+
+--permanent ka matlab
+Rule ko permanent configuration mein save karo, taake firewall reload/restart ke baad bhi rule rahe.
+
+Lekin permanent rule apply karne ke liye usually:
+
+sudo firewall-cmd --reload
+
+phir check:
+
+sudo firewall-cmd --list-services
+
+Agar output mein:
+
+ssh dhcpv6-client http
+
+aa raha hai, to http allowed hai.
+
+HTTP aur HTTPS
+Web server ke liye commonly:
+
+HTTP   → port 80
+HTTPS  → port 443
+
+HTTPS allow karne ke liye:
+
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+
+Important: firewall-cmd firewalld ke liye hai. Ubuntu mein aksar UFW use hota hai, jahan command different hoti hai:
+
+sudo ufw allow 80
+
+
+
+basic nginx structure
+
+user;
+events{
+}
+http{
+server{
+location{}
+}
+
+nginx htpp type request ko listen kr rha kam kr rha esliy ahttp
+apklo website ka content kha kis port pr kam kr rha serer ka mtlb
+
+server{
+listen:80
+root: /user/share/nginx/html
+root ma btaty kha apny bhjna 80 port pr request mtlb eska
+
+cd /usr/share/nginx/html
+static website hoti yha enki defaut
+
+
+
+setup 
+
+basic website setup
+
+sudo mkdir exmpale.com
+cd exmaple.com
+vi index.html
+
+cd /etc/nginx/
+ls
+sudo cp nginx.config nginx.conf_bkp
+sudo rm nginx.config
+
+sudo vi nginx.config
+
+file
+events{}
+
+http{
+server{ 
+	listen 80; port kha run horhi
+	root /user/share/ngoinx/html/exmpale.co; kha pr forward krni request wo hai	}
+}
+:wq save
+
+jab b configration banty syntax error hosty test kro
+sudo nginx -t
+
+config change ki relaod krna applciaoiton ko nhi pta chnage koya
+systemctl reload nginx.service
+staus check
+
+cd .usr.share.nfginx/html/exmaple.com
+multipe folder direcoty hsoti hai
+sudo mkdir about
+cd about
+sudo cp ../index.html . previous ko yha copy kro . mtlb
+
+
+
+phly defualt 80 port pr listen kr rhy agr change krna hn kr skty
+
+cd etc.ngonx.niginx.confg
+
+events{}
+
+http{
+server{ 
+	listen 8080; port kha run horhi
+	root /user/share/ngoinx/html/exmpale.co; kha pr forward krni request wo hai	}
+}
+:wq save
+
+
+firewal ma 8080 enable krna pry ga agr firewall use kr rhy ap
+
+
+nginx logging
+
+/var/log/nginx
+
+cd /var/log/nginx
+ls
+2 logs hogy
+access.log
+error.log
+
+yha pr ip waira info hoti user ki 
+ip get request browser http resposne code kya hai os k related info hoti info
+client ki request ati wha pr basic info mil jati hai
+
+
+
+Hosting multiple websites
+
+http
+serer{}
+server{
+location{}
+}
+
+wsite content create krna
+cd /usr/share/nginx/html
+ls
+sudo mkdir myexmaplewebsite.com
+cd myexmaplewebsite.com
+sudo vi index.html
+sudo vi style.css
+sudo vi etc/nginx/nginx.config
+
+file
+
+events{}
+
+http{
+server{ 
+	listen 80; port kha run horhi
+	root /user/share/ngoinx/html/exmpale.co; kha pr forward krni request wo hai	}
+}
+server{
+listen 80;
+root /usr/share/nginx/html/muyeamplewebsite.com;
+}
+
+
+fixing style.css
+
+cd etc/nfginx
+mime.types
+media type hoti ua css ideo wagira type hoti wo nginx kasy support krta
+main configraiton ko pata nhi css use krni hmany
+
+file
+
+
+http{
+include mime.types; jo files read ki wo add krni
+
+
+server{ 
+	listen 80; port kha run horhi
+	root /user/share/ngoinx/html/exmpale.co; kha pr forward krni request wo hai	}
+}
+server{
+listen 80;
+root /usr/share/nginx/html/muyeamplewebsite.com;
+}
+
+
+custom domain
+
+ip sy acess krky use kr rhy ham
+
+name use krna sab sy phly domain name chaye
+domain la li ab ipattch krna usky sath 
+dns ma record bna na name sy ec2 ko point krna
+
+sever ka public ip chaye
+
+wha ip dyga
+
+
+configue error and logs page
+
+file
+add in server block
+server_name:myexamplewebsite.xyc www.myexamplewebsite.xysz;	cusotm name da skty yah
+index index.html;
+
+error_page 404 /404.html;
+access_log /var/log/niginx/namefile.access.log
+error_log /var/log/nginx/namefile.error.log;
+
+location / {
+try_files $url $url/=404.html
+}
+agr us ma specfic file present nhi kya kry ga wo try kry ga locaiton
+
+ak log ma rhy ga sary hard to manage
+
+
+
+nginx enable HTTPS
+
+certificate use krni pry gi encryptoion use krna pry ga
+
+for linux
+public certficate or private certifcate chalye
+
+lets encrypt 
+free open certificate authroyt free deta hai 
+
+sudo apt install certbot python3.certbot-nginx-y
+
+certbot usoi cerver pr use krna jah nginx hao
+
+first stop the nginx
+sudo systemtl stop nginx
+
+to generate certifcate
+sudo certbot certonly --standlone -d domainname
+certonly mtlb sirf certificate chaye hmy
+
+ffiles will be generate hogy
+
+config ma chnage krna hoga
+
+ab hmy https prot pr listen krna hai 443 pr 
+ssl_certiciare 
+path wagira 2 sy 3
+
+
+
+http{
+include mime.types; jo files read ki wo add krni
+
+
+server{ 
+	listen 443 ssl http2; port kha run horhi
+	root /user/share/ngoinx/html/exmpale.co; kha pr forward krni request wo hai
+	ssl_certificate /etc/letsencrypt/oath dena public ka dena key
+	ssl_certification_key key path dena key ka priate ka
+	ssl_protocol TLS1,2mTLS1.1
+	}
+}
+server{
+listen 80;
+root /usr/share/nginx/html/muyeamplewebsite.com;
+}
+
+tls checker sy dkeh skty kitny achy sa set hoe website apki
+
+
+
+Nginx Reverse proxy
+mtlb current setup ak server pr website hai nginx b hai
+
+darmyan ma ak server nginx ka hota reverse proxy
+ak spearate server hai ngixn hai jha pr backend pr website hai actual hamri
+
+loadbalcjing secutory caching deta
+i nhi pta backend ka
+
+load balancing
+load arha bhut multipe server ki zarorathogi backhup b chaye hoga nginx sy asna hoti
+
+events{}
+
+http{
+include mime.types;
+
+server{
+listen 8080:
+root path
+location /{ mtlb kha pass krni agr yha requets ati proxy pass kra mtlv
+proxy_pass https:websiteurl
+}
+
+ab proxy kam kr hri
+
+load balancer
+traffic brh gi users agy
+ak serer rhy ga load prhy ga performnace khrba hogi
+use mutiple server
+ya ak benefit hota load balacer ka
+
+round robin kasy hoga ab
+name hai ips daty yha pr upstreeam ma register kry ham
+
+upstream backend_server{
+server 127.0.01
+}
+
+server{
+listen
+serer name
+;location / {
+proxy_pass http:backend servers
+}
+
+
+
+upstream user_backend {
+    server 127.0.0.1:3000;
+}
+
+upstream admin_backend {
+    server 127.0.0.1:4000;
+}
+
+server {
+    listen 80;
+    server_name example.com;
+
+    location /api/ {
+        proxy_pass http://user_backend;
+    }
+
+    location /admin/ {
+        proxy_pass http://admin_backend;
+    }
+}
+
+
+
+nginx backup server
+
+agr server upstream k agy backup likh dy ga tu wo as a backuo kam kry ga
+agr koi b fail hova sab tu wo end pr as a backup chlay ga
+
+
+
+1. Default: Round Robin
+Agar:
+
+upstream user_backend {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+    server 127.0.0.1:3002;
+}
+
+To requests roughly is tarah distribute hongi:
+
+Request 1 → :3000
+Request 2 → :3001
+Request 3 → :3002
+Request 4 → :3000
+Request 5 → :3001
+...
+
+Isko Round Robin kehte hain.
+
+Aapko isko explicitly set karne ki zaroorat nahi:
+
+upstream user_backend {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+}
+
+Nginx automatically default Round Robin use karega.
+
+2. Weight
+Agar aap chahte ho ke ek server ko zyada requests milen:
+
+upstream user_backend {
+    server 127.0.0.1:3000 weight=3;
+    server 127.0.0.1:3001 weight=1;
+}
+
+Matlab approximately:
+
+:3000 → 3 parts
+:3001 → 1 part
+
+So 3000 ko zyada traffic milega.
+
+3. Least Connections
+Agar aap chahte ho ke request us backend ko mile jiske paas currently sabse kam active connections hain:
+
+upstream user_backend {
+    least_conn;
+
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+    server 127.0.0.1:3002;
+}
+
+Concept:
+
+3000 → 10 connections
+3001 → 3 connections  ← new request
+3002 → 7 connections
+
+New request 3001 ko mil sakti hai.
+
+4. IP Hash
+Agar aap chahte ho ke same client ka IP generally same backend par jaye:
+
+upstream user_backend {
+    ip_hash;
+
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+}
+
+Example:
+
+User A → :3000
+User A → :3000
+User A → :3000
+
+User B → :3001
+User B → :3001
+
+Ye kuch scenarios mein useful ho sakta hai jahan session/state ko same backend par rakhna ho. Lekin modern applications mein sessions ko shared store (jaise Redis/database) mein rakhna often better approach hota hai.
+
+
+
+
+
+
+
+nginx timeout
+defualt keepalive timeout
+browsewr sy request krta connection hojt hai 20 secodn tk idela rhy ga conenciton
+perfomrance achi mily gi connection bna rhy
+resposne aty hai time lgta hai
+by defualt 20 hota
+proxy connect timeout
+pricxy read timeout
+proxy sedn timeout
+
+ngixn chaching
+stores copy of resposne images direclty tu user directly
+
+enable kr skty adjust kr skty hailocaiton ma setitng add krni cache ki
+
+http {
+    proxy_cache_path /var/cache/nginx
+                     levels=1:2
+                     keys_zone=my_cache:10m
+                     max_size=1g
+                     inactive=60m
+                     use_temp_path=off;
+}
+
+
+nginx protocols support
+
+http
+websockt
+tcp.udp
+grpc
+mail
+streamoing protocls
+
+
+
+
+1. Pehle normal setup
+Node.js:
+
+127.0.0.1:3000
+
+User:
+
+https://example.com/api/products
+
+Nginx:
+
+User
+ ↓
+Nginx :80
+ ↓
+Node.js :3000
+
+Ab hum chahte hain ke /api/products ka response Nginx cache kar le.
+
+2. proxy_cache_path samjho
+Nginx ki main config mein:
+
+http {
+    proxy_cache_path /var/cache/nginx
+                     levels=1:2
+                     keys_zone=my_cache:10m
+                     max_size=1g
+                     inactive=60m
+                     use_temp_path=off;
+}
+
+Iska matlab:
+
+/var/cache/nginx
+proxy_cache_path /var/cache/nginx
+
+Yahan Nginx cached responses ko disk par store karega.
+
+Concept:
+
+/var/cache/nginx/
+       ↓
+cached responses
+
+levels=1:2
+levels=1:2
+
+Cache files ko directories mein organize karne ka structure hai.
+
+Ye basically disk par bohat saari cache files ko ek hi directory mein dump hone se bachata hai.
+
+Aapko initially iska exact hashing mechanism yaad karne ki zaroorat nahi.
+
+keys_zone=my_cache:10m
+keys_zone=my_cache:10m
+
+Ye cache zone banata hai.
+
+my_cache → cache zone ka naam
+10m      → memory mein cache metadata ke liye 10 MB
+
+Baad mein isi naam ko use karoge:
+
+proxy_cache my_cache;
+
+Yani:
+
+keys_zone=my_cache:10m
+              ↓
+      proxy_cache my_cache
+
+max_size=1g
+max_size=1g
+
+Cache disk par maximum approximately 1 GB tak grow kar sakta hai.
+
+inactive=60m
+inactive=60m
+
+Agar koi cached item 60 minutes tak access nahi hua, Nginx us inactive cache ko remove kar sakta hai.
+
+Important: iska matlab ye nahi ke har response exactly 60 minutes baad expire hoga. Ye inactivity based cleanup hai.
+
+use_temp_path=off
+use_temp_path=off;
+
+Temporary files aur cache files ke handling ko optimize karne ke liye use hota hai.
+
+Initially bas itna samjho:
+
+Cache ko directly configured cache path ke saath handle karne mein help karta hai.
+
+3. Ab actual cache enable karo
+Ab server block mein:
+
+server {
+    listen 80;
+    server_name example.com;
+
+    location /api/ {
+        proxy_cache my_cache;
+        proxy_cache_valid 200 10m;
+
+        proxy_pass http://127.0.0.1:3000;
+    }
+}
+
+Ab complete flow:
+
+User
+ ↓
+example.com/api/products
+ ↓
+Nginx
+ ↓
+Cache check
+ ↓
+Node.js :3000
+
+4. Pehli request kya hogi?
+User:
+
+GET /api/products
+
+Nginx cache check karega.
+
+Pehli baar cache mein kuch nahi:
+
+Cache ❌
+  ↓
+Node.js
+  ↓
+Database
+  ↓
+Response
+  ↓
+Nginx cache mein save
+  ↓
+User
+
+Status:
+
+MISS
+
+5. Doosri request
+Same request:
+
+GET /api/products
+
+Nginx check karega:
+
+Cache ✅
+  ↓
+Response
+  ↓
+User
+
+Node.js ko request nahi jayegi.
+
+Status:
+
+HIT
+
+6. HIT/MISS dekhne ke liye
+Server block mein:
+
+location /api/ {
+    proxy_cache my_cache;
+    proxy_cache_valid 200 10m;
+
+    add_header X-Cache-Status $upstream_cache_status;
+
+    proxy_pass http://127.0.0.1:3000;
+}
+
+Ab:
+
+First request
+X-Cache-Status: MISS
+
+Second request
+X-Cache-Status: HIT
+
+7. Cache ka complete example
+http {
+
+    proxy_cache_path /var/cache/nginx
+                     levels=1:2
+                     keys_zone=my_cache:10m
+                     max_size=1g
+                     inactive=60m
+                     use_temp_path=off;
+
+    upstream backend {
+        server 127.0.0.1:3000;
+    }
+
+    server {
+        listen 80;
+        server_name example.com;
+
+        location /api/ {
+            proxy_cache my_cache;
+
+            proxy_cache_valid 200 10m;
+
+            add_header X-Cache-Status $upstream_cache_status;
+
+            proxy_pass http://backend;
+        }
+    }
+}
+
+Flow:
+
+                   Nginx
+                     |
+              Cache check
+              /          \
+           HIT            MISS
+            ↓               ↓
+         Cache          Node.js
+            ↓               ↓
+          User           Response
+                            ↓
+                       Save Cache
+                            ↓
+                           User
+
+
+
+. gzip_types kya hai?
+gzip_types
+    text/plain
+    text/css
+    application/json
+    application/javascript
+    text/xml
+    application/xml
+    image/svg+xml;
+
+Ye Nginx ko batata hai:
+
+In type ki files/responses ko Gzip compression ke liye consider karo.
+
+Usually pehle:
+
+gzip on;
+
+likha hota hai:
+
+gzip on;
+
+gzip_types
+    text/plain
+    text/css
+    application/json
+    application/javascript
+    text/xml
+    application/xml
+    image/svg+xml;
+
+Gzip ka faida
+Suppose server se JSON response hai:
+
+{
+  "name": "Saqib",
+  "course": "Linux",
+  "description": "Web development course..."
+}
+
+Without compression:
+
+Server ───────────────→ Browser
+       100 KB
+
+Gzip ke saath data compress ho sakta hai:
+
+Server ─────→ Browser
+       30 KB
+
+Browser usko automatically decompress kar leta hai.
+
+Result:
+
+bandwidth kam use hoti hai
+response transfer faster ho sakta hai
+website performance improve ho sakti hai
+
+
+
+# =========================================================
+# /etc/nginx/nginx.conf
+# =========================================================
+
+events {
+    worker_connections 1024;
+}
+
+http {
+
+    # =====================================================
+    # 1. BASIC SETTINGS
+    # =====================================================
+
+    include /etc/nginx/mime.types;
+
+    # Logs
+    access_log /var/log/nginx/access.log;
+    error_log  /var/log/nginx/error.log;
+
+
+    # =====================================================
+    # 2. GZIP COMPRESSION
+    # =====================================================
+
+    gzip on;
+
+    gzip_types
+        text/plain
+        text/css
+        application/json
+        application/javascript
+        text/xml
+        application/xml
+        image/svg+xml;
+
+
+    # =====================================================
+    # 3. LOAD BALANCING
+    # =====================================================
+
+    # Default algorithm = Round Robin
+
+    upstream backend {
+        server 127.0.0.1:3000;
+        server 127.0.0.1:3001;
+        server 127.0.0.1:3002;
+    }
+
+
+    # Least Connections example
+    #
+    # upstream backend {
+    #     least_conn;
+    #
+    #     server 127.0.0.1:3000;
+    #     server 127.0.0.1:3001;
+    # }
+
+
+    # Weight example
+    #
+    # upstream backend {
+    #     server 127.0.0.1:3000 weight=3;
+    #     server 127.0.0.1:3001 weight=1;
+    # }
+
+
+    # =====================================================
+    # 4. CACHE
+    # =====================================================
+
+    proxy_cache_path /var/cache/nginx
+                     levels=1:2
+                     keys_zone=my_cache:10m
+                     max_size=1g
+                     inactive=60m
+                     use_temp_path=off;
+
+
+    # =====================================================
+    # 5. HTTP SERVER
+    # =====================================================
+
+    server {
+
+        listen 80;
+
+        server_name example.com www.example.com;
+
+
+        # =================================================
+        # 6. STATIC WEBSITE
+        # =================================================
+
+        location / {
+
+            root /var/www/frontend;
+
+            index index.html;
+
+            try_files $uri $uri/ /index.html;
+        }
+
+
+        # =================================================
+        # 7. API → BACKEND
+        # =================================================
+
+        location /api/ {
+
+            proxy_pass http://backend;
+
+            # Original host
+            proxy_set_header Host $host;
+
+            # Client IP
+            proxy_set_header X-Real-IP $remote_addr;
+
+            # Proxy information
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            # HTTP/HTTPS information
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+
+        # =================================================
+        # 8. CACHED API
+        # =================================================
+
+        location /api/products {
+
+            proxy_cache my_cache;
+
+            proxy_cache_valid 200 10m;
+
+            # Cache status
+            add_header X-Cache-Status $upstream_cache_status;
+
+            proxy_pass http://backend;
+
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+
+        # =================================================
+        # 9. ADMIN → DIFFERENT BACKEND
+        # =================================================
+
+        location /admin/ {
+
+            proxy_pass http://127.0.0.1:4000;
+
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+
+        # =================================================
+        # 10. STATIC FILE CACHE
+        # =================================================
+
+        location ~* \.(css|js|jpg|jpeg|png|gif|svg|ico|webp)$ {
+
+            root /var/www/frontend;
+
+            expires 7d;
+
+            add_header Cache-Control "public";
+        }
+
+
+        # =================================================
+        # 11. BLOCK HIDDEN FILES
+        # =================================================
+
+        location ~ /\. {
+
+            deny all;
+        }
+    }
+
+
+    # =====================================================
+    # 12. HTTPS SERVER
+    # =====================================================
+
+    server {
+
+        listen 443 ssl;
+
+        server_name example.com www.example.com;
+
+
+        # SSL certificate
+        ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+
+        # Frontend
+        location / {
+
+            root /var/www/frontend;
+
+            index index.html;
+
+            try_files $uri $uri/ /index.html;
+        }
+
+
+        # Backend API
+        location /api/ {
+
+            proxy_pass http://backend;
+
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+
+
+    # =====================================================
+    # 13. HTTP → HTTPS REDIRECT
+    # =====================================================
+
+    server {
+
+        listen 80;
+
+        server_name example.com www.example.com;
+
+        return 301 https://$host$request_uri;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+Bas ye remaining topics kar lo
+1. Nginx location matching
+Ye important hai:
+
+location /api/
+location = /login
+location ~ \.php$
+location ^~ /static/
+
+Especially samjho:
+
+=
+^~
+~
+prefix
+
+Aur Nginx multiple location mein se kaunsa choose karta hai.
+
+2. proxy_pass URI behavior
+Ye tumne start kar liya hai, lekin properly samjho:
+
+location /api/ {
+    proxy_pass http://backend;
+}
+
+vs
+
+location /api/ {
+    proxy_pass http://backend/;
+}
+
+/api/users backend ko kya milega — ye interviews aur real deployment mein important hai.
+
+3. Timeouts
+Backend slow ho to:
+
+proxy_connect_timeout
+proxy_read_timeout
+proxy_send_timeout
+
+Example:
+
+location /api/ {
+    proxy_pass http://backend;
+
+    proxy_connect_timeout 5s;
+    proxy_read_timeout 60s;
+}
+
+4. Error handling
+Basic:
+
+error_page 404 /404.html;
+error_page 500 502 503 504 /50x.html;
+
+Aur samjho:
+
+502 Bad Gateway
+
+Nginx mein commonly iska matlab hota hai ke Nginx backend se properly response nahi le pa raha — jaise Node server down ho ya wrong port configured ho.
+
+5. Rate limiting
+Basic protection:
+
+limit_req_zone $binary_remote_addr zone=api_limit:10m rate=10r/s;
+
+Phir:
+
+location /api/ {
+    limit_req zone=api_limit;
+    proxy_pass http://backend;
+}
+
+Ye ek client ko excessive requests bhejne se limit karne mein help karta hai.
+
+6. WebSocket proxy
+Agar Node.js/Socket.IO/WebSocket use karo:
+
+location /socket.io/ {
+    proxy_pass http://backend;
+
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+}
+
+7. Upload limits
+File upload wali applications mein:
+
+client_max_body_size 20M;
+
+Warna large upload par:
+
+413 Request Entity Too Large
+
+aa sakta hai.
+
+8. Security headers
+Basic understanding:
+
+add_header X-Content-Type-Options "nosniff";
+add_header X-Frame-Options "SAMEORIGIN";
+
+Aur CSP (Content-Security-Policy) ka basic concept.
+
+
