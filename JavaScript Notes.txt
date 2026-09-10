@@ -1,0 +1,1539 @@
+JavaScripts Notes 
+
+Object kya hota hai?
+Object ek real instance hota hai class ka. Jab aap class ka use kar ke koi cheez banate ho, wo object kehlata hai.
+
+Variables:
+Container store data name store adress in memory ;
+Dynamically Typed language Javascript;
+
+Variables Rules'
+null undefined;
+Data Types
+Premitive or non Primitive Data Types
+Common examples:
+
+String
+Arrays
+Classes
+Objects
+Interfaces
+
+
+Object:
+Store Collection Of Data Key Value pairs Store values;
+Two Type to accesskey value 
+obj.key not used qotes
+obj[key] used quotes"'
+update value + used int
+object const key update
+
+
+
+Feature	for...in	for...of
+Iterates overProperty names (keys)	Values (iterable elements)
+Works on	Objects, Arrays	Arrays, Strings, Maps, Sets, etc.
+
+
+ for...in loop
+🔍 Kis cheez ke liye?
+Objects ke keys (properties) ko loop karne ke liye.
+
+🧪 Example:
+
+const person = {
+  name: "Ali",
+  age: 22,
+  city: "Lahore"
+};
+
+for (let key in person) {
+  console.log(key, person[key]);
+}
+
+for...of loop
+🔍 Kis cheez ke liye?
+Iterables par loop lagane ke liye:
+
+Arrays
+Strings
+Maps
+Sets, etc.
+
+🧪 Example 1: Array
+
+const fruits = ["apple", "banana", "mango"];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+operators
+String convert number to comporison ==
+===check data type
+
+for of loop iteratot charcater check
+
+template literals special string 
+
+Backticks (`)
+
+ Embedding Expressions
+Aap backticks ke andar directly expressions likh sakte hain:
+
+javascript
+Copy code
+const a = 5;
+const b = 10;
+
+console.log(`The sum of a and b is ${a + b}`); // Output: The sum of a and b is 1
+
+Method	Urdu Explanation
+slice()	Copy karta hai array ka ek hissa, asli array nahi badalta
+splice()	Asli array ko modify karta hai (delete ya insert)
+
+
+Escape Character /n /t next line tab space
+string n="helo/te"; /t single count
+
+
+string.length string[0] stirng property jo hamy kuch value dy rha hai 
+string is immutiable
+string methods ya kuch hamy kam kr k dygy
+method orignal stirng change ni kry ga new string create kry ga
+
+Array
+collection of item
+Same type data store in array
+array is object type
+index value pair
+array is immutaible value is change
+
+
+loops: iterables jes pr ham loop lga sky
+
+splice only 1 dy (3) del all 3 sy agy waky sry
+
+
+Arrow Function 
+
+const arrow=(a,b)=>{}
+ arrow valriable store value to function
+
+Template literals JavaScript ka modern feature hain (ES6 se introduced), jo aapko strings ko easily
+ create karne aur unmein variables embed karne ki facility dete hain.
+
+Callback function three papremter used value index arr full
+
+split Number methods 
+split create array in string specific condition check ," " 
+Number convert string number;
+
+
+What does "aeiouAEIOU".includes(char) mean?
+includes() is a JavaScript string method.
+It checks if a substring or character exists inside a string.
+Returns true if found, otherwise false.
+
+
+Method	Kaam kya karta hai
+split()	String ko array mein badalta hai
+join()	Array ko string mein convert karta hai
+
+
+window object browser ka aik "global object" hai jo browser aur webpage ke darmiyan interaction ko possible banata hai. 
+Is ke methods aur properties hum:
+
+Page reload karne ke liye.
+URL ka data lenay ke liye.
+Pop-up alerts show karne ke liye.
+Timer functions (setTimeout, setInterval) chalane ke liye use karte hain.
+Har JavaScript global variable window ka part hota hai, aur hum window ke bina bhi usko access kar sakte hain.
+
+
+
+
+
+
+Dom Har node object hai tree like structure 
+dom html ko js ma acsses krny ka tariqa hai
+js ma ham dynimacally chnages kr ksty hai
+dynamically chnages krna in web page  in js
+console.dir print object in wondow
+agr ham js file ko head ma likhy script tu html load ni hota phly tu wo null return krta hai jo b ham tag acsess kry esliya ham nichy likhty hai
+documnet.getelementbyclaaname return html collection
+document.getelemntbytagname return html collection
+
+
+getElementById():
+
+Sirf ek element ko id se dhoondta hai.
+Har page par ek id unique hoti hai.
+
+getElementsByClassName():
+
+Ek ya zyada elements ko class name ke zariye dhoondta hai.
+Yeh ek array-like object return karta hai, jisme aap index ke zariye access karte hain.
+
+
+
+querySelector():
+CSS selector ke through pehla matching element return karta hai.
+"Yeh sirf pehla element return karta hai jo aapke diye hue CSS selector ko match karta hai."
+Example: Agar 3 elements hain, yeh sirf pehla element dega.
+
+querySelectorAll():
+
+"Yeh saare elements return karta hai jo us selector ko match karte hain."
+Example: Agar 3 elements hain, yeh teeno ko ek list (NodeList) mein dega.
+querySelectorAll	CSS selector	NodeList	querySelectorAll("p")
+
+
+HTMLCollection (live): Agar HTML mein kuch naye elements add karo, to ye automatically update ho jati hai.
+NodeList (static): Agar HTML badlay, to ye waisi ki waisi rehti hai, update nahi hoti.
+ 
+
+
+tagName ➜ Aapka element kis tag ka hai? Jaise DIV, SPAN, P, etc.
+innerText ➜ Jo user ko screen pe nazar aata hai, wahi milega.
+innerHTML ➜ Jo bhi HTML andar likhi hai, wo sari milti hai (tags + text).
+textContent ➜ Sirf text milta hai, chaahe wo hidden ho ya visible.
+
+
+
+
+dom create three nodes
+text nodes
+comment
+elements
+
+dom navigation
+Aapke jo points hain, unhe hum DOM traversal ke context mein samajhte hain. DOM ke andar nodes ko access karna aur unke bich relationships ko samajhna kaafi zaroori hota hai. 
+childNodes[1] acses node first text comment text b acses kry ga return nodelist
+Definition: childNodes ek NodeList return karta hai jisme ek node ke sabhi children hote hain, chahe wo text, comment, ya element ho
+firstChild is text node kyo k space hai usmy
+firstChild first child node ko return karta hai, chahe wo text node, comment node, ya element node ho.
+lastChild is text Node kyo k space hai
+gar aapke parent ke end mein space ya newline hai, to wo bhi ek text node ban jaata hai aur lastChild wo return karega.
+firstElementChild ak aisa child mily ga jo elemnt hai
+firstElementChild pehla element node return karta hai (text ya comment nodes ko ignore karta hai).
+lastElemntChild ak aisa child mily ga jo elemnt hai
+last pehla element node return karta hai (text ya comment nodes ko ignore karta hai).
+parentElement uska paren tkya child ka
+: Ye sirf element node ko return karega. Agar parent ek text ya comment node hai, to parentElement return nahi karega.
+Children sirf us node k sary childrens elemnts return html collcetion
+children ek HTMLCollection return karta hai jo sirf element nodes ko include karta hai. Ye text ya comment nodes ko ignore kar deta hai.
+nextElemntSibling uska hamsaya jesk parent same hn
+prevElemntSibling uska pichla sibling
+prevSibling likhy subkuch aye ga text comment
+
+
+let el = document.createElement("div");
+el.textContent = "This is a new div!";
+
+classList.add atribute ki trha kam krta hai class ka name set krny k liya
+classList.remove remove krny k liya
+classList.toggle agr class present hai remove kry ga agr ni present tu add kry ga class
+
+let element = document.getElementById("myElement");
+element.classList.add("newClass");  // "newClass" ko add kar raha hai
+
+
+<div id="myElement" class="box">Hello World!</div>
+
+<script>
+  let element = document.getElementById("myElement");
+
+  // 1. Add a class
+  element.classList.add("active"); // Adds 'active' class to 'myElement'
+  console.log(element.classList);  // ➜ DOMTokenList ["box", "active"]
+
+  // 2. Remove a class
+  element.classList.remove("box"); // Removes 'box' class from 'myElement'
+  console.log(element.classList);  // ➜ DOMTokenList ["active"]
+
+  // 3. Check if a class exists
+  console.log(element.classList.contains("active")); // ➜ true
+
+  // 4. Toggle a class
+  element.classList.toggle("highlight"); // If 'highlight' is not there, it will add it
+  console.log(element.classList);  // ➜ DOMTokenList ["active", "highlight"]
+
+  // 5. Replace a class
+  element.classList.replace("active", "inactive"); // Replace 'active' with 'inactive'
+  console.log(element.classList);  // ➜ DOMTokenList ["inactive", "highlight"]
+</script>
+
+
+
+Method	Kahan Insert karta hai?	Andar ya Baahar?
+append()	End me	andar
+prepend()	Start me	andar
+before()	Pehle	baahar
+after()	Baad me	baahar
+
+
+
+
+onclick
+Single Event Handler: Ek element ke liye sirf ek onclick handler ho sakta hai. Agar dusri baar onclick assign karein, purani value overwrite ho jati hai.
+Less Flexible: Multiple events handle karna mushkil hai.
+Simple Syntax: Asaan aur seedha syntax hai.
+
+
+addEventListener
+Multiple Event Handlers: Ek hi element ke liye multiple event listeners add kar sakte hain, aur ye overwrite nahi hote.
+Supports Event Options: Extra options handle kar sakta hai (e.g., once, capture, passive).
+More Flexible: Advanced functionality ke liye zyada powerful hai.
+
+
+
+
+
+Classes
+
+
+Prototype hamry pas ak object hota jo b object hai wha ya protopye eski khud bn jati jitny b ham us object k method use lkrty wo wha sy 
+lykr use krty uski protype sy.
+Prototype is a special property jo har js object ma hoti hai
+jab ham khud protoype bnaye kisi ak object k method ko dosry object ki proptype bnaye tu wo uska refenrce hoga uska adress store kry gy
+
+prortype key worf function k liya use hoty prorype bnany k liya
+
+JavaScript uske prototype me dhoondhti hai.
+Yani:
+Pehle apne aap me dekhegi
+Agar nahi mila ➔ Prototype chain me upar jaayegi
+Tab bhi nahi mila ➔ Error de degi
+
+Function prototype ek object hai jo us function ke saath linked hota hai aur naye objects ke liye
+ shared methods/properties define karne ke liye use hota hai. Yeh inheritance aur memory-efficient code 
+reuse ke liye kaam karta hai.
+
+Array Prototype
+
+
+// Constructor Function
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+// Adding a method to the prototype
+Person.prototype.greet = function() {
+    return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+};
+
+// Creating objects
+const person1 = new Person("Ali", 25);
+const person2 = new Person("Sara", 22);
+
+console.log(person1.greet()); // Output: Hello, my name is Ali and I am 25 years old.
+console.log(person2.greet()); // Output: Hello, my name is Sara and I am 22 years old.
+
+
+
+
+OOP IN JS
+
+1. Class	Blueprint/Design hoti hai object banane ke liye. (Jaise "Car" ek design hai).
+2. Object	Class ka ek real version. (Jaise "Toyota Car", "Honda Car").
+3. Constructor	Special method hota hai class mein, jo object ke properties set karta hai jab object banta hai.
+4. Encapsulation	Data ko object ke andar chhupa lena. Sirf methods ke through data access karna. (Security/Control ke liye)
+5. Inheritance	Ek class doosri class ke features le leti hai. (Reuse code easily).
+6. Polymorphism	Same function/method ka alag alag behavior hona different objects ke liye.
+7. Abstraction	Sirf important cheezein dikhana, details chhupa lena. (Complexity ko easy banata hai).
+
+
+
+Inheritance types
+
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Hierarchical Inheritance
+4. Multiple Inheritance
+5. Hybrid Inheritance
+
+
+Type	Description	Example
+Single Inheritance	Ek class doosri class se inherit karti hai.	Dog inherits Animal
+Multilevel Inheritance	Ek class doosri class se inherit karti hai, aur woh apni subclass se inherit karti hai.	Puppy inherits Dog, and Dog inherits Animal
+Hierarchical Inheritance	Multiple classes ek hi parent class se inherit karti hain.	Dog aur Cat dono Animal se inherit karte hain
+Multiple Inheritance	Directly possible nahi hoti JavaScript mein, lekin mixins ke through achieve hoti hai.	Duck inherits from Animal and mixins like canSwim, canFly
+Hybrid Inheritance	Multiple aur multilevel inheritance ka combination hota hai.	Bird inherits from Animal and mixin canFly
+
+Non-Enumerable kya hota hai?
+Non-enumerable property wo hoti hai jo for...in loop, Object.keys() ya kisi bhi iteration mein nahi dikhai deti,
+lekin wo object ke andar hoti zaroor hai.
+
+enumerable	Kya hota hai?
+true	Property loop me dikhegi
+false	Property loop me chhupi hogi (hidden)
+
+class A {
+public:
+    void show() { cout << "A\n"; }
+};
+
+class B : public A {
+    // inherits from A
+};
+
+class C : public B {
+    // inherits from B (and A transitively)
+};
+
+
+Object.defineProperty() ka kaam hota hai object ki property banani ya modify karni
+aur us property ke attributes (hidden settings) ko control karna.
+
+
+
+Polymorphism
+Polymorphism ka matlab hota hai:
+"Same function name, but different behavior depending on object."
+
+
+
+Types of Polymorphism JavaScript mein:
+
+Type	Matlab
+Compile time (Overloading)	JS me direct nahi hota, manually function bana ke karte hain.
+Run time (Overriding)	Jo abhi Dog aur Cat ke example me dekha, ye hota hai run-time polymorphism.
+Bonus Overloading Wala Example (JS me manual tarike se):
+javascript
+
+function greet(name, age) {
+    if (age === undefined) {
+        console.log("Hello " + name);
+    } else {
+        console.log("Hello " + name + ", age " + age);
+    }
+}
+
+greet("Ali");         // Hello Ali
+greet("Ali", 21);      // Hello Ali, age 21
+Yaha pe ek hi function greet() do alag tarike se kaam kar raha hai.
+
+
+
+Tareeqa	Example
+Classes use karna	class Car {}
+Private Fields (#)	#privateVariable
+Private Methods (#)	#privateMethod()
+
+Abstraction ka matlab hota hai important cheezen dikhana aur faltu (unnecessary) cheezen chhupana.
+
+
+
+
+
+                                                  Other Topics Important
+
+Object.key return keys object all in arry
+object.Values returnr values object all in array
+Object.entries convert obj in one pair one array ma krta phr usko print kr skty
+[ [ 'name', 'saqib' ], [ 'age', 23 ], [ 'cgpa', 3.2 ] ] convrt array one key one array and combine one array all keys array
+Array.from ya object ko array ma convert krta
+array.from() kisi array-like object ya iterable (jaise string, set, map, HTML collection) ko naya real array bana deta hai.
+
+
+Object: Sirf string aur symbol keys support karta hai.kisi or key likho wo usko string ma convert krdy ga key ko
+
+duplicate key ma phli ignore krta end wali read krta phli key ki jga jo jha new key same add ki usko wha overwrite kry ga
+
+ 
+string reverse method use phly stirng ko phr revser methoid use krky dobra string bna dn
+array.join(separator)➡️ Default separator , (comma) hota hai.
+string ma convert krta
+separator: Optional hai. Ye specify karta hai ke array ke elements ke darmiyan kya lagana hai (default: comma ,).
+join method
+let fruits = ["apple", "banana", "cherry"];
+let result = fruits.join(" - ");
+console.log(result); // Output: "apple - banana - cherry"
+
+
+
+Split Method
+("tukra",limit) array form ma alida krta new string return krta
+
+
+
+function reverseString(str) {
+  // Step 1: String ko array mein convert karo
+  let array = str.split(""); // Split the string into an array of characters
+
+  // Step 2: Array ko reverse karo
+  let reversedArray = array.reverse();
+
+  // Step 3: Reversed array ko dobara string mein join karo
+  let reversedString = reversedArray.join("");
+
+  return reversedString;
+}
+
+// Example usage:
+let originalString = "hello";
+let reversed = reverseString(originalString);
+console.log(reversed); // Output: "olleh"
+
+
+Array.from() kisi array-like ya iterable object (jaise string, set, map, etc.) ko array mein convert karta hai.
+t
+let str = "hello";
+let arr = Array.from(str);
+console.log(arr); // ['h', 'e', 'l', 'l', 'o']
+
+
+join() kisi array ke elements ko string mein convert karta hai, aur aap separator (e.g. comma, space, dash) bhi de sakte ho.
+
+🔸 Example:
+let fruits = ["apple", "banana", "mango"];
+let result = fruits.join(", ");
+console.log(result); // "apple, banana, mango"
+
+
+
+split()
+📌 Purpose:
+split() ek string ko array mein convert karta hai using a separator.
+
+🔸 Example:
+let text = "apple,banana,mango";
+let arr = text.split(",");
+console.log(arr); // ["apple", "banana", "mango"]
+let str = "hello";
+let chars = str.split(""); 
+console.log(chars); // ['h', 'e', 'l', 'l', 'o']
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+fruits.reverse(); origanl array ko sort krta
+fruits.toReversed new array return krta 
+
+araay.sort() orignal array ma sort krta
+array.toSorted new array return krta sort krky
+
+Default Behavior of sort():
+Agar aap sort() ke saath compare function na likhein, to sort() array ko 
+
+
+a - b:
+Agar result negative hai, a ko b se pehle rakhte hain.
+Agar result 0 hai, a aur b ka order same rehta hai.
+Agar result positive hai, b ko a se pehle rakhte hain.
+
+
+
+find() array ke andar pehla element dhoondta hai jo condition ko satisfy karta hai, aur usko return kar deta hai.
+
+The search() method searches a string for a string (or a regular expression) and returns the position of the match:
+
+Examples
+let text = "Please locate where 'locate' occurs!";
+text.search("locate");
+
+
+strings ki tarah lexicographically (dictionary order) sort karta hai.
+Set ek collection hai jo sirf unique values ko store karta hai. Isme koi key-value pair nahi hote, sirf values hote hain.
+
+A Set ek collection of unique values hai. Isme duplicate values allowed nahi hain.
+const mySet = new Set();
+(primitive types jaise number, string, ya reference types jaise objects) ho sakti hai
+
+Common Methods of Set:
+add(value): Set mein value ko add karta hai.
+has(value): Check karta hai ki value Set mein hai ya nahi.
+delete(value): Set se value ko remove karta hai.
+clear(): Set ke saare elements ko remove karta hai.
+size: Set mein total elements ki count return karta hai.
+forEach(callback): Set ke har element par function apply karta hai.
+
+
+mySet.add(1);
+mySet.add(2);
+mySet.add(2); // Duplicate, won't be added
+
+// Set banate hain
+const mySet = new Set();
+
+// Values add karte hain
+mySet.add(1);
+mySet.add(2);
+mySet.add(2); // Duplicate value ignore hogi
+mySet.add("hello");
+mySet.add({ name: "Saqib" });
+
+console.log(mySet); 
+// Output: Set { 1, 2, 'hello', { name: 'Saqib' } }
+
+// Size check karna
+console.log(mySet.size); 
+// Output: 4
+
+// Value check karna
+console.log(mySet.has(1)); 
+// Output: true
+console.log(mySet.has(3)); 
+// Output: false
+
+// Value remove karna
+mySet.delete(2);
+console.log(mySet); 
+// Output: Set { 1, 'hello', { name: 'Saqib' } }
+
+
+let set = new Set();
+set.add(2);
+set.add(3);
+
+let arr = Array.from(set);
+console.log(arr[0]); // Output: 2
+console.log(arr[1]); // Output: 3
+
+
+loop of lga kr check krni value ya Array.from(varaible) ma convert kr ky index k zariya cehck kr skty hai
+
+Key kisi bhi type ka ho sakta hai (string, number, object, function, etc.).
+Insertion order preserve karta hai.
+.size property se count milta hai.
+Methods: .set(), .get(), .has(), .delete(), .clear(), .forEach()
+
+
+JavaScript
+let mySet = new Set();
+let obj1 = { name: "John" };
+let obj2 = obj1; // obj2 obj1 ka reference hai
+mySet.add(obj1);
+mySet.add(obj2);
+console.log(mySet.size); // 1
+Is example mein, obj1 aur obj2 same reference hain, isliye woh Set mein sirf ek baar store hongi.
+Lekin, agar objects alag-alag references hain, to woh Set mein alag-alag entries ke roop mein store hongi, chahe woh same properties aur values ke saath hon:
+JavaScript
+let mySet = new Set();
+let obj1 = { name: "John" };
+let obj2 = { name: "John" };
+mySet.add(obj1);
+mySet.add(obj2);
+console.log(mySet.size); // 2
+
+A Map ek key-value pair collection hai, jisme har key unique hoti hai. Yani ek key ke liye sirf ek hi value ho sakti hai
+Map ek collection hai jo key-value pairs ko store karta hai. Ismein keys ko kisi bhi type ka object ya primitive value ho sakta hai.
+
+Common Methods of Map:
+set(key, value): Map mein key-value pair add karta hai.
+get(key): Map se kisi key ki value retrieve karta hai.
+has(key): Check karta hai ki Map mein wo key exist karti hai ya nahi.
+delete(key): Map se kisi key ko remove karta hai.
+clear(): Map ke saare elements ko remove karta hai.
+size: Map mein total key-value pairs ki count return karta hai.
+forEach(callback): Map ke har key-value pair par function apply karta hai.
+
+Map: Zyada flexible aur ordered data structure hai, jo kisi bhi type ko key banane deta hai.
+const myMap = new Map([
+  ["name", "Saqib"],
+  ["age", 22],
+  ["city", "Faisalabad"],
+]);
+
+for (let [key, value] of myMap) {
+  console.log(`${key}: ${value}`);
+}
+map.set()
+
+🔸 2. Object {}
+✔️ Features:
+Key sirf string ya symbol ho sakti hai.
+Functionality fast hai, lekin complex keys ko string mein convert kar deta hai
+
+
+WeakSet()
+esmy ham itertarte ni kr skty it only store object
+
+WeakSet:
+WeakSet ek collection hoti hai objects ki only (primitive values allowed nahi hain). Isme har object unique hota hai — koi duplication nahi hoti.
+✔️ Features:
+Sirf objects store karta hai.
+Object automatically remove ho jata hai agar kisi aur reference se connected nahi ho (garbage collection).
+Iteration possible nahi hai (for...of nahi chalega).
+.add(obj), .has(obj), .delete(obj) methods hoti hai
+let ws = new WeakSet();
+let obj = {name: "Ali"};
+
+ws.add(obj);
+console.log(ws.has(obj)); // true
+
+obj = null; // object garbage collected ho sakta hai
+
+
+const a = { name: "Saqib" };
+const b = { name: "Saqib" };
+
+const mySet = new WeakSet();
+
+mySet.add(a); // ✅ added
+mySet.add(b); // ✅ added (kyunki b ≠ a, memory reference alag hai)
+mySet.add(a); // ❌ ignored (duplicate reference)
+
+console.log(mySet); // WeakSet { [object Object], [object Object] }
+
+
+
+WeakMap()
+esmy ham itertarte ni kr skty it only store object
+sath ham apni value dy skty parmater ma 
+
+🔹 WeakMap:
+WeakMap ek key-value collection hai jismein keys hamesha objects hoti hain (primitive keys allowed nahi).
+
+✔️ Features:
+Keys: only objects.
+Values: anything (object, number, string, etc.)
+Entries garbage collected ho jate hain agar key ka reference kahin aur se na ho.
+.set(obj, value), .get(obj), .has(obj), .delete(obj) methods hoti hain.
+Iterate nahi kar sakte.
+
+Feature	WeakSet	WeakMap
+Stores	Only objects	Object keys + any type values
+delete krny k liya
+
+user = null; // now object is eligible for garbage collection
+// secretData now automatically loses the entry
+🔐 Explanation:
+user object is key.
+Jab user = null kiya, WeakMap ne wo key-value pair hata diya memory se (behind the scenes).
+
+❌ Nahi!
+WeakMap object ka "reference" ya memory address dekhta hai — uske andar ke values ya key names bilkul bhi matter nahi karte.
+
+
+Keys sirf objects ho sakte hain.
+Keys weakly held hoti hain (i.e. garbage collected ho sakti hain agar unka aur koi reference na ho).
+Private data store karne ke liye use hota hai (e.g. in classes).
+
+const obj1 = { name: "Saqib" };
+const obj2 = { name: "Saqib" }; // same content, different object
+
+const myMap = new WeakMap();
+
+myMap.set(obj1, "first");
+myMap.set(obj2, "second");
+
+console.log(myMap.get(obj1)); // "first"
+console.log(myMap.get(obj2)); // "second"
+
+
+
+important
+"Map aur Set primitive data types ko unki value ke hisaab se unique treat karte hain, na ke reference ke hisaab se — jaise object ke case mein hota hai."
+object ko memery refernce k hisab sy stpore krta na k key value ko dkeh kr same hai ya nhi refenrce alg hn bas chaye key value same hn
+
+Feature	Set	Map
+Data type	Stores unique values only	Stores key-value pairs
+Syntax	new Set()	new Map()
+Data structure	Collection of values	Collection of [key, value] pairs
+Duplicate allowed	❌ No	✅ Yes (on values, not keys)
+Array from	Can convert to array	Can also convert to array
+Key	Not applicable	Can be any value (even object)
+
+
+Set: Agar aapko bas unique values store karni hain bina kisi key ke, to Set use kijiye. Yeh unique elements ko store karta hai.
+Map: Agar aapko key-value pairs store karne hain, jahan keys ko kisi bhi type ka value ho sakta hai (string, object, number, etc.), to Map ka use karein.
+
+const m = new Map();
+
+m.set("key", 1);
+m.set("key", 2); // ✅ overwrite hota hai, because key is same (string)
+
+const k1 = { id: 1 };
+const k2 = { id: 1 };
+
+m.set(k1, "first");
+m.set(k2, "second"); // ✅ alag treat karega
+
+console.log(m.size); // 👉 3
+
+
+
+
+
+Destructuring ek technique hai jo aapko JavaScript mein objects aur arrays ke values ko easily unpack karne mein madad karti ha
+object ki destring k liya key waly same name hony chaye;
+
+
+
+const arr = [10, 20, 30];
+
+// Traditional way
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// Using destructuring
+const [x, y, z] = arr;
+
+console.log(x, y, z);  // Output: 10 20 30
+
+
+
+
+const person = {
+  name: "Ali",
+  age: 25,
+  job: "Engineer"
+};
+
+// Traditional way
+const name = person.name;
+const age = person.age;
+const job = person.job;
+
+// Using destructuring
+const { name, age, job } = person;
+
+console.log(name, age, job);  // Output: Ali 25 Engineer
+
+
+
+
+Strict Mode JavaScript ka ek feature hai jo error handling ko zyada strict banata hai aur kuch
+unsafe features ko disable kar deta hai
+
+Silent errors ko visible banata hai.
+
+Unsafe actions ko disallow karta hai.
+
+Bad practices ko block karta hai.
+
+dattype na dena dectlare krty waqt
+function ma same paramter k namw k variable dena
+
+
+
+
+Hoisting ek JavaScript ka behavior hai jisme variable aur function declarations ko unke respective scopes
+ mein top pe move kar diya jata hai, chahe aap unhe code mein kahin bhi declare karein.
+
+Key Points about Hoisting:
+Variables (var) ko hoist kiya jata hai, lekin unki value assignment ko hoist nahi kiya jata.
+Functions ko bhi hoist kiya jata hai, lekin function expressions ko nahi.
+
+let/const bhi hoist hote hain, lekin unki value initialize nahi hoti — jab tak unka actual code line na aaye.
+Is gap ko kehte hain Temporal Dead Zone (TDZ).
+
+let / const → hoist hota hai, lekin access se pehle error deta hai (TDZ)
+
+Temporal Dead Zone wo time duration hota hai jab variable hoist to ho chuka hota hai, lekin abhi initialize nahi hua hota 
+— aur agar uss dauraan aap us variable ko access karo, to ReferenceError milta hai.
+
+
+
+
+JSON.stringify() ka use aap JavaScript object ko string mein convert karne ke liye karte hain, 
+taake usse store ya transmit kiya ja sake.
+
+JSON.parse() ka use aap JSON string ko JavaScript object mein convert karne ke liye karte hain,
+ taake aap us data ko JavaScript mein use kar sakein.
+
+
+JSON.stringify(): JavaScript object ko JSON string mein convert karta hai.
+JSON.parse(): JSON string ko JavaScript object mein convert karta hai
+
+ES6 Modules mein import aur export ka use hota hai aur aap easily apne code ko separate files mein divide kar sakte hain.
+
+
+
+. Local Storage
+Data Persistence: Data permanent hota hai, jab tak manually delete na kiya jaye (ya browser cache clear na ho).
+Scope: Ek website ka data saari browser tabs aur windows mein accessible hota hai.
+Size Limit: Approx. 5MB (browser-specific).
+Use Case:
+User preferences save karna (theme, language settings).
+E-commerce cart ka data store karna.
+Example:
+
+javascript
+Copy code
+// Data Save karna
+localStorage.setItem("name", "Saqib");
+
+// Data Read karna
+let name = localStorage.getItem("name");
+console.log(name); // Output: Saqib
+
+// Data Delete karna
+localStorage.removeItem("name");
+
+// Saara data clear karna
+localStorage.clear();
+
+2. Session Storage
+Data Persistence: Data temporary hota hai aur tab tak save rehta hai jab tak tab ya window close na ho.
+Scope: Data sirf ek tab/window ke liye limited hota hai.
+Size Limit: Approx. 5MB (browser-specific).
+Use Case:
+Temporary data store karna (form inputs, temporary state tracking).
+Authentication tokens (for the current session).
+Example:
+
+javascript
+Copy code
+// Data Save karna
+sessionStorage.setItem("token", "abc123");
+
+// Data Read karna
+let token = sessionStorage.getItem("token");
+console.log(token); // Output: abc123
+
+// Data Delete karna
+sessionStorage.removeItem("token");
+
+// Saara data clear karna
+
+
+
+
+
+
+
+
+
+object.create()
+
+Prototype Inheritance:
+
+Object.create ek naya object banata hai jo ek aur object (jo aap dete hain) ko prototype ke tor par use karta hai.
+ Matlab, naya object ke paas apni koi property nahi hoti, lekin wo dusre object ke properties aur methods ko inherit kar sakta hai.
+
+Fark (Differences):
+Memory Reference vs Prototype Chain:
+
+
+
+Object.create ka kaam:
+Object.create ek naya object banata hai jo ek aur object (jo aap dete hain) ko prototype ke tor par use karta hai. 
+Matlab, naya object ke paas apni koi property nahi hoti, lekin wo dusre object ke properties aur methods ko inherit kar sakta hai.
+
+Asaan Example:
+
+// Pehla object banaya
+let parentObject = {
+    greet: function () {
+        console.log("Hello from Parent!");
+    },
+};
+
+// Naya object banaya jo parentObject ko inherit karega
+let childObject = Object.create(parentObject);
+
+// childObject ke andar apni koi property nahi hai
+console.log(childObject); // Output: {}
+
+// childObject parentObject ke greet function ko use kar sakta hai
+childObject.greet(); // Output: "Hello from Parent!"
+
+let car = {
+    wheels: 4,
+    drive: function () {
+        console.log("The car is driving!");
+    },
+};
+
+// Ek nayi car banai
+let myCar = Object.create(car);
+myCar.color = "Red"; // Apni property add ki
+
+console.log(myCar.wheels); // Output: 4 (Inherited from car)
+myCar.drive(); // Output: "The car is driving!"
+console.log(myCar.color); // Output: "Red" (Apni property)
+
+
+
+
+let a = obj; mein a same object ko reference karta hai jo obj karta hai. Agar aap a.name change karenge, toh
+ obj.name bhi change ho jayega, kyunki dono same object ko point kar rahe hain.
+let a = Object.create(obj); mein a ek naya object hota hai jo obj se properties inherit karta hai.
+ Agar aap a.name change karenge, toh obj ki name property change nahi hogi.
+
+
+const baseObject = { type: "Base" };
+
+const newObject = Object.create(baseObject, {
+    name: { value: "Child Object", writable: true },
+    age: { value: 5, writable: false }
+});
+
+console.log(newObject.name); // Output: Child Object
+console.log(newObject.type); // Output: Base
+
+
+
+
+
+Object.getPrototypeOf(obj): Object ka jada/prototype dikhata hai.
+Object.setPrototypeOf(obj, proto): Object ka jada/prototype badalne ke liye use hota hai.
+
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+// Common method ko prototype pe rakh diya
+Person.prototype.sayHello = function () {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+let person1 = new Person("Ali", 25);
+let person2 = new Person("Sara", 30);
+
+person1.sayHello(); // Output: "Hello, my name is Ali"
+person2.sayHello(); // Output: "Hello, my name is Sara"
+
+console.log(person1.sayHello === person2.sayHello); // Output: true (Same reference)
+Advantages with Prototype:
+sayHello function sirf ek baar memory me allocate hota hai aur sab objects usse share karte hain.
+
+har object k liya alga sy memeory nhi create hogi ak dfa banye gi protype set kro or call kro
+
+function Person(name) {
+  this.name = name;
+  this.sayHello = function () {
+    console.log("Hello, " + this.name);
+  };
+}
+
+const p1 = new Person("Ali");
+const p2 = new Person("Sara");
+
+console.log(p1.sayHello === p2.sayHello); // ❌ false (different copies)
+⚠️ Ab har object ke liye sayHello() ki alagad copy bani hai, jo memory waste karega.
+
+JavaScript mein inheritance ka concept prototypal inheritance ke naam se jaana jaata hai. Isme ek object dusre object 
+se properties aur methods inherit karta hai. Jab aap Object.create() ka use karte ho, to aap prototype-based inheritance
+ implement kar rahe ho.
+Inheritance:
+
+Jab aap new Person() likhte ho, to JavaScript automatically person1 aur person2 ka prototype Person.prototype set kar deta hai.
+Prototype inheritance ka matlab hai ki agar koi method ya property person1 ya person2 ke andar nahi milti, to wo Person.prototype 
+se inherit ho jaati hai.
+
+
+
+rest Operator
+
+function add(a,b,c,..other){
+console.log(other) aray print;
+return a+b+c;}
+add(2,3,4,555,4,5,4);
+jo bach jaty wo rest array ma store ho jaty
+cobine recive
+
+
+spread operator
+combine send
+Arrays ya objects ko merge karna.
+Values ko copy karna.
+Arrays me arguments pass karna.
+
+
+let art=[2,3,4];
+function get(a,b,c){
+cnsole.log(a,b,c);
+}
+get(...art); send data using spread operator
+
+
+
+const original = {
+  name: "Saqib",
+  address: {
+    city: "Lahore",
+    country: "Pakistan"
+  }
+};
+
+// Shallow copy using spread operator
+const shallowCopy = { ...original };
+
+// Change shallowCopy ka top-level property
+shallowCopy.name = "Ali";
+console.log(original.name); // Output: "Saqib" (original object is not affected)
+
+// Change nested property
+shallowCopy.address.city = "Karachi";
+console.log(original.address.city); // Output: "Karachi" (original is affected!)
+
+Shallow Copy:
+Shallow copy mein, object ya array ka ek naya reference create hota hai.
+Agar object ya array ke andar kisi nested object ya array ka reference hai, to wo nested reference shallow copy mein bhi shared hota hai.
+Matlab, agar aap nested object ko modify karte hain, to original object bhi modify hota hai, kyunki dono ek hi reference ko point karte hain.
+
+
+let obj={
+name"saqib,
+adress:{city:"lahore'
+}
+let shallow=object.assign{{},obj}
+estra copy bn jaye gi
+let shallow={...obj};
+estra b hoskti shallow copy
+
+orignal obj ma changes kry gy
+obj.adress.city="gujranwala';
+console.log(shallow.adress.city);
+yes change hoga origanl ma change kiya shallow ma b change hojaye ga origanl ma jo changes kry gy 
+wo shallow ma ajye gy shallow copy ka memeory refernce same hota hai
+because memeory refernce same hoga
+
+
+
+Deep Copy:
+Deep copy mein, object ya array ka complete copy banaya jata hai, jisme nested objects aur arrays bhi recursively copy kiye jate hain.
+Deep copy mein, har nested object ya array ka apna alag reference hota hai, to jab aap nested data ko modify karte hain, to original object par koi asar nahi pad
+Object.assign():
+
+let deep=JSON(JSON.stringify(obj));
+ab new ka memory refnerce alg hoga orianl ma change kry gy tu refernce ma change nho hoga
+deep ka memory alg hai refernce donu ka nested hn jo b enka refernce alg hoga
+phy string ma convert 
+phr esko parse kry gy new refernce mil jaye ga
+
+
+
+let copiedObj = Object.assign({}, originalObj);
+Spread Operator (for arrays and objects):
+
+
+let copiedArr = [...originalArr];
+let copiedObj = {...originalObj};
+Deep Copy:
+
+Using JSON methods (for simple objects/arrays without functions or special object types like Date, RegExp, etc.):
+
+
+let deepCopiedObj = JSON.parse(JSON.stringify(originalObj));
+Recursive deep copy (for more complex data structures):
+
+function deepCopy(obj) {
+    if (typeof obj !== "object" || obj === null) {
+        return obj;  // Return primitive value
+    }
+
+    let copy = Array.isArray(obj) ? [] : {};
+
+    for (let key in obj) {
+        copy[key] = deepCopy(obj[key]);  // Recursively copy nested objects/arrays
+    }
+
+    return copy;
+}
+
+
+deep copy k liuya ya use hota
+JSON.parse(JSON.stringify(person1));
+
+
+
+
+
+Clouser
+Closure ek function hota hai jo apne outer function ke variables ko yaad rakhta hai, chahe outer function execution complete ho chuka ho
+. Iska matlab hai ke inner function apni surrounding environment (lexical environment) ko access kar sakta hai.
+anonimis function wo function hoty jinka koi name ni hota without name hoty
+jo ham parameter pass krkhy wo loss ni hogi lexicalscope k andr rhy gi
+
+function createClosure() {
+    let count = 0; // Closure variable
+
+    return function () {
+        count++;
+        console.log(count);
+    };
+}
+
+let closure = createClosure(); // Closure ban gaya, reference store hai
+closure(); // Output: 1
+closure = null; // Reference delete, memory free hone ke liye eligible
+
+Closure ki memory delete tab hoti hai jab:
+
+Closure ke function ka koi reference na ho.
+Parent function ka scope inaccessible ho.
+Memory retain hoti hai jab:
+
+Closure ka function kahin reference me ho ya kisi callback me ho.
+Memory leaks avoid karne ke liye:
+
+Event listeners ya callbacks ko remove karein.
+Unused references ko nullify karein (variable = null;).
+
+event listner add
+increment decremnt k liya
+asychronous programming k liya
+
+
+
+let sum=function(a){
+console.log(a);
+let c=4;
+return function(b){
+return a+b+c;}
+}
+var store=sum(2); output reutn 4+2=6
+console.log(store(5))6+5=11
+
+lexicalscope hai c or a ka jo ham dosry function ma acsess kr rhy hai
+jab ham call krky function return krty tu uski return value sve rhti jab dosrty function ko call krty jo return hota
+tu privaus value k sath wo plus hoti value;value lost ni hoti
+
+
+
+
+
+call apply bind
+
+call method odhar lena jab mujhe zarorat hn usko call krlena
+agr parameter pass kr rhy individual list tu usko ham array list ma pass krny k liya apply use kry gy
+apply method odhar lykr methoid or parameter array list pass krna
+bind functioin call ki tra hota hai bind khta hai ap direct function call na kro uski ap copy bna lo jab apko lgy zarorat hai usko call 
+krlo;uski copy bna laty jab zaraort hn call krlaty
+
+bind() function ko turant nahi chalata, balki ek naya function return karta hai jisme this fixed hota hai.
+
+
+
+Garbage Collector ka Kaam Runtime Par: Jab program chal raha ho, garbage collector ka kaam sirf un objects ko delete karna hai jin ka koi reference nahi bacha. Example:
+
+javascript
+Copy code
+let obj = { name: "Ali" };
+obj = null; // Ab object ka koi reference nahi, garbage collector isko delete karega.
+Lekin agar object ka reference hai, garbage collector usko delete nahi karega:
+
+javascript
+Copy code
+let obj = { name: "Ali" };
+let a = obj; // Reference abhi bhi hai.
+obj = null; // Lekin `a` abhi bhi object ko hold kar raha hai.
+// Garbage collector is object ko delete nahi karega.
+
+
+
+Important:
+Agar tumhara program terminate ho jaye, to saari memory khud se free ho jati hai. Tumhe manually kuch karne ki zarurat nahi hoti.
+Agar tum runtime pe object ki memory free karwana chahte ho, to tumhe ensure karna hoga ki us object ka reference remove ho jaye (e.g., null karna).
+Short Answer: Jab tum object se kaam lete ho aur uska reference kahin aur bacha hota hai, to uski memory delete nahi hoti. Lekin jab uska koi reference nahi hota,
+ tab garbage collector uski memory delete kar deta hai.
+
+
+
+
+
+
+Event Bubbling
+Child to parent tak jaye ga jha event lga hai
+by default nature hai button ka child to parent body html tk jata
+propergate krta hai parent tk jaye ga child sy
+Haan, bilkul! Event Bubbling by default hota hai, chahe aap event kisi div, button, ya kisi bhi element par laga rahe ho.
+
+Evenr Capturing
+parent to child enable krna prta khud parent to child propergate kry ga
+true krna addenvtlistner k end pr
+
+
+event.stopPropogation 
+propogation na hn
+parent ko dekhy ga hi apna kam kry ga
+
+
+stopImmedediatePropgation
+jab ya method chy ga es sy agy propotgate na kry stop hojaye
+
+
+
+
+preventDefault
+
+Anchor tag jo browser by default page refresh hota hai esko stop krna ho tu preventdefault use kry gy
+
+
+
+
+Debouncing
+search pr jab kuch likhty tu pori spelling k bad wo search ata wo function call hota milisecond k bad ata
+har press pr function call na hn kuch miliseoncd k bad call hn
+clearTimeout method time clear krta porana hai usko del kry 
+
+
+
+Thortting
+Throttling: Aap kisi function ko ek specific time interval mein sirf ek baar execute karte hain, chahe event kitni baar trigger ho.
+Debouncing: Debouncing mein function tab execute hota hai jab event trigger hone ke baad ek specific time tak koi aur event
+ trigger na ho. Yeh mainly user input (jaise search bar) ke liye use hota hai.
+
+
+
+Currying
+clousre function k paremnter ko currying k zariya pass krdy us function ka name likh kr
+object pass krna clousere ma to curriying k zariya pass kro parameters
+jab ham currying krty function return hota phr agla argument chlta 
+
+
+Infinite currying usi fucntion ko return kredena
+
+
+
+JavaScript mein data structures wo tariqay hain jinke zariye hum data ko organize aur store karte hain, 
+taki hum efficiently data ko access, modify aur manage kar sakein.
+ Data structures programming mein zaroori hain, kyunke ye humein complex data ko handle karne ka tareeqa deti hain.
+
+JavaScript mein kuch common data structures hain:
+
+1. Array (List)
+Description: Array ek ordered collection hota hai, jisme data elements ko index ke zariye access kiya jata hai. Arrays mein same type ke ya different type ke elements ho sakte hain.
+Example:
+javascript
+Copy code
+let arr = [1, 2, 3, 4, 5];
+console.log(arr[0]);  // 1
+console.log(arr.length); // 5
+Use Case: Jab humein sequential data store karna ho aur index ke zariye usay access karna ho.
+
+2. Object (Dictionary)
+Description: Object ek unordered collection hota hai jisme key-value pairs store hotay hain. Har key ko ek unique identifier ke roop mein use kiya jata hai.
+Example:
+javascript
+Copy code
+let obj = {
+  name: "Ali",
+  age: 20
+};
+console.log(obj.name);  // "Ali"
+console.log(obj.age);   // 20
+Use Case: Jab humein key-value pairs ke zariye data store aur access karna ho.
+
+3. Set
+Description: Set ek unordered collection hota hai, jisme unique values store hoti hain. Duplicate values nahi hoti.
+Example:
+javascript
+Copy code
+let set = new Set();
+set.add(1);
+set.add(2);
+set.add(2);  // Duplicate value
+console.log(set);  // Set { 1, 2 }
+Use Case: Jab humein unique elements ki list chahiye ho.
+
+4. Map
+Description: Map ek collection hota hai jisme key-value pairs store kiye jate hain. Map mein keys kisi bhi type ki ho sakti hain (string, number, object, etc.). Aur Map ka order insertion order ke hisaab se hota hai.
+Example:
+javascript
+Copy code
+let map = new Map();
+map.set("name", "Ali");
+map.set(1, "One");
+console.log(map.get("name")); // "Ali"
+Use Case: Jab humein key-value pairs ke sath ordered data store karna ho.
+
+5. Queue
+Description: Queue ek linear data structure hota hai jo FIFO (First In, First Out) principle par kaam karta hai. Matlab jo element pehle add hota hai, wo pehle remove hota hai.
+Example:
+javascript
+Copy code
+let queue = [];
+queue.push(1);  // Enqueue
+queue.push(2);
+console.log(queue.shift()); // Dequeue, Output: 1
+Use Case: Jab humein data ko order ke sath process karna ho, jaise job scheduling ya printing.
+
+6. Stack
+Description: Stack ek linear data structure hota hai jo LIFO (Last In, First Out) principle par kaam karta hai. Matlab jo element last me add hota hai, wo pehle remove hota hai.
+Example:
+javascript
+Copy code
+let stack = [];
+stack.push(1);  // Push
+stack.push(2);
+console.log(stack.pop()); // Pop, Output: 2
+Use Case: Jab humein reverse order mein data ko process karna ho, jaise undo functionality.
+
+7. Linked List
+Description: Linked List ek linear data structure hota hai jisme har element (node) apni value aur next node ka reference rakhta hai. Ismein memory allocate karte waqt contiguous memory ki zarurat nahi hoti.
+Example:
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+let node1 = new Node(1);
+let node2 = new Node(2);
+node1.next = node2;
+console.log(node1.next.data); // 2
+Use Case: Jab humein elements ko dynamically add/remove karna ho.
+
+8. Tree
+Description: Tree ek hierarchical data structure hota hai jisme elements (nodes) ek parent-child relationship me arrange hotay hain. Sabse pehla node ko root kaha jata hai.
+Example:
+javascript
+Copy code
+const tree = {
+  value: 1,
+  left: { value: 2 },
+  right: { value: 3 }
+};
+Use Case: Jab humein hierarchical data structure ki zarurat ho, jaise file systems.
+
+9. Graph
+Description: Graph ek collection hota hai nodes (vertices) aur unke beech edges ka. Iska use network structures, maps, aur social networks mein hota hai.
+Example:
+javascript
+Copy code
+let graph = {
+  A: ["B", "C"],
+  B: ["A", "D"],
+  C: ["A"],
+  D: ["B"]
+};
+Use Case: Jab humein complex relationships ya connections model karni ho.
+Summary:
+Array: Ordered collection, index se access.
+Object: Key-value pairs, unordered.
+Set: Unique values, unordered.
+Map: Key-value pairs with any type of key, ordered.
+Queue: FIFO order.
+Stack: LIFO order.
+Linked List: Nodes connected, dynamic memory.
+Tree: Hierarchical structure (parent-child).
+Graph: Nodes and edges, complex relationships.
+
+Number method
+convert string number to integrer not stirng abc convert inteeger only number
+sting is immutiable not change orignal string
+
+
+opational channing
+object?.property
+object?.method()
+array?.[index]
+onst obj = {
+  greet: () => 'Hello'
+};
+
+console.log(obj?.greet());  // Output: 'Hello'
+console.log(obj?.bye?.());  // Output: undefined (no error)
+First line: Agar obj ka greet method defined hai, toh wo call ho jayega aur "Hello" return karega.
+Second line: Agar bye method defined nahi hai, toh yeh undefined return karega, bina error ke.
+
+
+
+✔ Spread operator shallow copy banata hai (deep copy nahi).
+✔ Nested objects ka reference same rehta hai.
+
+ChatGPT said:
+Deep Copy Kya Hai?
+Deep Copy ek aisi copy hai jo object ke andar ke objects (nested objects) ko bhi independently copy kar leti hai. Iska matlab hai ke agar aap deep copy karte hain, 
+toh original object aur copy object independently change ho sakte hain, bina ek dusre pe affect kiye.
+
+
+
+
+
+
+
+StructureClone Kya Hai?
+structuredClone() ek built-in JavaScript method hai jo ek deep copy banata hai, meaning yeh original object ko recursively copy karta hai, including nested objects, arrays, aur other complex data structures.
+
+Iska use shallow copy se alag hai kyun ke shallow copy mein nested objects ek dusre ko reference karte hain, jabke structuredClone() mein yeh independently copy hote hain.
+
+structuredClone() Example
+js
+Copy
+Edit
+let obj1 = { 
+  name: "Ali", 
+  details: { 
+    age: 25, 
+    city: "Lahore" 
+  },
+  skills: ["JavaScript", "React"]
+};
+
+// Deep copy using structuredClone()
+let obj2 = structuredClone(obj1);
+
+// Modifying the copy
+obj2.details.age = 30;
+obj2.skills.push("Node.js");
+
+console.log(obj1.details.age); // 25 (Original remains unchanged)
+console.log(obj2.details.age); // 30 (New object changed)
+
+console.log(obj1.skills); // ["JavaScript", "React"]
+console.log(obj2.skills); // ["JavaScript", "React", "Node.js"]
+Explanation:
+structuredClone(): Yeh method deep copy banata hai, including nested objects and arrays.
+
+Agar hum obj2 ko modify karte hain, toh obj1 unaffected rehta hai, because yeh objects independently copy ho gaye hain.
+
+📦 Common properties of e.target
+Property	Kya deta hai	Example
+e.target.name	Element ka name attribute	"email"
+e.target.value	Element ka value (input, select etc)	"john@example.com"
+e.target.id	Element ka id	"username"
+e.target.type	Element ka type	"text", "password"Jab aap kisi event (jaise onChange, onClick, onSubmit, etc.) ka use karte hain React (ya JavaScript) mein, to aapko ek event object milta hai — jise hum aksar e likhte hain.
+
+🔹 e.target ka matlab:
+e.target us HTML element ko refer karta hai jis par event trigger hua ho.
+
+Yani:
+
+Agar user input field mein type kare to e.target → input element
+
+Agar button click kare to e.target → button element
+
+📦 Common properties of e.target
+Property	Kya deta hai
+
+
+
+
+
+Example:
+
+ts
+Copy
+Edit
+const x = 10;
+x = 20; // ❌ Error - const variable ko dobara assign nahi kar sakte
+🔹 const ka kaam:
+
+Variable ka reference fix ho jata hai, yaani aap us variable ko kisi aur value se replace nahi kar sakte.
+
+Lekin agar variable ek object ya array hai, to uske andar ki values change ho sakti hain.
+
+Example:
+
+ts
+Copy
+Edit
+const obj = { a: 1 };
+obj.a = 2;   // ✅ Allowed
+obj = { a: 5 }; // ❌ Error - reference change nahi ho sakta
+🔹 as const ka kaam:
+
+Ye pure object ke andar ki values bhi immutable bana deta hai, aur TypeScript me unki type literal ban jati hai.
+
+Example:
+
+ts
+Copy
+Edit
+const obj = { a: 1 } as const;
+obj.a = 2;  // ❌ Error - value change nahi kar sakte
+Iska matlab:
+
+const = variable ka reference fix
+
+as const = variable ke andar ki values bhi fix + type ko exact bana do
