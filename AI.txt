@@ -1,0 +1,5403 @@
+HOW AI learns?
+
+hamry khud k expiernces hoty books read krty hai people ko observe krty hau
+ham common pattern ko leanr krty phr desciron ma add krty hai ham
+
+exmaple
+hamny healty hona ham dekhy k as pas k log kya kahty wo fruits wagira laty ha
+b add kry ga apny roz mara ki fodd ma
+hamny dekha desciton dekhy
+
+ai b aisy krty hai
+unko data milta hai bhut sara leanring k liya jab train krny k liya data diya jata hai
+
+data =patterns
+machine patterns delhti hai
+wo math sy hoti pattern
+es sy ak model train hota 
+tu jo train hota wo ml khlta hai
+
+jasy images da ham wo pattern dlehy gi kya hai jasy achi images or bori
+wo framework baney gi usko hma machine larning khty hai ham
+dekhy ga sad ya happy image ai 
+machine pattern dekhti 
+
+usko ham traingin process khty hai
+
+jab model ajaye ga jab naya dta aye ga wwo sekhy ga
+usko infurence khty hai ham
+
+y=f(x)
+ya f nikal kr dy ga ya
+
+
+Neural Network
+
+ai esky andr domain hoti
+machine learning
+jo bhut sary data pr trainhoti pattern orgnize krti phr answer dati hai
+lot of data eamil span or not spam
+machine learnig k andr 
+Deep learning hoti
+edsmy ham neual network k sath deal krty hai
+jasy brain ma hoty  neurlal jo ak dosry sa connect hoty
+jab ham en neourlas ko ai ma create lrty usko ham 
+neural network khty hai
+
+Neural netwok
+esmy mutiple layers hoti input layer 
+last layer hoti usko output layer khty hai
+middle ma hidden layers hoti hai 
+left sy right ki trf info propagate krti hai
+
+hamry college k andr students hai enky exam hoty hai
+jasy mid filanl class test
+ak cgpa system ko design krna hai
+college k prosesfot random percentage assign ki
+mid semster ko 40 percent wright
+final 40 
+quiz test 20 
+
+esi tra hamry neeutrla ma hoty weigth hota ahar connection ka weight hota
+ak input sy x1 arha hai agly neural k kitna important hota
+ya random design hova mid final wla 
+prfoession ny class test ki weigt 30 percent krdiya
+batter resutl k liya
+ya hi kam neural network k adnr hota
+data dety hai as a input ham data ko feed krty hai
+end ma neural netowkr predication krta hai
+ya yes kry ga ya no predict kry ga
+
+jab data laeyrs wise jati hai end ma predection  ati hai
+es process ko forward propagation khty hai
+end ma loss ata jo usko dobara neurl netwoke ko 
+taky better adjust result aye 
+esko ko bakcward propagation kthy hai backward krty hai
+
+ham forward propagation kry ga phr backward propaation kry ga
+ak achi weight aye gi wo sai sy trai hojaye ga model hamra
+
+har single neural k andr math hota phr jakr neural ka reuslt ata
+ak bar trrain hogya network phr ham influence kr skty mtlb prdectio n 
+kr skty hai
+
+
+ya chota hai netual network pr jo bry usko ham
+Deep neural network krty hai
+
+
+LLM (large langaige model)
+
+hamry jasy depp neural netowkr hoty wo 
+large textual dtaa sy train  hota hai million of book inty zayda data pr train hota hai
+ya text hio hoty langiage hota hai
+llm human langaue 
+understand generate translate or summarize krny ma achy hota hai
+
+ham llm ko query daty wo base on query response generte krta hai
+capitral of pakisatn ya repsoen genrate kry ga
+
+ya kasy generate krty next work predecting the next word
+agr capital of paakistan next word kya hona chaye
+phr next token ata
+
+The prediect the next token
+ya lot of mathes krty hai high probabltiy hai
+jasy capital of pakistan k bad is hi aye ga probablity hai
+kon sa best word hai poroper repsosne ma fit kry ga 
+ak repsoene generate krty hai
+
+
+Tokens
+
+different machine langauge understand nhi krty
+text ko number ma convert krty hai
+jab bhut sara textual data ko smallest unit ma divide usko tokens khty hai ham
+token ko imagine krty 3/4 krty hai
+
+openai paltform ma dekh sty openai ki website pr
+token help krty vaculabry built krny ma 
+har token k sath ki id hoti decide hoti 
+jasy i k lie liy 40 
+latest word differnt k liya alida hoti hai ids 
+koi b specifc hota uski id hoti index ki tra hoti
+text ko token process krty tokenes algorithm sa hoti
+
+
+
+
+Context Window
+ya llm k liya ram hoti current conversation k liya
+current chal rhi uqeyr repsien milta
+ak llm ki partcular limit hoti hai
+eski limit hoti usko context window khty hai
+
+esko ham track krty hai tokens sa
+chpty5 new 512 tokens thy
+astra 1million token
+
+kafi zayda increase hogya 
+
+llm kya sotre krtya
+query user input
+generated repsodne llm
+previous message 
+agr docuemnt generate krta llm hamra ya b context window ma store krta hai
+
+80 sy 85 tk krni chaye
+pora fillup sy krna complex task hai ap subtask ma divde kro
+har k liya differnt session bana
+
+ya permenat nhi hoti hai
+only for current session k liya
+larger contex sai nhi answer dati wo
+bhut br size hota input daty bhut bara ya start query or end query ma focus krta
+start or end ma add kro
+
+
+Vectors
+
+ak input di us ko token ma conert hota hai
+{i,like,genera,ative,Ai]
+har ak k liya token id hoti hai
+cat 29
+dog 42
+tokenya token id sa llm sa meaning nhi pata hota llm ko
+meaning kab pta lgta ja token pora vectors ma convert krty hai
+
+ham differnt words ko chacrters ma divde krty hai
+cat vector  0.0.5 0.3 hpgya
+vector numbers ma convert krna ka ak treqa llms understand kry 
+ak series of nuber khty hai
+ya n deminsion bnty hai
+bhut sari demisnion hoti hai
+
+relatiosn dekhny k liya llm k loiya easy hota
+esko ham llm understnad krta
+
+llm ma vectors khty esko vectors embeding khty
+vecot embeding khty hai
+
+
+
+Maan lo model ke paas ye sentence aya:
+
+I love cats
+
+Tokenizer ne IDs bana di:
+
+I = 10
+love = 25
+cats = 80
+
+Ab model ko ye IDs mili:
+
+[10, 25, 80]
+
+Problem ye hai ke 10, 25, 80 sirf numbers hain. Model ko nahi pata:
+
+cat kya hai
+love kya hai
+inka relation kya hai
+
+Is liye Embedding use hoti hai.
+
+Embedding ID ko meaning wali list mein convert karti hai:
+
+10   → [0.2, 0.8, 0.1]
+25   → [0.9, 0.7, 0.3]
+80   → [0.4, 0.6, 0.2]
+
+Ab model in vectors ko compare kar sakta hai.
+
+Real-life example:
+
+Token ID = Student Roll Number
+
+Ali = Roll No 15
+
+Embedding = Student ki details
+
+Height = 5.8
+Age = 22
+Marks = 900
+
+Sirf Roll No 15 dekh kar kuch pata nahi chalta.
+
+Lekin details dekh kar student ke bare mein information milti hai.
+
+LLM mein bhi:
+
+Token ID → Embedding Vector → Transformer
+
+Embedding ka kaam sirf itna hai:
+👉 Token ID ko aisi numerical representation mein convert karna jisse model us token ka meaning aur dusre tokens se relation samajh sake.
+
+
+
+Attention
+
+i code in python
+A python bitu me
+
+donu sentece ma python word ko vector ma convert kry tu 
+llm understand nhi kry ga ctoken same conext alg hai donu ka
+kisi token k liya vecto ma convert krna nhi complete
+
+ham es k liya llm use krty attention machinsim ma 
+decide hota ak basic indivaudal token k liya k\
+jab b python ki bat horhi hai 
+
+query vector
+key vector create krty
+ya operation krty hai ham
+enki base pr attenstion score krty hai generate
+higher attention core hoga 
+sentece ma code words hai llm ko pta high propealtiy
+
+a python bit me
+python query vector key dosy
+atention score aye ga
+
+
+Transformer archtocture
+use it gemeni claude cahtgpt ya use krty hai
+
+llm or transfer similar hoty hai
+llm ka kam next predict krna next toekn ya rtrransfor krty hai
+llm ma transformer arctireture use kryt hai
+
+llm k andr next token predctions wo transformer krty hai
+llm or tsk perform krta hia
+extral tool extral information web ko access krty hai
+
+2 block hoty esmy
+ak block attention block hota
+attention caclaute krty hai ham
+types of atention hoti eski
+
+jo b inptu token hota hai
+netx boock
+Fnn feed network hota
+ya forst layer hota 
+eska output next layer ko daty hai
+next woi artcture phr krty pas
+ ya n times repat krty hai
+
+ak bara text first layer ak nhi kr skta understadn hoti
+llm higher menaign ko smjhta hai frist layer 
+next layer usky bad estra deper layer understandign hoti hao
+
+har boock ma tattention score calcuate hoti hai
+n*n ki matrix calcuate hoti hai 
+
+
+es atrcture ko 
+satae space model khty hai
+
+
+Fin tuning
+ai hoty some data sy trainhota hai
+some use case ma we need some spacilize models
+legal finance medical we need spaecialize model ki zarorat hoti
+
+ak base model hota pre trained hota
+ham esko further trai krty hai specilize data sa train krty hai ham
+jo b final llm aye understandable hn
+
+faida eska scrach sy triannhi krna prta
+
+Slef supervisor lenaing
+is a type of leanirng llm data sy paatern ko learn krty hai
+
+data ko 2 categories ma divde krty
+lable data or unlabeld data
+
+email s hai hamry pas har eamil ka pta spam hai ya not spam ya labled data hai
+wo spam not spma traget vlaue hai ya target kry ga 
+ham loss calcute krty aai answer sy wo improved krta hai
+
+unbaled data 
+cahcters hoty esmy excalty prediect kya krna target value kya hai
+large textual data hai esky pas
+human level pr lable krna easy nhi
+esko traikrna unlabeld ko
+
+esky liya self leanring hai
+supervies leanign ma
+input daty wo output deta loss clacute hota backward forwadring hoti
+
+self ma
+hamry llm ma data feed kuya gya wo hide kry ga 
+DATA a hide kry ga
+next value kya ani chaye wo predict kry ga
+agr a kiya good o kiya not good repsoen wo khud batter kry ga
+
+label nhi hai data wo targe bna rha hai unbalbed sa
+this lenaign sueprvised leanig hoti ho
+
+iamegs data ste pr trian kr rhy ham ham
+wo tir hide kry ga wo guess kry ga kya ana chaye yha wo agr sai good nhi bad dobara try kry g
+bad predcion
+jab mera modle unlabeld sy khud data trget krta hia unsupervied leanig kthy hai
+
+
+Reinforcemnt learning
+jo b modle hota hai wo lykr akta respoen ham feed kry 
+agr bad ham penalty daty sai pr ham reward dty hai
+
+jo b modle hota tri kr rhy hoty agent khty
+eska kam hota maximumze the rewards 
+hamra goal hona cahye sai answer dena agent ka
+
+Reinforcemnt leanitng human feedback
+chatgpt jasy repsoen deta gices two copies same answer ki data hai
+
+first verison ma diagrams portcer di hai
+secdn ma text hai sab 
+wo pocht hia konsa prefer hai
+
+ham diagram choose krta hai 
+jo hamny kiya usko positice or negatvie hai jo hamnyt selcet nhi kiya hamny
+
+
+
+RAG
+
+llm
+koi b llm hai normal user ask some query llm answer egenarte kry ga
+genmeratw
+
+kai bar llm company data which more conetext add krna
+koi dorne comapny ai differnt prodcuts hai publicy internet nhi hai
+cusotmer agent k pas acess honi chaye
+ko b pochy ga question infomation llm k train data pr nhi wo proper
+repsosne nhi ganetre kr skta
+ya RAG pipline desing kr skty hai 
+
+jes data ko pulicy nhi krna llm trainnhi krna ham RAG ipeline ban skty hai 
+llm ko acess da skty llm ko direclty ham
+llm query sy match krky data sa fecth lry ga docuemtn sa
+batter resposne genearate kry ga llm 
+
+llm resposne enerate kr rha
+esko retrval argyemted generation khty hai
+
+GRaph data 
+sql database
+vector databse 
+
+vector databse use krtyhai rag ma
+pra dTBASE KO acess nhi krta llm
+sirf chunk ko acess krta hai
+
+Vecto databse
+llm (qeruy) ->vecto databse ko acess krta ->espr resposne ata hai
+vecto datase store data in numbers
+sematic search krta ya menaign base search krta hai
+user search jogging shoes search krta hai
+normal databae ma wrod search kry ga
+
+sematic searhc menaing search 
+shoes ka meanig same nike k sath
+normal ma nhi bahcta ya vector bhjta hai llm ko
+
+docuemtn hota usko ham vecto daabse ma stro rkty ham enko
+chuks ma divde krty hai
+chunks ajaty hai enko ham vecto embbeding ma convert krty hai
+phr vecto databse ma krtyhai store
+piencor
+chroma db
+faiss
+HNSQ algrothm
+
+
+Few-shot prkmpting
+jab b query llm ko daty hai llm ko daty
+es prompt k sath some relevant exmaple daty hai 
+uski base pr relevant hot hai exmaple jaisa
+
+Zero short prompting
+no exmaple
+many shroit prompt
+lot of promptig ma hoti
+
+ya rag piapleine ma implemnt krty hai ham
+query fied krty hai sath relevenat chunks jaty haui llm k pas
+usko chunks ko context khty hai
+sath few short proptign daty hai 
+repsoen ki uality batter aye gi
+
+
+MCP(model context protcol)
+
+qeury daty repsoen ata
+llm ko ghtihb ko acess krna jjeira ko acess krna ll mko
+
+usko mcp khty
+ya protcola khy hai ya deifne krta hai kisi model ko aditiaonal context kasy milty ga
+ham mcq client ko as a interface add kr skty hai
+eska kam query llm ko forward krna
+datta github chaye wo mcp ko khy ga github sa conect krwa o jha sy fetch kry ga inforamtion
+llm batter resposne generate kry ga 
+
+hamry pas ak user hai
+pakcage ka satus pochna or ticket respove hoe ya hi cusotmer hruair hai
+mcp client k throw pass hogi llm k pas wo direct acess nhi kr skta kha sy create hoew
+wo mcp k aps jaye ga pcp cleint websote shopify mcqp server k pas jaye ga
+yha sy info ayega informaiton glat ja deliver hogay tha
+ticket jo coampny mcq server k pas jaey infomarion cleint ko dyga
+mcp cleint llm o dyga base on inforation ak batter repsoen generate kry ga for a user
+
+hamry llm ko batter context deta hai
+
+en concept ko combine krty 
+
+Context engineering
+
+ham kisi ki bat kry ga addtianl context hota
+extra indfoamriton daty llm ko repsoen batter banany k liya
+conetext ma kya daty addtinal chezy
+rag ma ajsy extra doecuemnts vecto databse ma store krty hai ham
+mcp sy addtialnl infoamriton laty esko context enginser khty b
+user prefernce using llm using chatbot
+user kaprefence hota ptyhton ma chaye code har dfa 
+by defualt llm java ya python ma dyga code
+insteuctions
+conext summeratison
+mtlb poran convsrtion na ajey ar qeruy ma
+conetx window fullfill na hn har dfa 
+porani conversation ma summrize krdy wo
+
+use mutopel thins use contsxt enginerng
+
+
+Multi modal Model
+jab chatgpt realse hova tha only text process tha imaes nhi daty thy
+
+mutlipe model ma differnet forms of data mtlb imaegs videos text audios pr work kr skty hai
+
+
+
+AI Agents
+
+traditional llm
+dont perform action us
+ya qeury laty repsosne generate kryt 
+some time pr action pefform kry wo es triy k action simple llm nhi kr skta
+ai agent krty hai
+
+process as a sysmtem khty enko ham task daty ham 
+additoonal tools resources access krty hai ya
+simple llm exteranl tools task ko acess nhi r skty hai ya
+
+enka brain ka kam krta hia jo llm krta hai
+task ko multiple task ma convert krna ya chezy liic hota reaisng hoti llm 
+krty hai ya sba
+enko ai aent khty
+
+
+Chain of thought
+llm ko query d direct answer da dy
+second case ma query daty thinking krta reaisng krta 
+multile setup ma breakdown kiya jo final resposne poncha wo
+ya b query ko proces krnay ka traiqa chain of thoughts khty hai
+
+
+Reasing model
+wo model hota jo final answer dany sa pjly steps rkh skty hai
+chatgptclaude geminei deppseeek model
+
+reaing k mutlipe tarkty hoty hai
+
+chain of thoughts
+tree of thougts
+
+
+Small lanaguge model
+small esliya khty small number of  paramters hoty hai
+more effiecent hoty hai ya
+
+leagal field ma hoti comapnies ya 
+ak cusomter chatbot k liya hosptial k liya
+
+
+Distillation
+llm take model teacher hota ya llm large
+slm stduent hota
+jop b data hai hamty pas x llm output deta hai
+slm ko yahi input dayag slm ko predirct krna usko outpu hai llm ki
+soft target smal model
+llm ki reasing ko meamic krta hai slm 
+
+Quantization
+ak nerual netowkr hai vlaues hai weight enki number ma hogi ya
+jitna zayda weight hoga otni memeory lagay gi
+itni zayda computaion krni prti hai hamy
+8 bit ko 4 bot ma
+
+post traing quantization
+triangi hoti normal after trainging quantization krty hai
+Quatization aware traingin
+low preocedure trianginhoti 
+eska befboitr model train hoajey ga output accuracy correct
+atter accuracy or output pr focus krna quantization pr focue kro
+
+
+Introduction & Overview: (0:00 - 4:08)
+How Machine Learning Models Learn: (4:08 - 6:25)
+Neural Networks Explained: (6:25 - 14:49)
+Large Language Models (LLMs): (14:49 - 19:09)
+Tokenization Basics: (19:09 - 22:24)
+Context Windows: (22:24 - 27:40)
+Vector Embeddings: (27:40 - 30:17)
+The Attention Mechanism & Transformers: (30:17 - 34:21)
+Fine-Tuning & Self-Supervised Learning: (41:59 - 59:43)
+Few-Shot Prompting: (59:43 - 1:01:29)
+Model Context Protocol (MCP): (1:01:29 - 1:05:35)
+Context Engineering: (1:05:35 - 1:08:56)
+Multimodal Models: (1:08:56 - 1:10:52)
+AI Agents: (1:10:52 - 1:14:29)
+Reasoning Models (Chain of Thought): (1:14:29 - 1:16:52)
+Small Language Models (SLMs): (1:16:52 - 1:19:21)
+Distillation & Quantization: (1:19:21 - 1:23:35)
+
+
+
+
+Generative ai
+sadi hai apki mahdnai k liya decration k ideas dn
+or khany ka menu b dn
+usko bolo ga call kro wo bata skta
+genertaive ai 
+ya pochu jawb dya task nhi kry ga
+preduction machine hai agla word predirect kry ga
+
+
+bat kr skta
+flught bta di bok nhi kry ga
+context nhi hai pichla kuch nhi yad hai
+hallusination jawab dyga chaye galt hn 
+
+
+Ai agent
+
+Automation ka mtlb agent nhi htoa
+step deifne kiya hotya
+agent ma staution k hisba sy dkehy ga
+thoghty process change krta hai
+automation hai steps wo 
+agr nhi wo agent hai
+
+shadi ma team chaye sab handle kry pori capmpany 
+
+Agentic AI
+bary task ko choty task ma convert krta hai
+apsa m cordinatire krti or kam b krti hai
+
+bare complex goal ko choty parts ma convert krta
+ak archtircture ak approach hai
+paling hoti choty parts ma convert krna hota
+orchsrtration manager hota konsa kam kisko dena hai
+antonomy task dena kuch descide kry ga
+
+cost high hai
+
+
+zaiper fixed step ota
+jha desicntopn leta 
+agentic ai ayegya
+hell
+
+
+
+
+
+
+
+
+
+ 🔹 Roman Urdu
+
+Artificial Intelligence wo technology hai jisme computer ya machine ko aisi ability di jati hai ke wo soch sake, seekh sake aur decision le sake, bilkul insaan ki tarah.
+AI systems data se learn karte hain aur phir us data ki madad se problems solve, predictions aur automation karte hain.
+
+Examples:
+
+Google Assistant / Siri
+Face Recognition
+Self-driving cars
+ChatGPT 🤖
+
+🔹 English
+
+Artificial Intelligence (AI) is a branch of computer science that focuses on creating machines capable of performing tasks that normally require human intelligence.
+These tasks include learning, reasoning, problem-solving, decision-making, and understanding language.
+
+Examples:
+Virtual assistants
+Recommendation systems (Netflix, YouTube)
+Image and speech recognition
+Autonomous vehicles
+
+
+✅ English (Correct & Clear)
+
+When human capabilities such as thinking, learning, and decision-making are embedded into machines, it is called Artificial Intelligence (AI).
+
+
+Artificial General Intelligence
+🔹 Roman Urdu
+
+Aik AI tab Artificial General Intelligence (AGI) kehlati hai,
+jab wo sirf aik kaam nahi, balkay insaan ki tarah har qisam ka kaam samajh aur seekh sakay —
+jaise natural intelligence (insaani aqal) hoti hai.
+
+Abhi jo AI hum use kar rahe hain wo Natural Intelligence nahi hoti,
+kyon ke natural intelligence sirf insaan ke paas hoti hai.
+AI artificial hoti hai, chahe wo kitni hi advanced kyun na ho.
+
+👉 AGI = Artificial + General + Insaan jaisi samajh
+
+
+Artificial General Intelligence (AGI) is a type of AI that can understand, learn, and perform any task a human can.
+It is artificial, not natural intelligence, because it is created by machines, not humans.
+
+
+
+
+Narrow AI (ANI)
+
+Roman: Narrow AI sirf ek specific kaam ke liye banai jati hai aur us se aagay soch nahi sakti.
+English: Narrow AI is designed to perform only one specific task.
+
+Artificial General Intelligence (AGI)
+
+Roman: AGI wo AI hoti hai jo insaan ki tarah har qisam ka kaam samajh aur seekh sakti hai.
+English: AGI is an AI that can understand, learn, and perform any task a human can.
+
+Super Intelligence (ASI)
+
+Roman: ASI wo AI hoti hai jo har maamlay mein insaan se zyada smart hoti hai.
+English: Super Intelligence is an AI that exceeds human intelligence in all areas.
+
+
+Humanoid Robot kya hai?
+
+Roman Urdu:
+Humanoid robot wo robot hota hai jo insaan ki shakal aur movements jaisa hota hai, jaise chalna, haath hilana aur baat karna.
+
+English:
+A humanoid robot is a robot designed to look and act like a human, including human-like body structure and movements.
+
+
+
+Artificial Intelligence (AI)
+
+Roman: AI aik broad concept hai jisme machines ko insaan jaisa smart banaya jata hai.
+English: AI is a broad field that enables machines to simulate human intelligence.
+
+Machine Learning (ML)
+
+Roman: ML, AI ka hissa hai jisme machine data se khud seekhti hai, bina explicitly program kiye.
+English: ML is a subset of AI where machines learn from data.
+
+Deep Learning (DL)
+
+Roman: DL, ML ka advanced form hai jo neural networks ka use karta hai.
+English: DL is a subset of ML that uses deep neural networks.
+
+Generative AI (GAI)
+
+Roman: GAI wo AI hoti hai jo naya content generate karti hai, jaise text, image, ya code.
+English: Generative AI creates new content like text, images, or code.
+
+
+
+Neural Network AI ka brain-style model hota hai 🧠
+
+Simple words mein:
+Neural network ek aisa system hai jo insani dimaag ki neurons ko copy karta hai, data se khud seekhta hai aur phir decision / prediction karta hai.
+
+AI mein role:
+
+Data lo → process karo → pattern samjho → result do
+
+
+
+
+
+Alan Turing
+
+Roman:
+Alan Turing aik British mathematician aur computer scientist thay, jinhen AI ka father kaha jata hai.
+
+English:
+Alan Turing was a British mathematician and computer scientist, known as the father of Artificial Intelligence.
+
+Turing Test
+
+Roman:
+Turing Test aik test hai jisme dekha jata hai ke machine insaan jaisa response de sakti hai ya nahi.
+
+English:
+The Turing Test checks whether a machine can behave like a human in conversation.
+
+Birth of Artificial Intelligence
+
+Roman:
+Artificial Intelligence ka start 1956 mein hua jab is field ka naam officially Artificial Intelligence rakha gaya.
+
+English:
+Artificial Intelligence was born in 1956, when the term “Artificial Intelligence” was officially introduced.
+
+First Chatbot (ELIZA)
+
+Roman:
+ELIZA duniya ka pehla chatbot tha, jise Joseph Weizenbaum ne banaya.
+
+English:
+ELIZA was the world’s first chatbot, created by Joseph Weizenbaum.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Artificial Intelligence (AI)
+
+When human capabilities such as thinking, learning, and decision-making are embedded into machines, it is called Artificial Intelligence (AI).
+
+1️⃣ Narrow AI (ANI – Artificial Narrow Intelligence)
+Definition: Designed to perform only one specific task.
+Capabilities: Cannot do tasks outside its programming.
+
+Examples:
+Google Search
+Siri, Alex
+Facial recognition software used in security systems.
+
+2️⃣ Artificial General Intelligence (AGI)
+Definition: AI that can understand, learn, and perform any task a human can.
+Capabilities: Flexible, human-like intelligence across multiple domains.
+Status: Theoretical; does not exist yet.
+
+3️⃣ Artificial Super Intelligence (ASI)
+Definition: AI that exceeds human intelligence in all areas.
+Capabilities: Outperforms humans in creativity, decision-making, reasoning.
+Status: Purely hypothetical / futuristic.
+
+
+A humanoid robot is a robot designed to look and act like a human, including:
+
+Human-like body structure (head, torso, arms, legs)
+Human-like movements and gestures
+Sometimes even facial expressions and speech
+
+
+
+
+
+
+1️⃣ Artificial Intelligence (AI)
+
+Definition: AI is a broad field that enables machines to simulate human intelligence.
+
+2️⃣ Machine Learning (ML)
+
+Definition: ML is a subset of AI where machines learn from data without being explicitly programmed.
+Learns from structured and labeled datasets.
+Requires human input for training and corrections.
+Uses algorithms such as regression, clustering and decision trees.
+Improves accuracy with more data.
+Examples: Amazon recommendations, Netflix suggestions, spam detection.
+
+3️⃣ Deep Learning (DL)
+
+Definition: DL is a subset of ML that uses deep neural networks to perform complex tasks.
+Excels in tasks like vision, speech and natural language.
+Examples: Self-driving cars, facial recognition, voice assistant
+4️⃣ Generative AI (GAI)
+
+Definition: Generative AI creates new content, such as text, images, or code.
+
+
+
+
+
+
+
+4️⃣ Reactive Machine AI
+
+👉 Sirf current situation pe react karti hai
+
+Memory nahi hoti
+
+Past experience use nahi karti
+
+Example:
+Chess AI jo sirf current move dekhta hai
+
+🧠 Memory ❌
+
+5️⃣ Limited Memory AI
+
+👉 Past data se seekh sakti hai
+
+Thori memory hoti hai
+
+Training data use karti hai
+
+Examples:
+Self-driving cars, Recommendation systems
+
+🧠 Memory ✅ (limited)
+
+6️⃣ Theory of Mind AI
+
+👉 Human emotions samajhne wali AI
+
+Khushi, gussa, sadness samajh sakti hai
+
+Human behavior predict kar sakti hai
+
+Status:
+❌ Research stage mein
+
+🧠 Emotions samajhne wali AI
+
+7️⃣ Self-Aware AI
+
+👉 Khud ko pehchanne wali AI
+
+Apni identity ka ehsaas
+
+Emotions + self-consciousness
+
+Status:
+❌ Sirf sci-fi / future concept
+
+🧠 Insan jaisi consciousness
+
+
+
+
+
+Agent:
+Koi bhi cheez jo apne environment (mahol ya surroundings) ko sense (mehsoos ya detect) kar sakti hai aur us par action (kaam ya reaction) perform kar sakti hai, use agent kehte hain.
+
+Sensors: Woh tools ya organs jo environment ko perceive (mehsoos) karte hain.
+Actuators: Woh tools ya organs jo environment mein action perform karte hain.
+
+Examples:
+
+Human agent (Insani agent):
+
+Sensors: aankhein (eyes), kaan (ears), naak (nose), etc.
+→ Yeh environment se information gather karte hain.      
+
+Actuators: haath (hands), paon (legs), zubaan (mouth), etc.
+→ Yeh environment mein action karte hain, jaise move karna, bolna, push karna.
+
+Robotic agent (Robot ya machine):
+
+Sensors: cameras, infrared range finders, temperature sensors, etc.
+→ Robot environment ka data collect karta hai.
+
+Actuators: motors, robotic arms, wheels, etc.
+→ Robot environment mein action karta hai, jaise move karna, pick & place karna.
+
+Simple words mein:
+Agent woh hota hai jo dekh sakta hai, sun sakta hai, mehsoos kar sakta hai aur phir kuch kar sakta hai. Human aur robots dono agents hain, bas tools alag hain.
+ 
+
+
+
+Agent:
+An agent is anything that can sense its environment using sensors and act on it using actuators.
+agent is something that percives environement through sensors and upon the environment throug its actuators.
+
+Examples:
+
+Human agent: Eyes and ears (sensors) → Hands and legs (actuators)
+
+Robot agent: Cameras and sensors → Motors and robotic arms
+
+human agent
+many ak pen nichy phnka ma hunman agent hn ya enviornemnt hai jha pen gira many percives kiya kuch gira 
+with help of sensors ankhu sy dkeh many apny envioemnt ko perceive kiya help of ensros 
+jo data wo mery dimag k pas gya dimag ny proces kiya chezo ko jawab dyga pen gira hai othna chaye apko
+jawab k bad action lyga with the help of acuators rkh dn ga envioenmt ko perseves kiya sensor
+jo action liya actutors k zariya
+
+
+robatic agent
+agent enviorment ko perves kiya woth the help sensors jo action liya acturaots
+ankhu ki jga camera hai or acturaots ma hat pao hogy rob k hoskty hai
+
+human egnet ma process hota robot ka b hota esmy program hota 
+code aisa hova kya krna wasy pr uski waja sy action leta hai
+
+sensors:camera
+acturaots:
+
+
+
+Intelleginece agent
+ya dekhta action goal oriented hn jo action perform kry 
+
+
+
+Relational Agent
+
+relational ka mtlb sensibale
+relation agent renlanal deciosn leta hai
+ak agent koi probelm solve krny k liya decison lyrha wo koi logical dicion inved hai 
+us descion ma relational agent hai
+jo right chezy kry right descion ly right behave kry 
+jo kam kry jemsy wo best outcome achive kr sky 
+
+jab knowdlege kam hn us codion ma b ya chata hai jo kam kr rha best outcome 
+achive kro ya relational agent hai
+rwlation agent wo jo decison leta koi insan hoskta machine hoksta
+koi agent task perform krta koi mistake kr deta outcome desire nhi
+deta tu wo us galti sy skehy ga 
+agli bar wo task perform kry ga usko dobara repeat nhi kry ga wo galti
+relational agent skehta hai galti sy agl bar wohi kam galti wala kry tu wo 
+dehta ma apna kam better kr kso pichli wali mistake na dn dobara
+
+ya relational agent lrta hai sab 
+
+A relational agent is an AI system designed to build and maintain long-term, social and emotional relationships with users through ongoing interaction.
+
+
+PEAS Agent model
+
+P Performance measure
+E environement
+A acturatos
+S sensors
+
+apny car dekhi slef enko banaty waqt peas ko madenazr rkhty banaya jata
+ak agent ka perfmornace dekh skty with the help of performance measure
+Enviornemnt agent ka as pas ka envoriemnt
+acturatos usky andr asi kya chezy jes sy wo action ly skta hai hamry hath pao hai
+Sensors ASI chezy jes sy wo input leta hai 
+
+
+Automated Car driving Agent
+performance meausre:
+asi kon kon c chezy honi chaye gari ma jes sy ham performace meaure kr ksty hai
+us gari ny acha perfmro kiya
+
+safety point a sy b safely acha perform kiya
+optimim speed rast ma speed brakers traffice or us ko dkehty hovy ak optimum 
+speed rkhi us gari ny acha perform kiya
+comfortable ak point sy dosry point customer sai poncha sia hai
+maximum proferit ak pesenger ko gari ny ak point sy dosrty point ponchya 
+kam sy kam petrol ma usny acha perform kiya kam sy kam pertorl ma zayda distance kiya
+
+
+Environemnt
+enviromet kya hai uska
+rroad 
+traffice condtion usky as pas kya hai coty ma zayda hai gao ma kam traffic hogi uski
+clients jo bhty gari ma cleints hai
+
+Acturators
+Steraring wear ghumye ga dirction chage hoga
+break ki waja sy gari action sy lyrhi hai
+accelaort kry ga speed brhy gi
+Light horn
+
+Sensor
+asi kon kon c chey jes sy wo input ly rhi
+
+camera
+jab gari reverse lythy gari dekhti pichy kya hai
+cmeare sy sourding areasy input ly rha
+gps traker jes sy direction ly ksty
+sonar system darmyan ma gari ajati do distance kitna wo break dba lati
+usko kasy pata chly sonar system sy pata lga sense kr ksi input ly pae
+
+
+
+Agent types
+
+simple reflex agent:
+ya agent envioemtn ko percesv krta sensors or pohcta current state pochta hai 
+janata hai wo action pochta 
+rules hoty jo cinrtion true wo action perform kro wo k rule pckup krta wo action 
+perform krta
+
+ya ganet eneviment ko percesv krta sensors sy apny envioment ka state agnta
+dekhta kya action lena chaye then wo action ak leta hai condtions sy jo b rule ma bola
+gya wo wo acturatos sy lyleta hai
+
+wo sirf current state pr kam krta previous ko ignore krta hai bhol jata hai
+limitataions:
+very less hai conditon rules hai har chez define hai rule
+ya ak partial envioenmt ma kam kr rha usmy loop ma sack kr ksta hai
+✅ Advantages
+Simple aur fast decision making
+Implementation easy hoti hai
+
+Model Based relfex agent
+🔹 Kya karta hai?
+Current state + previous information ko use karta hai
+
+apny envioment sy input leta sensors sy what is the current state kya hai
+previous state dekhta kya tha state previous
+world kasy develop horha
+jo b action lyga uska effect kya hoga
+yha action rule batat kya lena action apny
+acturatos sy action liya jata
+
+advantages:
+ya partial ma kam kr ksta
+ya previous input consider kr ksta hai
+
+Partial observable environment me better kaam karta hai
+Past data use karke accurate decision leta hai
+
+❌ Limitations
+
+Design complex hota hai
+Zyada memory aur processing power chahiye
+
+Goal based agent
+sirf sy soirf ak target apny goal tk pochna
+jo b decion leta es chez sy decion liya jata wo apny goal sy kitna dor hai
+ya jo action leta hai usky pichy mksad hai 
+esky or gol k beach jitna distance hai usko kitna minimuze kr ksta hai
+
+yha condtion nhi goal hai
+ma koi action ln ga goal k pas jao ga ya dor 
+
+limitation:
+ya flexible nhi ak goal pr jaye ga
+
+
+Utility based agent
+eska ak focus hota utility hai
+ya apny goal ponchy ga eska main focus utility hai
+jab agent ak action leta hai wo happy ya unhappy state ma ponchy ga
+ak car jarhi target distnacetk pochna ak short rasta ak bara 
+gari sortas rasta jaye gi
+wo dekhti samny acsiendt hogya agy tarffic hai wo goal tk nhi ponch sky
+woi unhappy stste ma hai wo phr 2nd rasty ma jaye gi wo phr happy state ma ajaye gi
+
+
+yha goal ki jaga utility aye ga 
+jo b action perform kiya jata us sy happy ya unhappy ma jaye g
+
+
+Learning agent:
+learning ma or baki agent ma ak differnce hai 
+learning agent chezo ko learn kr ksta statring ma basic hoti info
+bad ma grow krta rhta koi task perform kiya agr koi mistake ki agli
+dafa nhi kry ga learn kiya next time nhi hogi mistake 
+
+ciritic
+ya feedback deta learning ki
+jab b input keta sensor sy jo input ati usko efect deta 
+usko pata usky acion sy kya hona chaye 
+esky envioment sy jo effect hony wo feedback learning elemt ko deta
+learning eleemnt agent ko new chey skehny k liya enbale krta hai
+performance lement ko learnieng elemnt sy input milt akon sa action perfmron krna ya dekhta
+problem generator k
+
+✅ 1️⃣ Simple Reflex Agent
+🔹 Kya karta hai?
+
+Sirf current state dekh kar action leta hai.
+“If condition → then action”
+
+✅ Advantages
+
+Simple aur fast decision making
+
+Implementation easy hoti hai
+
+❌ Limitations
+
+Past state ya history consider nahi karta
+
+Complex ya dynamic environment me fail ho sakta hai
+
+✅ 2️⃣ Model-Based Agent
+🔹 Kya karta hai?
+
+Current state + previous information ko use karta hai.
+
+✅ Advantages
+
+Partial observable environment me better kaam karta hai
+
+Past data use karke accurate decision leta hai
+
+❌ Limitations
+
+Design complex hota hai
+
+Zyada memory aur processing power chahiye
+
+✅ 3️⃣ Goal-Based Agent
+🔹 Kya karta hai?
+
+Specific goal achieve karne ke liye action plan karta hai.
+
+✅ Advantages
+
+Clear objective hota hai
+
+Planning ability strong hoti hai
+
+❌ Limitations
+
+Time zyada lag sakta hai decision me
+Sirf goal focus karta hai, cost ya efficiency ignore kar sakta hai
+
+✅ 4️⃣ Utility-Based Agent
+🔹 Kya karta hai?
+Utility-Based Agent wo agent hota hai jo sirf goal achieve nahi karta,
+balke best option choose karta hai jo maximum utility (benefit/value) deta hai.
+Best possible outcome choose karta hai (maximum utility).
+
+✅ Advantages
+
+Multiple factors ko balance karta hai
+
+Uncertain environment me best decision deta hai
+
+❌ Limitations
+
+Utility function banana difficult hota hai
+Computationally expensive ho sakta hai
+
+
+✅ 5️⃣ Learning-Based Agent
+🔹 Kya karta hai?
+
+Yeh agent experience se seekhta hai aur time ke sath apni performance improve karta hai.
+
+Iske 4 main parts hote hain:
+Learning element – seekhta hai
+Performance element – action leta hai
+Critic – feedback deta hai
+Problem generator – nayi cheeze try karta hai
+
+✅ Advantages (2)
+
+1️⃣ Time ke sath improve hota hai
+2️⃣ Dynamic aur unknown environment me adapt kar sakta hai
+
+❌ Limitations (2)
+
+1️⃣ Training ke liye zyada data chahiye
+2️⃣ Shuru me galat decisions le sakta hai (learning phase me)
+
+
+
+
+Types of enviorment
+kasy akagent repsone krta wo envioemtn ma krta
+
+6 types hai ya
+
+
+fully oservable partialy  obversable
+fully ka maltb pora dekh sako ananlysis r ksy
+partial ma thoa analysis
+chess player sary oard ko dkehta hai fully obserb 
+partial observ ma cards diffetrnt logo k pas apny dekh skta hai
+
+determinsitoic and stochics
+tic tac toe game
+phla 0 kiya wo pata agla ya kry ga wo mujhe cros k liya kry ga ma line na banao
+jasy ludo game hai nhi pata kya game ana
+
+ak agent ka current state wo next state bata skta ya hai state next hoksta
+
+Episodic
+jasy ak robot hai kafi chezy pick krni wo eposidci hai
+sequential jasy chess game ak khela dosra kehly ga
+ak chez dosry pr depend nhi krti hai
+
+single agent 
+sirf ak agent
+multi agent fotbal hoga zayda hoty agent
+
+static and dynamic
+static mtlb jo chnage na hn dynamic jo chnage hojaye
+static ma envioment chnage nhi ga dynamic ma car chla rhy chnage hroha
+
+
+
+
+discrete continuos
+discrete ka mtlb number fo steps infinte ly ga jasy chess game hai action infinte haic
+continous ma action ko numbering nhi dyga jasy slef car hai action nhi kr ksty
+
+
+
+
+
+
+
+
+
+
+
+
+Simple Reflex Agent
+koi action perform kr rhy simple action perform kry
+currently action peform krna jo ab sense kiya usny wo
+enviorment:
+obersable enviroment
+vacume:
+dekhy ga kya gnda left pr jaye ga righr pr usko enviorment pata hai
+if else lgi hai if ya gnda hai ya clean kry ga
+
+current location kya usmy diret hai wo kry ga nhi tu right ma jaye ga
+agr state sirty hai tu clean kry ga nhi tu return right kry ga
+else if location b hai agr left saf right right safe let pr
+
+room ma automatic heater hai bahir kitni sardi temparture
+wo hit tepalrtaire k hisba sy on hoga less then 10 hai
+agr koi kamra ma na hn problem hai on hojay ega
+ya if else ma condtion pr chlta ya hoajye gya kya krna
+histry kya kuch nhi pata
+
+eski limeation hai ya fully iobservable ma kam kry ga
+partial ko nhi kry ga wo model krta
+
+
+
+Model Based agent
+simple if then pr work krta rule pr
+
+esmy work krta the hostry ki base pr aisa expience kiya kya hova tha phly
+action kya hova tha usky accridong kya kry ga
+disadvantge partial obersevblr pr kam krta hai
+ya perscpet hostry store krta hai
+2 factors important
+model:kasy hoti cheesy store hojati hai store hoti hai
+internal state:k histry ma aisa action hova tha kya tha succesful hova es sy phly ka kya action 
+tha
+
+phly glt action liya us sy expernce mila usko update kry ga
+apny experce sy sekhta update krta
+how the would evolve;
+
+advantage:
+partialy enviorment
+perviouse state consierd krta
+
+
+
+Goal Based agent
+mtlb mujhe ya achive krna aim
+esmsy additonal chezy add ki hai
+exma chal rha hai 2 din bad 4 section hai half half kr rha hn ak section jo ma 2 kr rha
+planing kr rha hn pass hony k liya search krty konsa easy konsa aprt
+palaing searching kr rhy 
+
+searching and planning kr rhy effiecnt chez kr ksy
+ya current state dkehta phly kya tha
+mery action ka kya effect hova us sy action lytha ya ln kya hoga
+agr past ma nhi apny acridng leta
+wo action leta wo goal ko condred krta achive krlo ga 
+
+Asaan Misal (Self-Driving Car):
+
+Sensors: Camera ne dekha agay gaari hai.
+State: Agent ko yaad hai ke peeche se ek bike bhi aa rahi thi (jo shayad ab nazar nahi aa rahi).
+What my actions do: Agar mein break marn ga to gaari ruk jayegi.
+Rules: Agar agay gaari rukay to break maro.
+Actuators: Break apply ho gaye.
+
+
+
+
+
+
+Utility based agent
+ya goal pr focus nhi krta
+agr goal tk pochny k way hai wo usko choose kry ga
+differnt alternatives hn utility baty apka agent happy hai ya nhi
+jasy location ma hai
+
+happy batny k liya utility bataye ga
+
+
+
+Learning based agent
+k jo apny expiernce sy learn krty past expiernce sy
+starting ms baisc knwodledge bad ma addapt krlaty hai 
+
+critic
+jo b action horha sensor sy feedback deta kitna acha perform kr rha
+learning elemnt improve krta action improve kry ga agr acha nhi kiyaa
+perofrmace elemnt ya action selct kry ga kya perform krna
+agr chnahes krna khr leranign ek pas
+learnign goal problem gentor k pas jaye y epxierce ly ga
+
+feedback dyga agent kasa perform kr rha hai
+ya changes hogy perofmrce ko dyga 
+perormace eemnt ny apny expice sy gain kiya hoga wo learning elemnt ko bataye ga
+problem genrotr action elct kry ga ya ya skeha tha esmy
+
+
+1️⃣ Simple Reflex Agent
+
+Definition: Ye agent sirf current percept pe react karta hai using condition-action rules.
+
+Internal state: None
+
+Planning: None
+
+Best Environment:
+
+Fully observable ✅ (agent ko environment ka poora information milta hai)
+
+Deterministic ✅ (same action hamesha same result deta hai)
+
+Static ✅ (environment mein zyada change nahi hota)
+
+Example:
+
+Automatic light switch (motion detect hone par light on/off)
+
+2️⃣ Model-Based Reflex Agent
+
+Definition: Ye agent internal state maintain karta hai jisse partially observable environments ko track kiya ja sake.
+
+Internal state: Yes, ek model of the world
+
+Planning: No, reacts using model
+
+Best Environment:
+
+Partially observable ✅ (agent ko current state ke saath unseen info bhi track karna padta hai)
+
+Dynamic ✅ (environment change ho sakta hai, agent ko adapt karna padta hai)
+
+Deterministic ya stochastic
+
+Example:
+
+Autonomous taxi
+
+Home vacuum robot with sensors
+
+3️⃣ Goal-Based Agent
+
+Definition: Ye agent future states ko predict karta hai aur goal achieve karne ke liye actions plan karta hai.
+
+Internal state: Yes
+
+Planning: Yes, selects action sequence to reach goal
+
+Best Environment:
+
+Partially observable or fully observable
+
+Dynamic ✅ (environment change ho sakta hai)
+
+Deterministic or stochastic
+
+Complex tasks requiring planning
+
+Example:
+
+Chess AI
+
+Navigation systems planning a route
+
+4️⃣ Utility-Based Agent
+
+Definition: Ye agent goals ke sath trade-offs aur utility function maximize karta hai.
+
+Internal state: Yes
+
+Planning: Yes, evaluates best action based on utility
+
+Best Environment:
+
+Partially observable ✅
+
+Dynamic and stochastic ✅
+
+Complex decision-making environment
+
+Example:
+
+Self-driving car optimizing safety, time, fuel
+
+Portfolio management AI
+
+5️⃣ Learning Agent
+
+Definition: Ye agent apni performance improve karta hai experience se.
+
+Internal state: Yes
+
+Planning: Can learn new rules or strategies
+
+Best Environment:
+
+Any environment where feedback/experience available
+
+Dynamic and stochastic ✅
+
+
+
+
+| **Agent Type**          | **Key Characteristics**                                                         | **Advantages**                             | **Limitations**                                                                                             | **Real Example**                             |
+| ----------------------- | ------------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| **Simple Reflex Agent** | Reacts only to **current input** using **If-Then rules**, **no memory** of past | ✅ Fast response <br> ✅ Simple to implement | ❌ Cannot handle complex situations <br> ❌ Cannot learn from past <br> ❌ Limited to predictable environments | Robot Vacuum, Automatic Faucet, Light Sensor |
+
+
+
+| **Agent Type**               | **Key Characteristics**                                                                | **Advantages**                                                                                            | **Limitations**                                                     | **Real Example**                                                 |
+| ---------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **Model-Based Reflex Agent** | Uses **current input + internal model** of environment; keeps track of **world state** | ✅ Can handle **dynamic/complex environments** <br> ✅ Makes **better decisions** than simple reflex agents | ❌ More **complex** to design <br> ❌ Needs **memory and processing** | Robot vacuum with map memory, Smart thermostat, Self-driving car |
+
+
+
+
+| **Agent Type**       | **Key Characteristics**                                                                                 | **Advantages**                                                                                                 | **Limitations**                                                                                  | **Real Example**                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| **Goal-Based Agent** | - Has a **specific goal** <br> - Plans actions to achieve goal <br> - Considers **future consequences** | ✅ Can achieve **complex goals** <br> ✅ Plans ahead for better results <br> ✅ Works in **dynamic environments** | ❌ Needs **more processing power** <br> ❌ Planning takes **time** <br> ❌ Harder to design/program | Robot Vacuum with route planning, GPS Navigation, Chess AI |
+
+
+
+| **Agent Type**          | **Key Characteristics**                                                                                                        | **Advantages**                                                                              | **Limitations**                                                                                   | **Real Example**                              |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **Utility-Based Agent** | Uses **utility function** to evaluate actions <br> Chooses action with **highest score** <br> Can handle **conflicting goals** | ✅ Makes best decisions <br> ✅ Handles conflicting goals <br> ✅ Works in dynamic environment | ❌ Needs more computation <br> ❌ Designing utility function is hard <br> ❌ Slow for large problems | Self-driving car, Online shopping AI, Game AI |
+
+
+
+| **Agent Type**           | **Key Characteristics**                                                                                          | **Advantages**                                                                                                | **Limitations**                                                                                | **Real Example**                                           |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Learning-Based Agent** | - Learns from **past experiences** <br> - Improves **performance over time** <br> - Adapts to **new situations** | ✅ Gets better over time <br> ✅ Can handle unknown or changing environments <br> ✅ Can discover new strategies | ❌ Needs lots of data <br> ❌ Learning takes time <br> ❌ Designing learning algorithm is complex | Self-driving car, Netflix/YouTube recommendation, Chess AI |
+
+
+
+
+
+
+Types of enviorment
+Fully observabal vs partally observable
+agent 
+jab a agent ka senor as pas k enviormet  ko detect observe kr ksta memoty ma store n krna pry
+usko fully kry ga
+agent ko full track nhi krna kya smjha kya kya seekha
+sara usko visible hai 
+unibserable usko khty jab senosr na hn usky pas
+
+example
+chess ma usko sara observabl hai 
+drivving car agent ko track record rkhna hota asa pas dekhana prta
+
+agr aisa nhi wo partially enviorment
+
+
+Determinstic
+jab aent curren state ma wo action perform hn next state milna hai
+chess esmy ata esky pices momone kuch b hosjty hai previous record k sath agr ya pice
+pr hao next state kya hoga
+
+stochastic
+unique na hn agent ko nhi pata hota
+next state ko predict nhi kr ksty
+self driving car
+ya random hai asapas ka enviornemt random hoga sourding same nhi hoga
+
+Episodic
+esmy series action hota usko perform krny k liya current undersatndign ki zarorat
+past ki zarorat nhi har bar series new bnti pichli sy nhi match krta
+
+pcik and place robot agent dekhna cureent past ma krta hai 
+
+sequetial 
+esmy agent ko past rkhna taky next best action ly wo
+pichla move next sy krta past memory rkhni hoti
+checkers expale eski
+
+
+Static
+agr ak agent ka as pas enviormetn change nhi hota usko staic khty
+
+dynamic
+agr chnage hota 
+empty house
+
+
+discrete
+ak agent infinite number pfrom kry ak waqt ma wo discrete
+
+
+continous
+agr nhi infinit tu wo continus enviorment khty hai
+
+
+single agent
+ak enviorment ma ak hi agent hai usko single agent kthy
+a p
+
+multi agent
+agr ak sy zayda agent
+footbal multi agent
+
+
+
+
+an agent can always see the entire statment of envioement
+chess
+partial 
+card game
+
+
+1. Deterministic Environment
+
+English (Correct & Simple):
+An environment is deterministic if the next state is completely predictable.
+If an agent performs an action in the current state, the result is always the same.
+
+Example:
+Chess is deterministic because for every move, the next state of the board is known and fixed.
+
+Roman English:
+Deterministic environment wo hota hai jahan agent agar current state me koi action kare, to next state pehle se pata hoti hai.
+Chess deterministic hai kyun ke har move ka result fixed hota hai.
+
+2. Stochastic Environment
+
+English:
+An environment is stochastic if the next state is uncertain or random.
+The agent cannot fully predict what will happen after an action.
+
+Example:
+A self-driving car operates in a stochastic environment because pedestrians, traffic, and weather can change randomly.
+
+Roman English:
+Stochastic environment me next state confirm nahi hoti.
+Self-driving car stochastic hai kyun ke surroundings hamesha change hoti rehti hain.
+
+3. Episodic Environment
+
+English:
+In an episodic environment, each action is independent.
+The agent does not need to remember past actions to decide the next one.
+
+Example:
+A pick-and-place robot works episodically because each task is separate from the previous one.
+
+Roman English:
+Episodic environment me har action alag hota hai.
+Agent ko past yaad rakhne ki zarurat nahi hoti.
+Pick-and-place robot iska example hai.
+
+4. Sequential Environment
+
+English:
+In a sequential environment, the agent’s current action affects future states.
+The agent must remember past actions to make better decisions.
+
+Example:
+Checkers is sequential because each move affects the next possible moves.
+
+Roman English:
+Sequential environment me pichla action future ko affect karta hai.
+Checkers game sequential hai kyun ke har move aglay move pe depend karta hai.
+
+5. Static Environment
+
+English:
+An environment is static if it does not change while the agent is deciding what to do.
+
+Example:
+A crossword puzzle is static because nothing changes while the agent thinks.
+
+Roman English:
+Static environment wo hota hai jahan agent ke sochne ke doran environment change nahi hota.
+
+6. Dynamic Environment
+
+English:
+An environment is dynamic if it changes while the agent is making decisions.
+
+Example:
+A busy road is dynamic because traffic keeps changing.
+
+Roman English:
+Dynamic environment me agent ke action lene se pehle hi environment change hota rehta hai.
+
+7. Discrete Environment
+
+English (Correction):
+An environment is discrete if states, actions, and time are countable and finite.
+
+Example:
+Chess is discrete because moves and positions are limited.
+
+Roman English:
+Discrete environment me limited aur countable actions hotay hain.
+Chess discrete environment hai.
+
+8. Continuous Environment
+
+English:
+An environment is continuous if states, actions, or time are infinite.
+
+Example:
+Self-driving car environment is continuous because speed, distance, and time are continuous values.
+
+Roman English:
+Continuous environment me values infinite hoti hain jaise speed aur distance.
+Self-driving car continuous hai.
+
+9. Single-Agent Environment
+
+English:
+A single-agent environment has only one agent acting in the environment.
+
+Example:
+A puzzle-solving AI is a single-agent system.
+
+Roman English:
+Single-agent environment me sirf aik agent hota hai.
+
+10. Multi-Agent Environment
+
+English:
+A multi-agent environment has more than one agent interacting with each other.
+
+Example:
+Football game is a multi-agent environment because many players (agents) are involved.
+
+Roman English:
+Multi-agent environment me aik se zyada agents hotay hain.
+Football multi-agent system hai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Fully Observable vs Partially Observable
+
+Fully Observable: Agent ko poori information milti hai environment ki.
+Example: Chess → player saari board dekhta hai.
+Roman: Agent ko sab kuch nazar aata hai, pura analysis kar sakta hai.
+
+Partially Observable: Agent ko sirf kuch information milti hai, poora pata nahi.
+Example: Card game → har player sirf apne cards dekhta hai.
+Roman: Agent ko sirf thodi cheezein nazar aati hain, pura analysis nahi kar sakta.
+
+2. Deterministic vs Stochastic
+
+Deterministic: Next state exactly predict kar sakte ho.
+Example: Tic Tac Toe → agar main X lagaon, agla move kya hoga, pata hai.
+Roman: Result bilkul certain hai, koi chance nahi.
+
+Stochastic: Next state uncertain hai, probability se hota hai.
+Example: Ludo → dice roll ka result pata nahi.
+Roman: Result chance pe  karta hai, uncertain hai.
+
+3. Episodic vs Sequential
+Episodic: Har action independent hai, previous actions matter nahi karte.
+Example: Robot picking objects → ek cheez pick karna dusri pe depend nahi karta.
+Roman: Action ka sequence important nahi, alag alag episodes hain.
+
+Sequential: Har action future pe effect dalta hai.
+Example: Chss → agla move previous moves pe depend karta hai.
+Roman: Pehle ka kaam next actions ko affect karta hai.
+
+4. Single Agent vs Multi-Agent
+Single Agent: Sirf ek agent environment me.
+Example: Maze solving robot.
+Roman: Ek agent kaam karta hai, koi competition nahi.
+
+Multi-Agent: Multiple agents environment me interact karte hain.
+Example: Football → multiple players interact karte hain.
+Roman: Zyada agents hain, ek dusre se effect lete hain.
+
+5. Static vs Dynamic
+
+Static: Environment change nahi hota jab agent action leta hai.
+Example: Crossword puzzle.
+Roman: Environment fixed hai, koi change nahi.
+
+Dynamic:Environment continuously change hota hai.
+Example: Self-driving car → road, traffic change hote rehte hain.
+Roman: Environment change hota rehta hai, agent ko adapt karna padta hai.
+
+6. Discrete vs Continuous
+
+Discrete: Limited actions or steps, countable.
+Example: Chess → moves are countable.
+Roman: Action aur steps ginni ja sakti hain, finite.
+
+Continuous: Infinite actions or states, not countable.
+Example: Self-driving car → steering, acceleration infinite values le sakte hain.
+Roman: Actions aur states infinite hain, number assign nahi hota.
+
+
+
+🔹 State
+
+Definition:
+State environment ki current condition / situation hoti hai jahan agent is waqt mojood hota hai aur usi base par action leta hai.
+
+Simple words:
+👉 Abhi environment ka kya haal hai.
+
+Examples:
+
+Chess: board par pieces ki current positions
+Self-driving car: speed, position, traffic signal, nearby cars
+Maze agent ki current location
+
+🔹 State Spac
+
+Definition:
+State Space environment ki tamam possible states ka set hota hai jin me agent move kar sakta hai.
+
+Simple words:
+👉 Environment me kitni different situations ho sakti hain.
+
+Examples:
+
+Chess: board ki saari possible arrangements
+Maze: maze ke saare cells
+Car driving: speed, direction aur position ke tamam possible combinations
+
+
+
+
+
+
+🔹 Action
+
+Definition:
+Action wo step / move hota hai jo agent current state me perform karta hai taake environment change ho.
+
+Simple words:
+👉 Agent ab kya karega?
+
+✅ Examples:
+
+Chess: move karna (pawn aagay, rook side)
+
+Self-driving car: accelerate, brake, left turn, right turn
+
+Maze: up, down, left, right
+
+🔹 Action Space
+
+Definition:
+Action Space tamam possible actions ka set hota hai jo agent kisi bhi state me perform kar sakta hai.
+
+Simple words:
+👉 Agent ke paas kitne options hain?
+
+✅ Examples:
+
+Chess: sab legal moves
+Car driving: speed increase/decrease, steering angle
+Robot: pick, place, rotate, move
+
+
+
+🔹 Initial State
+
+Definition:
+Initial State wo starting condition hoti hai jahan se agent apna kaam start karta hai.
+
+Simple words:
+👉 Agent ka start point
+
+✅ Examples:
+
+Chess: game start hone wali position
+Maze: jahan agent khara hota hai
+Robot: object uthane se pehle ki position
+Self-driving car: current location
+
+🔹 Goal State
+
+Definition:
+Goal State wo desired condition hoti hai jahan agent ko pohanchna hota hai.
+
+Simple words:
+👉 Agent ka target / destination
+
+✅ Examples:
+
+Chess: checkmate
+Maze: exit point
+Robot: object ko correct place par rakhna
+Car: destination par safely pohanchna
+
+
+
+
+
+🔹 Agent–Environment Interaction
+📌 Definition:
+
+Agent aur environment ke darmiyan continuous interaction hoti hai.
+
+Agent observe karta hai (sensors)
+
+Phir decision leta hai
+
+Action perform karta hai (actuators)
+
+Environment change hota hai
+
+🔄 Interaction Cycle:
+
+Environment → Percept
+
+Agent → Decision
+
+Agent → Action
+
+Environment → New State
+
+🧠 Simple Diagram (exam me aise likh sakte ho):
+Environment → Sensors → Agent → Actuators → Environment
+
+✅ Example: Self-driving car
+
+Sensors: camera, radar
+
+Percept: traffic, road
+
+Action: brake, accelerate
+
+Environment: road condition change
+
+🔹 Search Problem Formulation
+📌 Definition:
+
+Search Problem wo hota hai jahan agent best path / solution dhoondta hai taake goal state tak pohanch sake.
+
+🔑 Components of Search Problem:
+
+1️⃣ Initial State
+→ jahan se agent start karta hai
+
+2️⃣ Actions
+→ agent kya kya moves kar sakta hai
+
+3️⃣ Transition Model
+→ action lene se state kaise change hoti hai
+
+4️⃣ Goal Test
+→ check karna ke goal mila ya nahi
+
+5️⃣ Path Cost
+→ har move ka cost (time, distance, etc.)
+
+
+
+
+
+
+Vaccum cleaner problrem
+prbolem solvding
+agr ma ps hn koi problem di gaie start sttamet nikalo ga kha sy tsrat kro
+goal start ka mtlb jha ponch kr kh sko problem solve hogi 
+ya goal state tk ponchy   liya eefiect path dhonfta hai uspr chal kr proble solve krta hai
+
+problem formaulation problem solving ko actions batat hai js ki wja sy prbkem solving pany goal
+tk ponvh jaye ga
+
+
+instail state
+esko solve krny k liya strat kro ga jes state sy start lry ga intail state kty hai
+any state can b design as the intainla state
+
+romm a or b hai wo rom a sy kr ksta strat or romm b sy b
+intial state koi b state intial state hoskti hai
+
+action 
+eska mtlb jo b state ma action ly action khty hai
+esmy moving right moving left sucking suck krna hoga nichy dykr clean krna
+
+successer function
+s mtlb state a action
+Result(s,a)
+ya finction action lreny k bad kis stta epr ponchy ga wo return krta
+
+agr cleaner rom a ma hai ya function apply kiya
+s mtlb a ction mtlb sucking
+suck krly ga wo kis state ma jaye ga wo return kry ga 
+clean hojaye gi abi goal nhi hova
+
+state sy action lyga right ma ajye ga
+dirty safe nhi function apply kry ga cleanig kr gy sucking
+suck k bad jes state pr ponchy ga clean
+
+ab room b ma
+
+goal test
+ya batat jes state pr hai wo goal state hai ya ni
+jab action perform krny k bad dkehy ga ya goal state hai ya nhi 
+jes state pr pincha wo goal state nhi ya batat agy agy brhta jab tk goal test tk na ponc jahye
+
+this check wether all the squers and clean
+
+path cost
+start state sy goal state k darmyan jtiny b state aty hai
+sray k state ko ak cost assign krty jes sy goal astate pr ponchny k bad effienct kam kiya ya nhi
+
+ak step ko 1 cost doya jtny jump kiya otna count
+
+
+
+
+
+
+
+
+
+
+
+
+🔵 BFS (Breadth First Search)
+✅ Time Complexity:
+
+O(b^d)
+
+b = branching factor
+
+d = solution ki depth
+
+✅ Space Complexity:
+
+O(b^d) (zyada memory use karta hai)
+
+✅ Optimal?
+
+✔ Haan (agar har step ka cost same ho)
+
+✅ Complete?
+
+✔ Haan
+
+📌 Kab use karein?
+
+Jab shortest path chahiye
+Jab solution root ke kareeb ho
+Jab memory problem na ho
+
+🔴 DFS (Depth First Search)
+✅ Time Complexity:
+
+O(b^m)
+
+m = maximum depth
+
+✅ Space Complexity:
+
+O(bm) (kam memory use karta hai)
+
+❌ Optimal?
+
+Nahi
+
+❌ Complete?
+
+Har case me nahi
+
+📌 Kab use karein?
+
+Jab memory kam ho
+
+Jab solution deep ho
+
+Jab shortest path zaroori na ho
+
+
+
+
+
+
+
+
+1️⃣ Uninformed Search (Blind Search)
+
+Meaning:
+Is search me algorithm ke paas koi extra information nahi hoti. Sirf initial state aur goal state pata hota hai.
+
+Features:
+
+Heuristic use nahi hoti
+
+Sab possible paths check karta hai
+
+Time aur memory zyada lag sakti hai
+
+Examples:
+
+BFS (Breadth First Search)
+
+DFS (Depth First Search)
+
+Uniform Cost Search
+
+Example samajh lo:
+Maze me rasta dhondhna jab tumhe nahi pata konsa rasta sahi hai, to tum har rasta try karte ho.
+
+2️⃣ Informed Search (Heuristic Search)
+
+Meaning:
+Is search me algorithm ke paas extra knowledge (heuristic) hoti hai jo batati hai ke goal ke qareeb konsa path hai.
+
+Features:
+
+Heuristic function use hota hai
+
+Goal jaldi mil jata hai
+
+Zyada efficient hota hai
+
+Examples:
+
+A* Search
+
+Greedy Best First Search
+
+Example:
+Google Maps jab shortest route batata hai to distance estimate use karta hai.
+
+3️⃣ Adversarial Search
+
+Meaning:
+Ye search games me use hoti hai jahan 2 players ek dusre ke against khelte hain.
+
+Features:
+
+Opponent ke moves bhi consider karta hai
+
+Strategy based decision hota hai
+
+Examples:
+
+Minimax Algorithm
+
+Alpha-Beta Pruning
+
+Example:
+Chess ya Tic-Tac-Toe me AI opponent ka next move predict karta ha
+
+
+
+
+1️⃣ Complete
+
+Meaning:
+Algorithm agar solution exist karta ho to usay zaroor find kar lega.
+
+Simple words:
+
+Agar goal kahin bhi ho, algorithm akhir me usay dhoond lega.
+
+Example:
+BFS complete hota hai agar branching factor finite ho.
+
+📌 Matlab: solution mil jayega, chahe time zyada lag jaye.
+
+2️⃣ Optimal
+
+Meaning:
+Algorithm best / shortest / minimum cost solution deta hai.
+
+Simple words:
+
+Sirf solution nahi, sab se best solution deta hai.
+
+Example:
+BFS optimal hota hai jab har step ki cost = 1 ho, kyun ke wo shortest path deta hai.
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+void reverse(int n){
+    if(n == 0) return;       // base case
+    printf("%d", n % 10);    // print last digit
+    reverse(n / 10);         // recursive call
+}
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    reverse(n);
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {5, 2, 8, 1, 4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int temp;
+
+    // Bubble Sort Algorithm
+    for(int i = 0; i < n-1; i++) {
+        for(int j = 0; j < n-1-i; j++) {
+            if(arr[j] > arr[j+1]) { // swap if current element is greater than next
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+[3,5,1,3,5]
+
+
+    // Print sorted array
+    printf("Sorted Array: ");
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    
+    return 0;
+}
+
+
+
+I am Muhammad Saqib Younas, a 6th-semester Bachelor’s student in Information Technology at Superior University
+. I have 6 months of internship experience in different software houses, where I worked with multiple stacks. 
+On the frontend, I mostly worked with React.js and Next.js, while on the backend, I have experience with Node.js,
+ Express.js, Python Django, and FastAPI. Recently, I worked on an automation project using n8n.
+ I am not limited to a single stack like MERN; I continuously learn new technologies and adapt to whatever the company requires.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🤖 Machine Learning kya hoti hai?
+
+Machine Learning (ML) AI ka ek part hai jisme computer data se khud seekhta hai bina explicitly programming ke.
+
+👉 Simple words:
+Computer ko rules batane ke bajaye, hum usko data dete hain aur wo patterns learn karke decisions leta hai.
+
+📌 Example (Real Life)
+Spam Email Detection
+Gmail ko thousands emails dikhayi jati hain
+Wo seekhta hai ke kaun si email spam hoti hai
+Phir automatically new emails ko spam ya inbox me daal deta hai
+YouTube Recommendations
+Tum kya videos dekhte ho
+Us base pe system tumhe new videos suggest karta hai
+Face Recognition (Mobile Unlock)
+Phone tumhara face learn karta hai
+Phir sirf tumhe unlock karne deta hai
+
+
+
+
+ML ka basic workflow (important for exams 👇):
+
+1. Data Collection
+Data collect karna (images, text, numbers)
+2. Data Cleaning
+Galat ya missing data remove karna
+3. Feature Selection
+Important cheezen choose karna (jaise age, salary)
+4. Model Selection
+Algorithm choose karna (e.g., Linear Regression)
+5. Training
+Model ko data pe train karna
+6. Testing
+Check karna ke model sahi kaam kar raha ya nahi
+7. Prediction
+New data pe result dena 
+
+
+
+
+
+
+
+
+
+
+
+
+1️⃣ Supervised Learning (سب سے easy)
+
+👉 Kya hoti hai?
+Isme model ko input + correct output (label) dono diye jate hain.
+
+👉 Matlab:
+Teacher jese — pehle answers batata hai, phir test leta hai.
+
+📌 Example:
+Student marks → Pass ya Fail predict karna
+House data → Price predict karna
+
+👉 Input: size = 5 marla
+👉 Output: price = 50 lakh
+
+🔹 Real Life Example:
+Spam detection (email spam hai ya nahi)
+Weather prediction
+2️⃣ Unsupervised Learning
+
+👉 Kya hoti hai?
+Isme sirf input data hota hai, koi answer (label) nahi hota
+
+👉 Matlab:
+System khud patterns ya groups find karta hai
+
+📌 Example:
+Customers ko groups me divide karna
+Rich
+Middle class
+Low income
+🔹 Real Life Example:
+Netflix / YouTube grouping
+Market segmentation
+3️⃣ Reinforcement Learning (Advanced)
+
+👉 Kya hoti hai?
+Isme system trial & error se seekhta hai
+
+👉 Reward milta hai agar sahi kaam kare
+👉 Punishment milti hai agar galat kare
+
+📌 Example:
+Game playing AI
+Robot walking
+🔹 Real Life Example:
+Self-driving cars
+Chess / PUBG AI bots
+
+
+
+
+
+
+
+
+
+Lecture
+
+
+machine Learning
+
+machine leanring mtlb hard code ma na batye ability dy da wo khud learning krna start krdy wo
+
+machine leanrin subet of ai
+
+learn kry ga ptterns jo pichy epxiernce hovy data sy
+taky ham new incominng ana wala data upcmomin usmy accurate answer dy ksy
+ham enhi modle ko use krky next desicion ly  kso
+
+hard code ma na diya jaye pichly expiernce sy new decision ly sko ma
+
+poython code likhy image ko dekhy ya image cat ka image hai
+possible hai python ka code hai ma likhu ya pixels by pixels info arhi hai 
+ya asy rules hard code kiya hn un ko dkehty hovy mera program likha hai ya program k 
+zariya image study kr rhi itny ixels pr ya cat ka image hai
+
+
+In image classification, Python programs do not rely on hard-coded rules. 
+Instead, machine learning models analyze pixel data and learn patterns from labeled
+ images to identify objects such as cats.
+
+esko next time hard code na krna pry image k liya mujhe 
+
+tradditional programming
+esmy jo images hai mery pas 
+mera system hai esk sath data attch hai us data ko smjhny k liya rules 
+thy wo rules hard code instructions thi har dafa new data aye 
+ya rules dekhy ga output dy ga rules ki base
+
+ya picel values pr ya answer dn ga ma
+
+
+ma sab iamges dy dn gi ya sab cats k hai set of images hai ya sab cats k hai
+data dy diya labels bata diya 
+machine ka kam kya hai data outpu mil gi hai
+agli dafa usny khud rules patterns identify krny kya ruls hai emsy patterns bn rhy hai
+ya jo data hai ya wala labels outpt dena hai
+
+kabhi b kam krns hota hmy data chaye hota hai
+machine larning ma kinty temprature pr outpu pasnd hogi wo sekh jaye gy bahir kya temprtaute 
+andr room ma hai kis hisab sy room ko thnda kr cloonig phnkni hai
+khud kry ga wo
+
+
+
+Deep Learning 
+
+thay points
+step of machine learning
+
+size bird tail color ki understandig hai
+ya mdoel bana lyla ta enki bunyad pr 
+agr size bara hai kis ka oclor balck hai tail bara hai
+esko grow khty hogy 
+next time ak or sparrow ati hai new think ya kya hai
+wo dimag ma la aye ga ya sparrow hai
+
+third time pareet ata hai
+wo pochta hai wo bata ta ya paret hai
+beak choti tial datmyani hai color green hai esko paret khty hogy ham
+
+past epxiernc eki bunyad pr data paret ka store hova hai
+wo again rules apply kry ga paremeter 
+color b lack blue wo usko grow ka name dyga
+uski laenring k mutaik growk sath mil rhy thy
+
+wo khy ga not grow ya eagle hai 
+jab b new chez dekhta tha wo update nhi krta tha 
+ya factore hai ya emxpal emachine learning sy match kr rhi hai
+
+
+Steps of machine leanring
+
+1.Data cllection Gatetring
+2.Expoloarty data Analysis(EDA)
+3.Data cleaninig/preprocessing
+4.Algorothm Slection>Feature Extraction >training>Model Training
+5.Model Testing
+6.Performance Measure>Model Evalution (consfision Mtetrics)
+
+
+
+deep leanign workflow
+
+jo data hai jetan quality wala jitna zayda utna behtr haoi wo
+taring data akheta krna
+ak tairka 
+khud jao pirtchers lo data akheta kro ma many pitcers ko dekhan hai
+ya or ka kisi ka data kud bana ln ya kisi or k dn ya data set bana kr rkha hai 
+
+
+Traing dta
+zayda hn acha hn deverse data hn label hn 
+
+jo itna data aya hai analysis kro khud explore kro ya image blury hn usmy nisy image hn usmy
+kuch mistakes hn usmy lable na hn usmy galt lable laga hn usmy 500 image ma or hn koi
+esko Exploring Data Analysis khty hai ham
+data anlysis krna ya data scient hai sai sy analysis nhi kiya usko idea nhi apko
+apko apny data k janny ma pata hn agr unmy issue hai wo ap dkeh sky
+
+main proceing sy pohly k kam usko pre procsing khty 
+mtlb data clean krna hn mujhe 
+
+algorihm bari bari image pkry ga usny image ko dkehna aisa kya hai
+jo cat banye ga esko wo
+ya fetaures dekhta tha 4 tail waly
+wo features lyga agr image ma ya ya hai wo cat ka hai
+new image ma pichly waly match kr rhy hai sai identify kiya hai
+usny fraurs identify kiya claases deifne krli uski 3 classes hai 
+identify krli kya kya fetaur s hogy jeski base pr dog kna paret khna many
+esko modle traing khty
+
+esko model learning kthy hai esko test krna hai model ko
+agr 5 question diya yad krny ko liya apny rata lga liya paper b wohi diya
+kya test kiya sai sy 
+new situation mili wha pr nhi dyga answer usy wohi aty hai
+many tetsing krni kuch aisa data jo triang ma na hn 
+label lag ahn tetsoing ,ma or na lga hn usny batna hai
+model image pkry ga features ko extract kry ga 
+kis class sy match krta hai wo jes class sy match kry ga zayda 
+wo assing krdy ga category wo
+
+ab dekhan kitny corect thy usky answer avaluation krni uski
+
+
+
+Types of machine laearning
+
+1.Sypervised Learning
+2.Unsupervised Learning
+3.Reinforcement Learning
+
+data rules outpu lable tha usmy
+
+supervised
+jab mery pas aida data arha hn lable sath ma lgy hn usko ham su[pervised leanirng horhi hai
+
+unsuperviused
+agr data arha hn lable assign na hn usko test krna hn unsupervised khty hai
+clustering ma help krta wo
+data ki grouping kry ga apna mind lagaye ga 
+esko cluster khty hai grouping ko
+
+reiinforcemnt leanring
+ap koi action lea ga jo epxiernce lyga reinfocment kry a wo kasy leanrign hoe hai apki
+
+chair exmple k gaira ap pain hoe ya kam nhi krna dobara many
+
+clusitrng mean group ma divide krna 
+
+
+
+
+
+1️⃣ Classification (تقسیم)
+Matlab: Data ko categories ya classes me divide karna.
+Type: Supervised learning
+Example:
+Email ko spam ya not spam me classify karna
+Image ko cat, dog, ya bird me identify karna
+Simple Idea: "Ye cheez kisme aati hai?"
+
+Code Example (pseudo):
+
+if email.contains("win money"):
+    label = "spam"
+else:
+    label = "not spam"
+2️⃣ Regression (تخمین)
+Matlab: Continuous numbers predict karna.
+Type: Supervised learning
+Example:
+Ghar ki price ka estimate nikalna based on size, location
+Student ki marks predict karna based on study hours
+Simple Idea: "Ye cheez kitni hogi?"
+
+Code Example (pseudo):
+
+price = 5000 + (size_in_sqft * 300)
+3️⃣ Clustering (گروہ بندی)
+Matlab: Data ko similar groups me divide karna, without labels.
+Type: Unsupervised learning
+Example:
+Customers ko unke buying habits ke hisaab se group karna
+Social media users ko similar interests ke hisaab se cluster karna
+Simple Idea: "Kaun kis ke saath similar hai?"
+
+4️⃣ Association (رابطہ یا تعلق)
+Matlab: Data me patterns aur relationships dhundhna.
+Type: Unsupervised learning
+Example:
+Supermarket: Jo log bread kharidte hain, wo butter bhi kharidte hain
+Online shopping: Jo log phone kharidte hain, wo headphones bhi dekhte hain
+Simple Idea: "Aksar ye cheezen saath me aati hain"
+
+Example:
+
+{Bread} -> {Butter}  (support = 50%)
+5️⃣ Forecasting (پیش گوئی)
+Matlab: Future values predict karna based on past data.
+Type: Supervised learning
+Example:
+Stock prices predict karna
+Weather prediction
+Sales forecast for nex t month
+Simple Idea: "Aane wale time me kya hoga?"
+
+Example:
+
+Past sales: Jan=100, Feb=120, Mar=130
+Forecast Apr = 140
+
+
+
+Machine Learning Types — Detailed with Real Examples
+1. Supervised Learning
+
+Yahan model ko:
+
+Input bhi dete hain
+Correct answer bhi dete hain
+
+Matlab model “teacher” se seekhta hai.
+
+Real Example — House Price Prediction
+
+Suppose hamare paas data hai:
+
+Area (sqft)	Rooms	Price
+1000	2	50 lakh
+1500	3	75 lakh
+2000	4	1 crore
+
+Yahan:
+
+Inputs = Area, Rooms
+Output = Price
+
+Model relation seekhta hai:
+
+“Agar area aur rooms zyada hon to price zyada hoti hai.”
+
+Phir agar new house aaye:
+
+Area	Rooms
+1700	3
+
+Model predict karega:
+
+“Iski price approx 80 lakh hogi.”
+
+Isko supervised kyun bolte hain?
+
+Kyuki training ke waqt correct answers already diye gaye.
+
+Types of Supervised Learning
+A) Regression
+
+Continuous numeric value predict karta hai.
+
+Examples:
+
+House price
+Temperature
+Salary prediction
+Example
+Input: Experience = 5 years
+Output: Salary = 120,000
+
+Yahan output number hai.
+
+B) Classification
+
+Categories predict karta hai.
+
+Examples:
+
+Spam / Not Spam
+Cat / Dog
+Disease / No Disease
+Example — Email Spam Detection
+Email Text	Output
+“Win money now”	Spam
+“Meeting at 5 PM”	Not Spam
+
+Model keywords aur patterns seekhta hai.
+
+New email aaye:
+
+“Claim your free iPhone”
+
+Model bolega:
+
+Spam
+
+Common Algorithms
+Linear Regression
+Logistic Regression
+Random Forest
+Decision Tree
+SVM
+2. Unsupervised Learning
+
+Yahan model ko sirf data diya jata hai.
+Correct answers nahi diye jate.
+
+Model khud patterns find karta hai.
+
+Real Example — Customer Segmentation
+
+Store ke paas data hai:
+
+Customer	Shopping Amount
+A	High
+B	High
+C	Low
+D	Low
+
+Model khud groups bana dega:
+
+Group 1 → Premium Customers
+Group 2 → Budget Customers
+
+Kisi ne pehle label nahi diya tha.
+
+Use Cases
+Customer grouping
+Fraud detection
+Recommendation systems
+Pattern discovery
+Types
+A) Clustering
+
+Similar cheezon ko group karta hai.
+
+Example — Students Grouping
+Student	Marks
+Ali	90
+Ahmed	88
+Sara	45
+Zain	40
+
+Model groups bana dega:
+
+Top Students
+Weak Students
+B) Association
+
+Relationships find karta hai.
+
+Example — Shopping Store
+
+Store observe karta hai:
+
+Jo log bread lete hain
+wo butter bhi lete hain
+
+Store suggestion dena start karega:
+
+“People also bought butter.”
+
+Common Algorithms
+K-Means
+DBSCAN
+Apriori
+3. Reinforcement Learning
+
+Yahan model:
+
+Environment me action karta hai
+Reward ya punishment milta hai
+
+Game ki tarah learning hoti hai.
+
+Real Example — Self Driving Car
+
+Car ko road par chalna seekhana hai.
+
+Actions:
+
+Left
+Right
+Brake
+Accelerate
+
+Rules:
+
+Correct driving → Reward
+Accident → Penalty
+
+Repeated practice ke baad car best driving strategy seekh leti hai.
+
+Maze Example
+
+Robot maze me hai.
+
+Reach exit → +10 reward
+Hit wall → -5 penalty
+
+Robot trial-and-error se shortest path learn karega.
+
+Reinforcement Learning Terms
+Term	Meaning
+Agent	Learner (robot/car)
+Environment	World around it
+Reward	Positive points
+Penalty	Negative points
+
+
+
+
+
+
+
+AI Algorithm
+supervised ma classsifcation kry ga ham 
+data lebed daata hn
+superived ma label data use krky alogtihm use krna
+hamny calssification use krni hai
+classification kry k liya classify hony chaye
+
+first
+Basyseian classifiers
+usky andr 
+naive bayes classifer  algotihm use krna hmany
+
+data kaggel use kr na bana banyaa data use krna hamny
+kaggle es paltofrm k upr use krty hai 
+
+traidnal programming ma kisi b problem ko solve krna hard code krna khud
+agr ap rela world ma dkehna
+
+past data dkehty hovy khud discover kry ya
+generalizaition
+
+trianign data past expeirnce alogtihtm new data unseen data new data smart guess kr ksy
+recommenddation procedure r ksy usy
+
+ 
+Bayes Theorem
+
+condaitoon probility
+indpeendet events
+ak dosry ko effect na kry do events
+
+dependt events
+ak event phly sy effect hota
+
+exmaple
+ak coin hai usko ship kry head tail aye ga probility nikal ty hai
+sab sy possibel outcomes 2 hai 
+chose krna kisi ki probility krni head ak dafa tail b ak dfa hoga
+
+1//2=0.5 50 percent chanec head aye ga 
+
+problem dice role
+4 hai 1/6  haiu probality dekh rhy hai ap
+
+ independet events 
+jekso dkehny k liya kisi or shert ko dkehna na hn
+dependet event
+esmy kisi or event ka accour hona zarori hai
+
+lecture delvier hona event hai agr koi member join na kry
+perfernce event hai apka join hona dpeendt hai apki
+preferce or depoend hai
+
+p(aandb)=P(BandA)
+
+p(banda)=p(banda) p(a)
+p(aandb)=p(a/b)mulitpluep(b)
+
+2 ma defien kr rhy bianry classification 3 pr or thi
+ya dataset hota data
+rows instaces hoti ak din ma kya hove datset ma
+
+alogithm data set pr leran krky kry ga
+ya yes no ma answer dyga
+
+
+har feature k against niaive based
+column 6 hai 4 feaute hao
+6 masy labeldcolumn hota
+end wala column target hogya jes ki base pr learn krna
+problem ko dkena konsa column use case hai ya nhi first sirf days hai 
+
+naive table pkry ga usky liya probabilty tbale bana ly ga
+leanr kry ga tesitng kry ga ham
+
+stpe ine ma target column ma jaye ga jitnui options hogi
+
+p(n) p(yes) k hisab sy deky ga
+
+p(n0)=5/14
+14 total 5 ni
+p(yes)=9/14
+
+outlook
+sunny kitny no hai 3 hai 
+3/5)
+sunny wiht yes
+2/9
+
+jitny yes us hsiab sy toitola or no b sab my baty k nihcy aye ga
+
+maping rule ma overall yes ki probabilty kya thi
+2/9*3/9*3/9*3/9*9/14
+p(no)=3/5*1/5*4/3*3/5*5/14
+
+
+
+naive base krna hai
+
+naive base exmaple algorithm khud skehna hai
+decision tree throtical practical exmaple upload krna hai
+
+
+
+
+Neural Network ka matlab
+Neural Network (NN) ek computer system hai jo insan ke dimaag (brain) ke neurons ki tarah kaam karta hai.
+Ye data ko process karke patterns ya decision seekhta hai.
+Matlab: NN input data se output predict karta hai using layers and connections.
+
+Simple Example:
+
+Tumhare pass photo of a cat hai → NN is photo ko analyze karke “ye cat hai” ya “ye dog hai” batata hai.
+Neural Network ka basic structure
+Input layer: Jahan data aata hai (features)
+Hidden layers: Jahan NN complex patterns seekhta hai
+Output layer: Jahan final prediction / decision aata hai
+Neural Network ke types
+
+1️⃣ Feedforward Neural Network (FNN)
+Data sirf ek direction me flow karta hai → input → hidden → output
+Simple aur basic NN
+
+2️⃣ Convolutional Neural Network (CNN)
+Mostly images aur videos ke liye
+Features (like edges, shapes) automaticdally detect karta hai
+Example: Face recognition, Cat/dog image detection
+
+3️⃣ Recurrent Neural Network (RNN)
+Sequence data ke liye → data ke past info ko yaad rakhta hai
+Example: Text prediction, Language translation
+
+4️⃣ Long Short-Term Memory (LSTM)
+RNN ka advanced version → long sequences yaad rakh sakta hai
+Example: Stock price prediction, Speech recognition
+
+5️⃣ Generative Neural Networks (GANs)
+New data generate karte hain → fake but realistic data
+Example: AI images, Deepfake videos
+
+
+
+descion tree bna na
+do chezy hoti entropy and infomration gain
+ab start krna entropy or information gain krni sabki 
+jitny columns sab ki 
+jeski sab sy kam hogi anwser wo hoga root
+
+
+phly yes dekhu ktiny hi or no 4
++ positive k sath or - negative k sath present kro ga
+
+
+sab sy phly total ka phr usky categories ka
+
+information gin
+entorpy whole data ki pht totla row ak column ki divide/total rows mtlb ak ki cattegory
+
+infromation gain ma sabsy zayda kiska wo root node bny ga
+
+next jo child wo ly ga
+jitni types haoi cateogry wo usky chidl hogy jo parent node hoga
+
+
+
+
+
+machine learning
+types of data types 
+
+labeled and unkabeld data
+
+cat or dog har k sath mention hai
+aisa data dety machine leanring ko esko supervised leanring khty hai ham
+
+unlabeld 
+mtlb lable assign nhi machine ny khud pattern ko dekh0onda hai
+esko unsupervised data khty hai ham
+
+
+Quatative and quallitative
+
+koi b value range ma ati hai time series hoti track krty time k hisab sy
+qualitativ
+types ajati data ki numerial 
+orders hoty sity k names hoty hai
+categories hoti data ma
+
+
+stricture
+data ko orgnize kasy kiya jata hai
+3 ttypes
+structured row column ma bank transication records wagira ajty
+unsr]turctred khas format nhi hota process krna easy hota ya wahtaspp voice msg wagira
+semi structure ya thora mix hota hai kuch structre hai sara nhi html docuemnt pdf wagira twitter wewsbite email header ma
+
+
+data by source and timeline
+kha sy arha
+collected 
+scraped
+
+collected data aisa data ejmsy kuch direlcty rescrh krty apny mutbaik khud akheta krty hai
+scraped data all ready exisitng data allready para hai wo akheta krty hai esko web scrapign krty hai khty hai
+ya large data hota info ka hota 
+
+timeline 
+mtlb kis portion sy kha sy akheta kr rhy hai ham
+storecal hoga ya esmy past data ata hai
+weather ka dat astoe market ka data dekhana
+
+
+train validate test
+traing data mtlb wo data jis pr machine model trainhorha hai mera
+70 percent triang data use krty hai
+wo es data sy hi laeran krta hai
+
+validation set
+trainign k doran hi dekhta
+mera model sai sy kam krta vlaidation pr nhi sai ya
+
+
+by origin and uniqueness
+
+
+emergess data types
+grpah data
+sesnsor daa
+cartographic data
+
+grpah data
+sometime aisa dat jo social data ka network 
+sensipr data iot stream jaisa data
+cartgrphaic data
+maps ka data
+
+
+13 types data ki ya hai
+
+
+by annotation
+quantitative
+by qualitative
+by structure
+by source
+by timeline
+by purpose
+by uniqueness
+by accessbility
+by quality
+by lifecycle
+new data types
+
+
+
+Qualitative vs Quantitative 
+
+
+categorial data
+jo categories ki form ma hota hai
+
+types 
+nominal catoegorews nhi hoti speacifc order ma hota color country gneder exmpale hai
+ordinal
+yha order nhi hota
+poor good excellent
+smal mideum t shirt
+
+nominal ma wo aye gi jes ma spescifc ranking nhi hai
+
+
+numerical data
+wo hota jo numbers ma hota hai count kiya jaskta hai
+
+discrete vs continues
+discrete countbale data
+continueous data
+jo countbale nhi
+
+tim series data
+numericla data ki type ya time k sath collect kiya jata date wgaira sy
+
+
+
+🔹 1. Clustering (Grouping)
+
+Matlab:
+Similar cheezon ko groups (clusters) me divide karna (without labels)
+
+Example:
+
+Customers ko groups me divide karna (rich, middle, low budget)
+Students ko performance ke hisaab se group karna
+
+👉 Jaise:
+Tum fruits ko khud group karo → apple alag, mango alag
+
+🔹 2. Classification (Category banana)
+
+Matlab:
+Data ko fixed categories me rakhna (labels hotay hain)
+
+Example:
+
+Email → Spam ya Not Spam
+Disease → Positive ya Negative
+
+👉 Output hamesha category hoti hai
+
+🔹 3. Regression (Number predict karna)
+
+Matlab:
+Continuous numeric value predict karna
+
+Example:
+
+House price → 25 lakh, 30 lakh
+Temperature → 35°C
+
+👉 Output number hota hai
+
+🔹 4. Association (Relationship find karna)
+
+Matlab:
+Items ke darmiyan relation/connection find karna
+
+Example:
+
+“Jo log bread lete hain, wo butter bhi lete hain”
+Market basket analysis
+
+👉 Shopping websites pe: “Frequently bought together”
+
+🔹 5. Forecasting (Future predict karna)
+
+Matlab:
+Past data dekh kar future ka prediction
+
+Example:
+
+Next month sales kitni hongi
+Weather prediction
+Stock market trend
+
+👉 Time-based prediction hota hai
+
+
+
+
+🔹 Machine Learning mein Data Types (Simple + Examples)
+1. 📊 Labeled vs Unlabeled Data
+✅ Labeled Data (Supervised Learning)
+
+Jahan har data ke sath label already diya hota hai
+
+👉 Example:
+
+Image	Label
+🐱	Cat
+🐶	Dog
+
+➡️ Machine ko bataya jata hai: "ye cat hai, ye dog hai"
+
+📌 Isay kehte hain Supervised Learning
+
+❌ Unlabeled Data (Unsupervised Learning)
+
+Jahan label nahi hota
+
+👉 Example:
+
+Image
+🐱
+🐶
+
+➡️ Machine khud patterns dhoondti hai
+
+📌 Isay kehte hain Unsupervised Learning
+
+2. 🔢 Quantitative vs Qualitative Data
+🔢 Quantitative (Numerical Data)
+
+Numbers mein hota hai, measure ya count hota hai
+
+👉 Example:
+
+Age = 20
+Temperature = 35°C
+Salary = 50,000
+Types:
+Discrete → countable
+👉 Example: Number of students (10, 20, 30)
+Continuous → infinite range
+👉 Example: Height, Weight
+Time Series
+👉 Example: Daily temperature, stock prices
+
+
+🔹 Qualitative Data (Categorical data)
+
+Matlab:
+Jo data categories / names / labels me hota hai (numbers nahi)
+
+Example:
+
+Gender = Male / Female
+Color = Red, Blue
+City = Lahore, Karachi
+Feedback = Good / Bad
+
+👉 Is par math apply nahi hoti
+
+🏷️ Qualitative (Categorical Data)
+
+Categories mein hota hai
+
+👉 Example:
+
+Color = Red, Blue
+Gender = Male, Female
+Types:
+1. Nominal
+
+➡️ Koi order nahi hota
+👉 Example:
+
+Colors (Red, Blue, Green)
+Country names
+2. Ordinal
+
+➡️ Order hota hai
+👉 Example:
+
+Poor < Good < Excellent
+Small < Medium < Large
+
+3. 🗂️ Structured vs Unstructured vs Semi-Structured
+✅ Structured Data
+
+➡️ Rows & Columns mein hota hai
+
+👉 Example:
+
+Excel sheet
+Bank transactions
+❌ Unstructured Data
+
+➡️ Koi fixed format nahi
+
+👉 Example:
+
+Images
+Videos
+WhatsApp voice notes
+⚖️ Semi-Structured Data
+
+➡️ Thoda structure hota hai, pura nahi
+
+👉 Example:
+
+JSON
+HTML
+Emails
+
+4. 🌐 Data by Source
+📥 Collected Data
+
+➡️ Khud collect kiya
+
+👉 Example:
+
+Surveys
+Experiments
+🌍 Scraped Data
+
+➡️ Internet se liya
+
+👉 Example:
+
+Web scraping (Twitter, websites)
+
+5. ⏳ Data by Timeline
+📜 Historical Data
+
+➡️ Past ka data
+
+👉 Example:
+
+Stock market history
+Weather data
+6. 🧪 Train, Validation, Test Data
+🏋️ Training Data (≈70%)
+
+➡️ Model yahan se seekhta hai
+
+🧪 Validation Data
+
+➡️ Check karta hai model sahi learn kar raha ya nahi
+
+🧾 Test Data
+
+➡️ Final evaluation
+
+7. 🧠 Emerging Data Types
+🔗 Graph Data
+
+👉 Example:
+
+Social networks (friends connection)
+📡 Sensor Data
+
+👉 Example:
+
+IoT devices
+Smart watches
+🗺️ Geographic (Cartographic) Data
+
+👉 Example:
+
+Maps (Google Maps)
+
+
+
+confisuion matrix
+tb 1 perc3ent ko ai 99 ko nhi pr error ma 1 ka b nhi ata nhi esko tb 
+hamy error chaye hi nhi
+
+actual predicated
+true	false
+true	false+ve
+false-vs	true	-ve
+
+actual predicated ma differnce false agr true ture ture
+same pr true agr nhi false
+
+
+tp tn
+true postive true negtive
+negtivetrue
+
+
+ctual
+havetb	doonthavetb
+true	true
+
+
+accurancy 
+tp+tn/all
+
+presciion
+tp/(tp+fp)
+
+recall/sensitivity
+tp/(tp+fn)
+
+f1 score
+2*(prec*rec)/(prec+rec)
+
+
+1-Full Name: As per Matric Certificate along with correct spellings *
+MUHAMMAD SAQIB YOUNAS
+2-Student CNIC: Example: 36302-1234567-8 *
+34103-2611294-3
+3-Personal Mobile Number *
+03420339016
+4-Date of BIrth *
+15/03/2004
+5-Gender *
+ Male
+ Female
+6-Nationality *
+ Pakistani
+ Other
+7-Specify Nationality (if not Pakistani)
+8-Passport Number (For International Student Only)
+9-Passport Validity Date (For International Student Only)
+10-Maritial Status *
+ Single
+ Married
+11-Father Name *
+MUHAMMAD YOUNAS KHAN
+12-Father Status *
+ Alive
+ Deceased
+13-Father CNIC: Example: 36302-1234567-7 *
+34103-2741539-7
+14-Father Mobile Number *
+03278800135
+15-Father Profession *
+ Government Employee
+ Corporate Sector Employee
+ Businessman
+ Army Official
+ Farmr
+ Banker/Financial Institution
+ Retired Government Officer
+ Retired Army Officer
+ Other
+16-Father Income
+50000
+17-Mother Name *
+SHAZIA YOUNAS
+18-Mother Status *
+ Alive
+ Deceased
+19-Mother CNIC: Example, 35202-1234567-0 *
+34103-5517474-6
+20-Mother Mobile Number *
+03420339016
+21-Mother Profession *
+ Housewife
+ Businesswomen
+ Teacher
+ Doctor
+ Government Employee
+ Corporate Sector Employee
+ Retired
+ Other
+22-Mother Income
+0
+23-Province *
+ Punjab
+ Sindh
+ KPK
+ Balochistan
+ Gilgit Baltistan
+ Kashmir
+24-Domicile *
+This question requires an answer.
+
+25-City *
+Lahore
+26-Present Address *
+Sultan Town Lahore
+27-Permanenet Address *
+Garmula virkan District Gujranwala
+28-Day Scholar or Hostelite *
+ Day Scholar
+ Hostelite
+29-Emergency Contact Number *
+This question requires an answer.
+
+30-Religion *
+ Islam
+ Hindu
+ Muslim
+ Christianity
+ Sikh
+ Other
+31-Blood Group *
+ A+
+ B+
+ AB+
+ O+
+ A-
+ B-
+ AB-
+ O-
+32-Number of Brothers *
+-3
+33-Number of Sisters *
+2
+34-Matriculation Marks (Obt/Total) *
+944/1100
+35-Intermediate Marks (Obt/Total) *
+762/1100
+36-Completed Intermediate from [College Name] *
+Aspire College Nowshera virkan
+37-CGPA in BS-For MS Students Only
+38-Completed BS from [University Name]-For MS Students Only
+39-CGPA in MS-For PhD Students Only
+40-Completed MS from [University Name]-For PhD Students Only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Machine Learning – Preparation Notes (Roman English)
+1. Introduction to Artificial Intelligence & Machine Learning
+What is Artificial Intelligence (AI)
+
+Artificial Intelligence
+
+Artificial Intelligence wo field hai jahan machines ko is tarah design kiya jata hai ke wo insan ki tarah soch saken aur decisions le saken.
+
+Examples:
+
+Voice assistants
+Self-driving cars
+Chatbots
+Face recognition
+What is Machine Learning (ML)
+
+Machine Learning
+
+Machine Learning AI ka subset hai jahan systems data se seekhte hain aur bina explicitly program kiye improve hote rehte hain.
+
+Examples:
+
+Spam email detection
+Netflix recommendations
+Fraud detection
+What is Deep Learning (DL)
+
+Deep Learning
+
+Deep Learning ML ka advanced part hai jo neural networks use karta hai complex patterns learn karne ke liye.
+
+Examples:
+
+Image recognition
+Speech recognition
+ChatGPT type systems
+Difference Between AI, ML, and DL
+AI	ML	DL
+Broad concept hai	AI ka subset hai	ML ka subset hai
+Human intelligence imitate karta hai	Data se learning karta hai	Deep neural networks use karta hai
+Rules + learning dono use ho sakte hain	Mostly data-driven hota hai	Large data aur high computation chahiye
+Why Machine Learning is Important
+Automation karta hai
+Large data handle karta hai
+Accurate predictions deta hai
+Human effort kam karta hai
+Hidden patterns find karta hai
+Real-World Applications of Machine Learning
+Healthcare
+Disease prediction
+Medical image analysis
+Finance
+Fraud detection
+Credit scoring
+E-commerce
+Product recommendations
+Customer analysis
+Social Media
+Face detection
+Content recommendations
+Cybersecurity
+Spam aur threats detect karna
+Traditional Programming vs Machine Learning
+Traditional Programming
+
+Input + Rules → Output
+
+Example:
+
+Tax calculator
+Machine Learning
+
+Input + Output Data → Machine khud rules learn karti hai
+
+Example:
+
+House price prediction
+Advantages of Machine Learning
+Fast automation
+Better decision-making
+Continuous improvement
+Complex data handle karta hai
+Challenges and Limitations of Machine Learning
+Large data required hota hai
+Data quality important hoti hai
+Training expensive ho sakti hai
+Bias problems aa sakti hain
+Models samajhna mushkil hota hai
+Ethical Issues in AI and ML
+Privacy concerns
+Bias aur discrimination
+Jobs ka impact
+Security risks
+AI misuse
+2. Types of Machine Learning
+Supervised Learning
+Definition
+
+Machine labeled data se learn karti hai.
+
+Labeled Data
+
+Jahan input aur correct output dono available hon.
+
+Example:
+
+Input	Output
+Email	Spam / Not Spam
+Input and Output
+Input = Features
+Output = Label/Target
+Real-Life Examples
+Spam detection
+House price prediction
+Student result prediction
+Unsupervised Learning
+Definition
+
+Machine unlabeled data se patterns find karti hai.
+
+Unlabeled Data
+
+Sirf input data hota hai, output nahi hota.
+
+Pattern Discovery
+
+Hidden groups aur similarities find karna.
+
+Real-Life Examples
+Customer segmentation
+Product grouping
+Market analysis
+Reinforcement Learning
+Definition
+
+Machine rewards aur penalties ke through seekhti hai.
+
+Agent
+
+Jo learning karta hai.
+
+Example:
+
+Robot
+Game AI
+Environment
+
+Jahan agent kaam karta hai.
+
+Reward
+
+Good action par positive points milte hain.
+
+Penalty
+
+Wrong action par negative feedback milta hai.
+
+Learning Through Interaction
+
+Trial and error se learning hoti hai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Machine Learning Workflow / Process
+Problem Definition
+
+Sab se pehle problem identify ki jati hai.
+
+Example:
+
+House price predict karna
+Spam email detect karna
+Customer churn predict karna
+Data Collection
+
+Relevant data collect kiya jata hai.
+
+Sources:
+
+Databases
+APIs
+Excel files
+Sensors
+Websites
+
+Example:
+Customer purchase history collect karna.
+
+Data Cleaning
+
+Incorrect ya missing data remove/fix kiya jata hai.
+
+Tasks:
+
+Missing values handle karna
+Duplicate data remove karna
+Wrong entries fix karna
+Data Preprocessing
+
+Raw data ko machine learning ke liye ready banana.
+
+Includes:
+
+Normalization
+Encoding
+Scaling
+Formatting
+Feature Selection
+
+Important features choose karna jo prediction mein help karein.
+
+Example:
+House price prediction mein:
+
+Location
+Size
+Rooms
+Splitting Dataset
+
+Dataset ko different parts mein divide karna.
+
+Usually:
+
+Training Set
+Testing Set
+Training Set
+
+Model ko sikhane ke liye use hota hai.
+
+Usually:
+70%–80% data.
+
+Testing Set
+
+Model ki performance check karne ke liye use hota hai.
+
+Usually:
+20%–30% data.
+
+Model Selection
+
+Best algorithm choose karna.
+
+Examples:
+
+Linear Regression
+Decision Tree
+Random Forest
+Model Training
+
+Selected algorithm ko training data diya jata hai taake wo patterns learn kare.
+
+Prediction
+
+Trained model new data par output predict karta hai.
+
+Example:
+New customer product buy karega ya nahi.
+
+Evaluation
+
+Model ki accuracy check ki jati hai.
+
+Common metrics:
+
+Accuracy
+Precision
+Recall
+F1 Score
+Model Optimization / Improvement
+
+Performance improve karne ke liye tuning ki jati hai.
+
+Methods:
+
+Hyperparameter tuning
+More data
+Better features
+
+
+
+
+
+4. Data Science & Data Concepts
+Types of Data
+Structured Data
+Definition
+
+Well-organized data jo tables/rows/columns mein hota hai.
+
+Examples
+Excel sheets
+SQL databases
+Student records
+Real-Life Usage
+Banking systems
+ERP systems
+CRM systems
+Unstructured Data
+Definition
+
+Aisa data jo proper table format mein nahi hota.
+
+Examples
+Images
+Videos
+Audio
+Social media posts
+Real-Life Usage
+YouTube videos
+CCTV footage
+Chat messages
+Semi-Structured Data
+Definition
+
+Partially organized data.
+
+Examples
+JSON
+XML
+Emails
+Real-Life Usage
+APIs
+Web applications
+Configuration files
+
+5. Data Types in Machine Learning
+Numerical Data
+
+Numbers based data.
+
+Integer Data
+
+Whole numbers.
+
+Examples:
+
+Age
+Number of students
+Float / Continuous Data
+
+Decimal values.
+
+Examples:
+
+Height
+Weight
+Temperature
+Categorical Data
+
+Categories based data.
+
+Examples:
+
+Gender
+City
+Product type
+
+Nominal Data
+
+Categories without order.
+
+Examples:
+
+Colors
+Countries
+Blood groups
+Ordinal Data
+
+Categories with order/ranking.
+
+Examples:
+
+Small, Medium, Large
+Poor, Good, Excellent
+Boolean Data
+True / False Data
+
+Sirf do values hoti hain.
+
+Examples:
+
+Yes / No
+True / False
+Pass / Fail
+
+Qualitative vs Quantitative Data
+Qualitative Data
+Definition
+
+Descriptive ya category-based data.
+
+Examples
+Gender
+Color
+City names
+Real-Life Usage
+Surveys
+Customer feedback
+Product categories
+Quantitative Data
+Definition
+
+Numerical measurable data.
+
+Examples
+Salary
+Height
+Temperature
+Real-Life Usage
+Financial reports
+Scientific measurements
+Sales analysis
+Difference Between Qualitative and Quantitative Data
+Qualitative	Quantitative
+Descriptive hota hai	Numeric hota hai
+Categories show karta hai	Measurements show karta hai
+Example: Color	Example: Height
+Non-numeric	Numeric
+
+
+
+
+
+
+Overfitting vs Underfitting
+Overfitting
+
+Jab model training data ko itna zyada learn kar leta hai ke wo data “yaad” kar leta hai instead of general learning, usay Overfitting kehte hain.
+
+Model training data par bohot achi performance deta hai lekin testing/new data par fail ho jata hai.
+
+Simple Example
+
+Jaise student ne sirf ratta maara ho:
+
+Exam mein exact same question aaye to sahi karega
+Thora different question aaye to fail ho jayega
+Causes of Overfitting
+Training data kam hona
+Model bohot zyada complex hona
+Too many features
+Noise ko bhi learn kar lena
+Problems
+Poor generalization
+Testing accuracy low
+Real-world performance weak
+Underfitting
+
+Jab model training data ko bhi properly learn nahi kar pata usay Underfitting kehte hain.
+
+Model bohot simple hota hai aur important patterns learn nahi karta.
+
+Simple Example
+
+Jaise student ne properly study hi na ki ho.
+
+Training mein bhi weak
+Testing mein bhi weak
+Causes of Underfitting
+Model too simple
+Features kam hona
+Insufficient training
+Important patterns ignore karna
+Problems
+Low accuracy
+Poor predictions
+Weak learning
+Difference Between
+
+
+
+
+
+
+
+
+
+RAG
+
+retreival argumented generation
+
+
+case 1 student kal exma hai esky pas questions hai
+llms normal 
+llms jo hoty wo large data stes sy train hota jab b user new query train kry ga wo gneerate kry ga answer
+yha sy generaytoon ata hai
+ak student 2 hai leanr kry ga sylbaus data sy wo open book exam hai verify fact look dekh sky
+student 2 better perform kry ga
+
+ak technique hai models k answer generate krty unki accuracy ko improve krny k liya
+realtime data sy fecth krta model hamra uski base pr realvent answer generate kry ga
+
+context aware
+normal jaye kon c flight book ki sttau usko nhi pata
+jes earline sy kiya us sy chatbot wha sy pochy usky pas relvenat data hoga ham kon kis website sy book ki flight
+agent k pas hoga wo anserr dyga
+
+
+benefits
+reduce hallucination
+krrp knownledge up to date(modle ko trian knry k liya jo data use kiya wo es date ka hai
+modle ko current event ka nhi pata usko dena chaty rag use)
+cost effective(kis b modle ko dena data ki acess tu expemnsive lgty trainning dani hoti)
+maintina data privacy(bary copamny data ko data na dy privacy tu wo nhi dfygi modle ko)
+
+
+modle ak query leta us query k according answer deta sara data completey expose nhi pota
+
+Query  krty user wo generate krta mesage
+
+Injestion pipeline
+Retrival pipeline
+
+Injestion pipeline
+
+data kuch b hoskta pdf  data extract kry ga
+data ko chunks ma divide kry ga ham chunk ajaye ga
+usky bad chunk ko embedinng ma convert kry ga
+modle number ko process krty hai usky liya embeddign kry ga  har 
+spearate chunk k liya vector ma convert kry ga chunk ma hoga
+ebedinign agi usky bad store vector db ma store kry ga
+hamry normal data hogy en ma keyword search kr ksy mideal record hai db ma
+hart attck krna wo hi aye ya keyword mention hogy jo search kry ga
+vector ma semtic search kr ksty hai many search kita
+cardica arrest wo b return kry ga vector db 
+
+ya pipeline data injectsion
+
+
+Retervial Pipeline
+first time user query kry ga 
+esko embeding ma convert kry ga query ko inhestion wal hoi
+
+based on query query sy match ko dcument ma search kry ga vector db ma
+jinti b docuemnt aye ga semativc search krty hai use
+wo ajaye ga relevant informaiton eextarc kr liya
+ya contex mdoel ko dyga ham
+argumentaiton
+prompt k andr query roignal next aregumention
+usko llms ko dyga wo answer gegnerate kry ga
+wo return kry ga user ko
+
+
+
+techniqual implmention
+
+chunking startges used
+embeding model
+vector db
+
+chunking
+fixed size chunking 
+herirical chunking 
+sematic chunking
+
+
+📦 1. Fixed Size Chunking
+🔹 Kya hota hai?
+
+Data ko equal size blocks me tod dete hain (word/token based).
+
+📌 Example:
+Har chunk = 200 words
+
+Text:
+
+“AI is growing fast… (long text)”
+
+Chunks:
+
+Chunk 1: words 1–200
+Chunk 2: words 201–400
+👍 Pros:
+Easy to implement
+Fast processing
+👎 Cons:
+Sentence break ho jata hai
+Meaning break ho sakta hai
+(context loss)
+
+🌳 2. Hierarchical Chunking
+🔹 Kya hota hai?
+
+Data ko structure (tree style) me todte hain:
+
+Document
+Section
+Paragraph
+Sentence
+📌 Example:
+
+Book →
+
+Chapter 1
+Heading 1
+Paragraph 1
+👍 Pros:
+Structure preserve hota hai
+Better for long documents (books, legal data)
+👎 Cons:
+Complex to build
+Processing heavy hoti hai
+
+🧠 3. Semantic Chunking
+🔹 Kya hota hai?
+
+Data ko meaning (semantic similarity) ke basis par split karte hain.
+
+👉 AI decide karta hai:
+“ye sentences same topic ke hain ya nahi”
+
+📌 Example:
+
+If text:
+
+Heart attack symptoms...
+Treatment methods...
+Weather update...
+
+Chunks:
+
+Medical chunk (heart attack + treatment)
+Weather chunk separate
+👍 Pros:
+
+Best accuracy
+Context preserve hota hai
+RAG me most powerful
+👎 Cons:
+Slow processing
+Embedding + AI needed
+
+
+magchain
+llamiundex
+
+embedding model
+openai text embeding 3 large
+gemnini embedding
+
+
+vector db
+chromadb
+piencone
+faiss
+
+
+
+Rag articture
+NAive standard RAG same
+user query embeding retruval context prompt answet gneerate
+faqs simple supprot chatbot k liya
+
+Hybrid RAG
+entrpiese ecommerce searc k liya sai
+
+RAg with meemory
+standatd not store memtoy
+ya hoistry maintian rkta hai
+memory layer create krta raing cinverstion amsy
+
+GRAPH rag
+wo persevthe relationship chnunk ki madad sy grpah bnta
+
+
+Agnetic RAG
+multiple rag
+self rag
+
+
+
+MCP server
+
+
+
+
+LLM
+
+Large Language Model
+is a type of llm 
+data sy train kiya 
+ai understand generate and ineract using human language.
+input dngy output dyga phly jo b train nhi tha phly
+LLM jab aya prompt likhty wo answer data
+
+prompt mtlb ak word hai llm ma promt khty ham question
+llm bhut sary data sy train hota hmany data machine ko diya jo pochy wo answer dyga
+chatgpt 
+gemini  
+
+LLM se pehle chatbots “rules follow” karte thay,
+
+LangChain = Train track 🚆 (straight path)
+LangGraph = Google Maps 🗺️ (many routes, decisions, loops)
+
+prompt instructions ety llm ko wo text generate krky deta answer
+
+llm
+gpt
+claud ai 
+
+market ma hai use kr skty Hai ap
+
+every llm apny tariqy sy banaya gya hai
+kisi ki speed zayda accuracy multilingual abililites
+
+cloud bangle ma bat nhi kr ksta gemeni kr ksta hai
+bhut sary model text ma bat krty image wgaira ma nhi
+
+cloud ma code likha skty usko train hi aisy kiya gya hai
+accuracy ma bar kry claude ki zyada hai
+
+twitter ny grok launch kiya hai
+
+llms
+real world use case
+cahatbots:like bots 
+summarizers;NEW PPS PDF
+Trasnlation:cinvert English Urdu 
+automation:ai code reviews
+
+llms use kr skty hai 
+llm kam kasy krta   hai
+
+jo text diya ya output nikalny  phly kya krta process wo
+tokenization:
+embedding
+transformer
+prediction
+
+tockenization:jo b text likha hai usko tokenization krty 
+parts ma divide krty hai ham usko tokens khty hai
+input=most famous cheese in France
+toekns[most,famous,cheese,in,france]
+array ma convert krty ak space b matter krta hai model meaning nhi nikal skta hai
+
+embedding
+token ko vector ma convert krty hai ham
+chhese ak world hai array of vector ma distribute krty hai
+
+i love ai model s
+
+[0.01,] har token ma vectore deta hai jo number hai 
+jo llm model ko smjhny ma eska mtlb kya hai usko words smjh nhi aye ga
+
+USKO embedding khty hai
+har model ka apna hisa hota kasy token bnata hai
+
+vector apple hai
+har model apna dyga kasy wo train hai
+embedding wagira
+
+
+Transformer
+pora sentence dekhta konsa word important hai kis pr focus hona chaye
+
+what is important
+what words are related
+what to focus on
+
+the model learns that cheese frnace hai wo focus kry ga konsa important hai word
+
+wo human ki tar kry ga hmm
+output b token ki format ma deta hai
+jeski zayda probability hai wo pick kry ga 
+har model apny hisab y krta hai
+usny socha kis pr focus krna model output generate kry ga human answer ma
+
+
+es satge pr work krta hai
+input leta token k formate ma output b data token ki form ma
+probability ki base pr answer deta hai 
+
+input text
+tokens
+embedding
+transformer blocks
+output embedding 
+tokens output tokens
+
+prediction model kasy krta
+
+deep learning is very 
+bhut sara output diya multiple words 
+har wo probability deta hai jeska zayda hota wo dy deta hai
+token sy text ma convert krty ham
+multipe token generate krta wo probabailty wala deta zayda 
+
+
+prediction depends on
+traingin dtaa 
+the prompt 
+temperature
+max token length
+
+
+the dog sat on 
+text sy inputm ma convert kiya hamny
+phr ya llm ma gya ya dimag lagta jitna train hai
+the mat pad enki probabailty zayda hai
+ab scond highest probabitly return krty hai
+
+zarori nhi jeska output zayda o output dena hamny
+
+sampliing strategies kya ai
+ak outpu kasa dena wo change kr skty probability konsa chaye
+
+apna soch k mutabik output dena hai 
+
+the boy wnet to the
+usmny multiple results diya ham chaty hai low probability kam wala dn  hmy
+
+ham prameter change krty kis pr wo sai deta hai output alg alg simplify startegies krty ai
+
+
+1.Temprature
+agr temparture kam hai
+tu jo b ouptu token hota hai uska probailtiy hota wo zyda hota
+
+ak ka 60 percentage
+40 
+10 
+1
+apko pick krna 60 wala kry ga ham
+apko milta
+80
+79
+81
+75
+85 ab choose krna muskhil sai lg rha confusing answer dyga
+yha temparture ata
+kam rkha tu 2nd wala output milta
+
+lower 0.2 rkhty acha milta result
+1.0 confuse kry ga
+
+jasy tmepature bhrty aye ga wo similar mily ga dekh nhi ksy khy ga konsa pick kry ga
+tempareyre am simpliy sai milgy ga
+
+
+2.top-k-sampling 
+jo output mil rha sabsy acha ala pick krna hai
+agr koi khrab nhi aye ga choose krna easy rhy ga
+ 
+top wose sorted hota set k=2
+top 2 elelment dyga ya nichy wala discard krdu 
+
+
+
+
+Top p Sampling
+picks smamleste set token jeski
+aisa set token la kr dn jeska probability 0.9 sy zauda hn
+
+ham khy ga starting k 3 la dn
+jo token krna jeska top 3 sy zayda hoga
+
+top p wo chaye 
+
+sampliy
+
+
+3.Min-p
+
+minimum 
+jp b min-p ka value hoga 0.1 hai es sy kam wo hata dn Esko
+
+top k fixed output chaye topki 
+top p k agr cummulaitce sum hamy set of token la kr dn jeska sum top sy zayda hn
+top min kya khta hai wo discard krdu jeski probability kam hai  ham output sample nikal skty hai llm k zariya
+
+kasy kam krta token kasy krty ouptu sample kasy krty ham
+
+Frequency Penalty
+LLM jab jawab likhta hai aur same word / phrase bar-bar repeat karne lagta hai,
+to frequency_penalty us repetition ko punish karta hai.
+
+
+
+
+
+Hugging Face Basics + Open-Source LLMs
+
+chatgpt hai wo paid hai ak point k bad paisy dn use kro response nhi sai mily ga
+ap jo data likha many personal chezy di apni mera ya data chpt k server pr jarha hai
+
+open source llm
+jo open source hai paisy diya bagir llm
+
+ak llm trian krny k liya medical k liya open source hota ham apna contribution dy skty hai
+
+gemma ak model hai google deta hai 
+gemini paid hojata gemma free hai open source hai 
+jes gemeini sy trian kiya gemma b us sy 
+
+huging face aisa platform ml models datasets ko tools ko host kr ksty hai taky dosry develoers use kr ksy
+
+Hugging Face ek open-source AI platform hai jo pre-trained models, datasets aur tools provide karta hai jisse hum NLP aur LLM applications build, train aur deploy kar sakte hain.
+
+
+esmy models dataset models infrenceapi b mily gi
+ai jo train hota bana hova usko use krna inference khty hai 
+
+datasets difference dta milta jesko use krky train kr skty hai
+GitHub pr code rkhty hugginface ma ai model rkhty apna 
+hamny web application banye usko directy use kr skty hai wha sy
+jo banye hai gamama llma use kr skty bina apna cpu use krky
+
+
+har model mathematician calculation solve krny k liya dimage chaye hardware cpu gpu
+
+gpt hosted hai apny openai pr hi usky server hota hai
+open source hai Esko use krky krty apny system ma
+
+hugging face api dety jesko use krky model use krty hamra cpu chota 
+
+model choose kiya hugging face Esko hose krta apny server pr
+apko api dy diya ham jo b input bhjy hugging face khud handle kry ga
+
+
+ai ko use krny k liya hmy gpu ki zarorat hoti hai
+gpu jo hai wo multiple clauclation krny k liya bana hai parallel
+cpu ko trian kiya kuch kuch task liya os app run krny k liya
+cpu ak bar ma ak task kry ga ak math problem ak time ma
+
+gpu graphical processing unit
+graphic ko jaldi render kr ksy phly
+1000 math problem ak sath use kr ksta parallel cpu ak hi
+cpu ko kho 1000 kro solve time lyga cpu 1000s lyga
+gpu ko 1 second ly ga 1000 problems k liya 
+
+ai model ka kam next word predict krna ai bhut sara mathemitcal krta 
+calculation ki zarorat hoti hai 1000 clacualtion krni hoti ak word k liya gpu use hota esky liya 
+
+cpu 4 score
+cpu 4 core mltb 4 task paralle ma kr skta esky bad krna ya khtm hoga phr hoga 
+
+gpu ma hundered or hazar prlbme ak sath solve kr skta
+
+nvidia rtx 4090 16384 ak time ma
+
+ai ko run krny k liay gpu use krty hai
+
+kya model ko cpu ma run kr ksty hai kr skty slow hoaga wo 
+
+zayda model ly hang krny lg jaye distilbert tinyllma etc small model mtlb
+
+hugging face ak website model mily ga hamy account banye ga 
+models datasets mily ga 
+
+models konsy dekh skty 
+
+gemma-3-4b-it ya model image lyga jo b hai usko dekhy answer lakr dyga jo ham query dyga
+
+
+model paramteters ka mtlb
+ai model ma paramters is a number hai jo model learn krta sekhta during traing 
+jab model train krty datsets hai jab wo model train krty hai jo wo sekhta hai usko number ma store krta hai usko parameter jeska zayda parmater hai wo zayda sekha hai
+
+4b hai itni learning hai 27 billion laearning ki hai
+
+ai model ka kam next word predict kry kisi model ko hindi sy translation enlgish ma billon rules weights skhta hai 
+wo number ma store krta hai
+
+gpt-2 ka 124million parameter hai 
+gpt-3 k pas 175billion 
+
+jab model train krta wo different chezy sy skehta hai ak hota
+weight
+value 
+rule 
+
+weight ma 2 word great ko value 0.95 diya 
+value jo actual store kry ga
+rule ai ma if else nhi hoti
+mtlb ak car k extrat kasy krna speed dani kam krna ya khud krta hai llm ya past training pr depend krta hai 
+ai har word ko value deta witgh deta kab kitna dena lana hai wo training ma depend krta hai ya paramters khty hai
+
+jo sara data sekha wo numbers ki form ma store krta input deta calculation krta phr output deta kitna zayda hoga utna train hai
+
+agr llm ko cpu ma krna computation wo ram ma krta 
+cpu jb b calculation krta ram sy data leta hai
+
+model 15 gb ka hai pora model run kry ga 
+3gb ka 7 gb ka hai ram ma load kry ga run kry ga ham
+
+model size kis pr depend krta ya number 
+float32 int8 int4 ma 
+
+float 32 4 byte ka leta
+int 8 ak byte int 4 0.5 byte
+
+model ka size parmater ma depend krta hai
+jes intger ma store usko multipley kro 
+
+agr gpt 2 14m hai float32 ma hai 124*4 kry ga 496mb hai
+
+
+formula
+size*parmatersize
+
+quantization
+ jo model ka parmter hai usko high percison sy low precision ma kr dety hai small or fast hoajye ga
+
+
+
+Low-size-model
+yhi hai model k actual model use na krky quantatize version use krty hai ham 
+
+Naming conversion of models
+name ajeeb hai muskil hai 
+
+
+ham llma othaty hai cloud othaye ga organization hai opensource hai ap apny hisab sy customize krly
+
+first name + model architctire +parmater size+ version + quantized models
+thebloke+mistral+7b+instrcut-vo-1+GGUF
+
+google-gemma-7b
+ya text generation k liya sai hai
+
+
+
+Transfomers Library
+har ak liya paossible nhi wo model download kry run kry apny system ma
+
+ak library hai python ki transformer
+ap kisi b model ko thorw a pyhton load kr ksty run kr kstyy
+
+google coolab kry ga use ham
+
+
+from transformers import pipeline
+
+generator = pipeline("text-generation", model="gpt2")
+
+output = generator(
+    "Pakistan ka AI future",
+    max_length=50,
+    num_return_sequences=1
+)
+
+print(output[0]["generated_text"])
+
+
+max length 50 token sy deal kry ga input token or output ka token 50 hoga
+varencies ktiny hai 1 kiya
+pip k zariya install kiya usko usekntk liya pipeline banya 
+generortor ana r diya or parameter diya kuch
+
+
+
+
+Run LLMs Locally with Ollama & LM Studio 
+
+
+
+
+Ollama
+ya ak cli hai terminal hai
+terminal ma llm ko run kry ga ham
+
+ak enviroment deta Jha llm file dyga ya run kry ga 
+
+wsl install krna hai
+ak envoiemnt eta linux ko chla skty hai apny system ma ham
+
+phi ak open source hai micrsoft dia hai
+
+Ollama kyun use karte hain?
+
+Local AI chalane ke liye (internet ke baghair bhi)
+LLM (LLaMA, Mistral, etc.) apne PC par
+
+Fast & private
+API jaisa use (chat, apps)
+
+Matlab:
+ChatGPT jaisa AI, lekin apne laptop par
+
+ollama run tinyollama ya run kry ga ollama ka chota version ka size chota hai original ka zayda hai
+
+yha quontize hi model run kr ksty hai ham apny system ma
+ya llm mery local system ma chal rh amera locally memeory wagira use kr ha
+
+PS C:\Users\Saqib> ollama list
+NAME                ID              SIZE      MODIFIED
+tinyllama:latest    2644915ede35    637 MB    5 minutes ago
+PS C:\Users\Saqib>
+
+
+by defult ak pi deta run krta port pr 11434 ma 
+
+localhost//11434/api/generator
+
+aagr koi offline model run krna
+.gguf milna chaye hai
+
+
+
+
+ollama run mistral 
+ya doenload krna start krdy ga ya
+
+express server run kry ollama ak api deta hai eska use krky kr ksty pora chatbot bana skty hai ak frinted bana dena ap chatbot sy bat kr ksty api k zariya
+
+
+apny locahost ma kiya express sy server sy banaya donu ko commence kr krty hai
+
+
+commands
+
+ollama pull model
+ollama run model
+ollama list
+ollama rm model 
+
+
+
+ollma dedicating hai local ma run krny k liya
+personal projects k liya ollama
+ollama local chlta
+hugging global libarray mmilty 
+ollama local k liya Jha sy quantatize model mil jaty hai
+
+
+
+
+Lm Studio
+ya desktop app hai run la language models k liya
+yha b model daly ga question pochy ga answer dyga ya hmy
+
+
+
+RAG = Retrieval Augmented Generation
+
+Iska seedha matlab:
+
+Pehle apne data se relevant information nikaalna (Retrieval)
+phir us information ki madad se jawab banana (Generation)
+
+
+
+Prompt Engineering
+
+hamara prompt jitna sai hoga utna sai hoga answr
+act like a trave guide kon hn exmalin 3 places top 3 n Pakistan
+
+prompt structure
+
+who the ai is
+instrcutions
+response kasa chaye 
+
+types of prompting
+
+roleplay prompting
+act-like a startup co-founder and explain ai to a 12-year old
+
+chain of thought prompting
+hamny kha llm ko loud thing kro 
+har step by step chez hn 
+
+few shiort prompting
+
+phly expel dy input otput dykr 
+phr wo estara sy response sy lakr dyga
+
+
+
+
+
+
+
+
+LangChain
+
+langchain  framework hai llm powered applications bnaty hai ham
+
+react ak framework hai esky bina b ham fronted bana skty thy react k zariya easy hogya fronted sy bana skty
+
+llm bulitn in features deta hai
+LangChain ek framework hai jo LLMs (ChatGPT, Ollama, etc.) ko:
+
+tools
+memory
+databases
+APIs
+ke sath connect karta hai.
+key features
+
+llm:brain hai ya
+prompt:llm sy kya krwana chaty hai ap
+
+output parser: llm apko desired ma output lakar dyga jes my ap khy ga
+
+jab b gpt sy pochty hai ak word hota context hai
+aj yak day 1 sy pocha 
+agr day 1 sy 5 tk aye usko yad nhi rhta usko chat ma ya yad nhi usko
+
+cntext ko memory khty jo b llm k sath krty usko save krty hai ak dafa bata diya name usko yad rhy memory ma ad krty hai
+
+chain:ya k srequence flow hai Esko prompt diya wo llms kpas jaye ga wo outpu dyga
+
+agr langchain use kry chan bana o ya agnet 
+
+chain ma dimag nhi wo llms k pas jaye ga wo usko process kryga reply dyga
+agent khud ka dimag lgaya ga 
+mujhe esky answer k liya koi tool use krna kry ga reply dyga
+
+
+chain
+chai banaty 
+biolld water 
+add tea leaver 
+pout into cup
+serve 
+ya chan process dimag nhi lgana hamny
+
+jo prompt llm k pas jaye decision lyga output dyga ya
+
+koi dimag nhi lgya rule follow kry ga 
+
+qna chatbot bnaty koi question bnaty wo answer drtsa
+
+
+Agent
+khud sochta reply deta
+agr flight dekhan current time ka 
+indigo ixgo api deta flight k liya
+
+agent search flight api use kry ga sab sy chepest dekhy ga flight
+
+
+ya langchian
+chain
+agent deta hai
+
+langchain bhut kuch deta
+
+nodejs+gemien sy bnye ga ham
+
+langchain k framework hai jo isa frmaweok jo functionality deta 
+tools deta ak chain hai or ak agent hai
+
+chatbot banan ai text summarizer langchain anana
+
+text summarize bhut bara diya wo chota krdy ga
+
+Jha ai ko decide krna pry search krna tool krna real time update esky liy agent use kry ga ham
+
+
+agr nodejs gpt api use krky chain bana skty ya manually hai
+
+agr tool use kry ya help krty hai prompttempalte function hai outputpraser outpu lakr dyga achy sy
+
+
+agent k liya langchain haye builtin tool k liya chyae ya 
+
+basic prompt k liya bina langchain
+logic flow multiple prompts without langcahin
+tools memory decision making k liya lanchain use kry ga
+
+
+ak chian dlay ga wo process kry ga outpu dy ga
+
+npm i langchain @langchain/openai dotenv
+
+openai ki api use krna chty dosra package install kry ga ham
+
+langchain
+prompt tool
+lms sy connect krwata 
+
+langchain openai k tool hai 
+
+openai use krna zarair hai ollama sy b api milta local sy b 
+
+langchain/chat_models/ollama ab local sy connect kry ga
+
+llm chaye kahi sy b hoskta local b gemeini ka mistel ka hoskta hai 
+
+
+openai k liya apenai key chaye
+
+aistodi.google.com website ma jana
+get api key mily ga option
+getapi option pr click kry ga ham gemini ka use kry ga jo online hai
+
+
+chain.js 
+
+env ma key 
+GOOGLE_API_KEY=key apna 
+
+import {config} from 'dotenv'
+config()
+
+imports
+{ChatgOOGLEgENERATEIVEAI} 
+{LLMChain} 
+{PromptTemplate} esky throw hi llm ko prompt dety hau ham
+
+
+const model0new ChatGoogleGneeratoveAI({
+model:|modelsgemini-2.5-flash|,
+maxoutputToekns:2048,ya bhut bara token ka na dy ouptu 
+temperature:0.7,
+apiKet:process.env.Google_API_Key)}
+
+const prompt=PromptTemplate.formTmeplate(
+"Expalin the concept og {topic} to a biggner"}
+);
+
+
+const chain=new LLMChai (ya output lakr dyga
+llm:model,
+prompt:prompt
+)
+
+const res=await chain.run(computing)
+
+langchain prompttmeplae+model+logic ya chain hau prompt use krty promptemeplate 
+
+
+
+
+LCEL
+ya tarika hai function likhny ka
+
+langchain expression language
+
+ak chain bana rhy prompt ka wo llm k pas jarha wo outpu dyrha
+
+new tarika kya hai
+ham llm pipeline bana dyga ham
+
+
+lcel_Chian.js
+
+import config
+config();
+ChatGoogleGenerativeAI 
+promptTempalte
+
+
+
+const model0new ChatGoogleGneeratoveAI({
+model:|modelsgemini-2.5-flash|,
+maxoutputToekns:2048,ya bhut bara token ka na dy ouptu 
+temperature:0.7,
+apiKet:process.env.Google_API_Key)}
+
+const prompt=PromptTemplate.formTmeplate(
+"Expalin the concept og {topic} to a biggner"}
+);
+
+
+const chain=prompt.pipe(model) hamny pipe k andr model dy diya
+
+const repsonse=await chain.invoke({
+question:"what is the future of ai")}
+
+
+markdown website hai dekh skty friendy 
+
+prompt .pipe(llm) dydiya chain hogya call kry ga
+
+outputpraser use kry
+
+ak desired formte ma output chaye hamy 
+import 
+
+const outputPraser=new StringOuptuPraser();
+const choan=prompt.pipe*chain)/pipe(outputPraser)
+
+desired output ma chaye ya
+
+water filter system
+sab sy phly prompttemplate kry ga input formate
+phly model ko dyga wo output lakr dyga usko ouptu[raser kry ga
+
+
+
+
+import fs from "fs";
+import { pipeline } from "@xenova/transformers";
+import hnswlib from "hnswlib-node";
+
+const embedder = await pipeline(
+  "feature-extraction",
+  "Xenova/all-MiniLM-L6-v2"
+);
+
+// Load data
+const text = fs.readFileSync("data.txt", "utf-8");
+
+// Chunking
+const chunks = [];
+for (let i = 0; i < text.length; i += 500) {
+  chunks.push(text.slice(i, i + 500));
+}
+
+// Create index
+const dim = 384;
+const index = new hnswlib.HierarchicalNSW("cosine", dim);
+index.initIndex(chunks.length);
+
+// Embeddings
+for (let i = 0; i < chunks.length; i++) {
+  const emb = await embedder(chunks[i], {
+    pooling: "mean",
+    normalize: true,
+  });
+  index.addPoint(emb.data, i);
+}
+
+// Save index
+index.writeIndex("index.bin");
+fs.writeFileSync("chunks.json", JSON.stringify(chunks));
+
+console.log("✅ Data indexed successfully");import fs from "fs";
+import hnswlib from "hnswlib-node";
+import { pipeline } from "@xenova/transformers";
+
+const embedder = await pipeline(
+  "feature-extraction",
+  "Xenova/all-MiniLM-L6-v2"
+);
+
+// Load index
+const chunks = JSON.parse(fs.readFileSync("chunks.json"));
+const index = new hnswlib.HierarchicalNSW("cosine", 384);
+index.readIndex("index.bin");
+
+// Local LLM (light model)
+const generator = await pipeline(
+  "text-generation",
+  "Xenova/phi-2"
+);
+
+export async function ask(question) {
+  // Question embedding
+  const qEmb = await embedder(question, {
+    pooling: "mean",
+    normalize: true,
+  });
+
+  // Fetch relevant chunks
+  const ids = index.searchKnn(qEmb.data, 2).neighbors;
+  const context = ids.map((i) => chunks[i]).join("\n");
+
+  // Strict RAG prompt
+  const prompt = `
+Answer ONLY from the context below.
+If not found, say "Information not available".
+
+Context:
+${context}
+
+Question:
+${question}
+
+Answer:
+`;
+
+  const out = await generator(prompt, { max_new_tokens: 150 });
+  return out[0].generated_text;
+}
+
+
+web ma use langchain ka
+
+2️⃣ Apne Data se Q&A (PDF, DB, Docs)
+Aap ke paas PDFs / database hota hai
+LangChain:
+
+data ko embeddings mein convert karta hai
+vector database (FAISS, Pinecone, Chroma) use karta hai
+relevant info nikal ke LLM ko deta hai
+
+👉 Example: “Is document mein refund policy kya hai?”
+
+3️⃣ Search + AI (RAG system)
+
+User ka question
+LangChain pehle search karta hai (docs / DB / web)
+Phir LLM se grounded answer generate karta hai
+👉 Isko RAG (Retrieval Augmented Generation) kehte hain
+
+
+LangChain Agents
+
+
+chain 
+agent
+
+agent sochta hai decide krta phr act krta hai 
+chain sedha sedha process jo llm k pas jaye ga output yga lady ga
+
+koi query pochi usmy google search required or  agent use hota hai
+
+hamny lllm sy pocha wo ecide krta koi tool required hai ya nhi
+agr wether current wo batany ma galti kiya
+data pr train kia 224 tk maximum pata hoga
+current time kya horha current weather jana esky pas nhi hoga eska data wo wetsher api call kry ga
+agr external time kya hai 
+
+tools dekhta agr zarorat
+web search
+caluclaotr
+document eader
+databas query apka jo 
+adapter real time databse ko gent sy conntec krta
+python code exuextuon
+
+
+langcahi adapter eta hai jesky zriya ham openai use krty hai
+
+google-genia es adapter k zariya use kr rhy ham
+agr weather api chaye agent sy connect krlo wo call kry ga
+
+
+packages
+langchain install krna hoga 
+base tools chaye agent bhut use kr ksta hai 
+@langchain/ore ya install kry ga
+prompt formatted krna
+chain connected 
+lel chaye
+
+@laginchain/community
+ya external service sy connected krny b madad krti hai
+current nes chaye ham google sy kry ga
+ham third api use kry ga
+SerpApi google api use r skty hai
+PineCorn Vector b
+Huggingface models
+
+enko use krny k liya pacjage chaye wo langchain/community hai
+
+
+@lagchain/openai
+@lagnchain/google-genai 
+
+@langchain/core
+jo b package se krna core hona lazmi hai
+
+
+official documents
+langchain ka
+top ma api resfernce r jaye mil jaye ga 
+custom tool b bana skty hai ham
+
+chat.langinchain.com
+yha lanchain sy poch skty hai koi package ni mil rhy 
+esmy change hota rhta enka version lanch horha hai 
+
+agr relatime hatbot chaye relatime llm  pas nhi
+esky pas required data hai ya tool use kry ga google search 
+
+SerpApi tool
+google search api hai
+jo b question es sy pochu
+ya geographic ki base pr ata result
+agr Pakistan diya 
+
+ya kam serpapi use kry ga ham
+
+google search ak search engine hai
+Esko jo b relative info lgti wo dydata hai wo kis news channel ka hoskta koi koi or
+serpapi json a deta jo googleserach a ta wo
+
+snippets preview hota 
+ak url titile ak message es message ko preview khty hai search krny k bad jo ata message 
+
+jasy wheatspp ta mesgae chota preview khty usko
+
+sarpapi register krna hai
+usky bad api key pr jana mil jaye gi
+
+JAB npm ak library jah package mlty bhut sry hmy
+
+jab b pakcgae install krty jo exsiiting package k sath shae krta npm 
+dotnv k sath comaptibale i rrent 
+jab b package isnatll kry 
+--legacy-peer-deps 
+jo arha issye solve hoaye ga k compatible nhi dotenv k sath lanchain
+
+ya flag sy ya dpeendcy isuuse ignore krd
+eta hai
+
+
+Agent Ai Power News
+
+llm nhi kr ksta tool use kry ga direct nhi kr ksty langchain sath ry ga connect adapter mil gya 
+
+api key dotnv ma
+
+imports
+{chatGoogleGneratioveai}
+{initialieAgentExcutiveWithOptions
+SerpApi 
+
+
+const model=new ChatGoogleGneerativeAi({
+model:"model/gemini-2.50flash",
+maxoutput:2048,
+temattrue:
+apikey:
+(}
+
+const agent=await inilizeagentexcutorwithoptions(
+[seat=rchapi,wesatehrtool] ya khud agent decide kry ga kya hcyae wo khud use kry ga agr nhi llm sy jwab dyga 
+model
+}
+
+const res=await agent.invoke({
+input:'waht is the latest news about isro"
+)}
+
+
+
+Bonus Point
+
+LLM Wrapers opneai
+chains
+agents
+tools 
+memory cntext
+propmts
+outputpraser kya onach chaye json xml
+docuemntloader text spillters
+vector db
+runnables
+
+
+summary
+
+langchain
+chain ->llm chaye bas
+agent->llt+tool khud decode kry ga konsa tool chaye
+
+
+
+
+why used langchain
+2️⃣ Chat memory rakhne ke liye 💬
+
+LangChain:
+
+previous messages yaad rakhta hai
+long conversation handle karta hai
+
+👉 Example:
+User: “mera naam Ali hai”
+Baad mein: “mera naam kya hai?”
+➡️ AI correctly answer karega
+
+3️⃣ Apne data se jawab lene ke liye 📄
+
+LLM:
+
+sirf general knowledge janta hai
+LangChain:
+PDFs, DB, Excel, Docs se data read karta hai
+relevant info LLM ko deta hai
+
+👉 Example: company policy bot, student notes Q&A
+
+4️⃣ Search + AI (RAG) ke liye 🔍
+
+LangChain:
+
+pehle data/search karta hai
+phir usi data se answer banwata hai
+Result:
+hallucination kam
+accurate answers
+
+5️⃣ Tools use karwane ke liye 🛠️
+
+LangChain AI ko sikha sakta hai:
+
+calculator
+APIs
+database queries
+web search
+AI khud decide karta hai:
+
+“is sawal ke liye calculator use karna chahiye”
+
+6️⃣ Production-ready apps ke liye 🚀
+
+Without LangChain:
+
+sab cheez khud likhni padti
+With LangChain:
+
+prompts
+chain
+agents
+memory
+retries
+sab ready milta hai
+
+
+
+
+
+
+MCP Server Explained for Beginners
+
+
+model context protocol
+ak llm or ak external data eksy darmyan ma mcp chaye
+ya ak standard vise protocol hai ak tariq hai jesky thorw external data k sath connect kr ksty hai
+
+ak llm kisi data set pr train hai aisa bhut sara data hai jo external hai
+jasy services data
+jasy personal data jo gpt gemni k pas nhi
+
+ak kya choty storage k liya upload krdu 
+agr gbs ma data hai tu ya estara nhi kr ksty
+jasy finicail hai march 2025 ka wo gbs ma hai
+
+ag ksii company ka data 15 20 gb ka hai llms k pas es ka conection hn wo msp k zariya krty hai
+
+
+mcp tool box hai multipe hoskty hai
+ya protol hai jesky thorw externdata ko llm k sath connect krty hai 
+
+
+bina mcp k kry skty thy
+llm sy external db sy connect krna wo excel sheet ma wo sql ma wo mongodb ma hoskta wo audio hoskta 
+
+agr na kry difference compines alg tariq nikaly ga llm sy connect krny sy
+
+excel or krta sql or krta har type of data sy connect k liya connectivity chaye
+
+esny kha ak protocol hona chaye ak data ko external sy connect llm kr ksy hai
+
+har company kry security issue
+ak standard protocol hona chaye tha
+
+mcp sy tools bnaty hai ham
+
+
+where can use mcp
+tool hai
+weather mcp server
+currenct convertor mcp server
+database mcp server 
+
+
+StdioServerTransport
+communciton t ry ga mcp server communicate kry ga llm or user k sath
+
+modelconextsevr packagehai 
+
+
+ham jo b mcp server bnaye ga us ko use krny k liya mcp client chaye
+set of tools ko use krny k liya mcp client chaye hamy
+
+mcp har koi deta 
+cloud b mcp 
+vscode b mcp ki tara kam krta
+cursor b mcp ki tara kam krta hai
+
+set of tools hai jesko usekrny  k liya mcp client chaye
+
+koi b currency cinvertor ana rhy hai ham
+eska mtlb koi b bdna 100 dollar ko convert krdo kis b country k currency sy
+
+mcp tool bnata Esko llm use krta jab zaroart hn ya protocol ko use krky bnata
+
+vscode ma
+
+library install
+npm i \2modelcontextprotocol/sdk zod
+
+
+currencyconvverted.js
+import
+McpServer @
+stdioServerTransport llm or mcp k sth connect k liya
+import {z} from 'zod'
+
+
+const server=new McpServer({
+name:"currencyconvertor mcp server,
+version:"1.0.0"
+})
+
+server chlany k liya stdio chaye
+
+async function startServer(params){
+const transport=new stdioServerTransport();
+await server.connect(transpirt)
+}
+
+startservr().catch(error)=>{
+console.log("failded to sart mcp server|,error
+process.exit(1)
+}
+
+
+server.tool(
+"convertCurrency",
+"Conver amount from one curenct to another" ll ko kab pata kgy ga chlana Esko
+{
+amount.a.number().describe("amount to convert")
+from:z.strin.describe("base urent code eg USD",
+to:z.string().describe(target current code eg INR")
+)
+
+Esko input parameter dy rhy ya outpu dy ga paramters
+
+
+async (amount,from,to)())>{
+try{
+return {content:[
+{
+type"text",
+text:converted currency is 100 INR'
+} tool output dy g input lyga format batye ga
+}}
+catch(error){
+return content[{type,text)}]
+
+
+ya cirrencu convert ry ga llm ko call kry ga jab curreecny k bary ma pochy ham
+
+
+ab cliud install kry ga desktop ma
+cloud ma opr setting ma jaey ga develoeprs ma jaye ga
+eidit config ma jaye ga es file ko vs code ma on kry ga
+
+ab json file ma 
+pwd krky terminal ma oath dyga wha
+
+currency convertor:[
+command:"node"
+args:[path]
+]
+
+
+
+
+
+
+
+Build AI Agents + Workflows in 2025 
+
+agr telegram ma msg kiya agent kasy drive sy meri idcard laye ga
+
+multipe patform hai bana skty 
+n8n best hai
+
+n8n open source hai local ma run kr skty free trail dety ya start ma
+
+
+
+
+ab hsieng er ma open kry ga\
+hostinger open kry ga
+vps choose kry ga 
+
+
+
+Agent “kya karna hai” decide karta hai
+MCP “kaise safely karna hai” handle karta hai
+
+
+
+
+RAG Approach — Theoretical Guide
+RAG = Retrieval-Augmented Generation
+Retrieval → relevant data dhoondhna
+Generation → LLM se answer generate karna
+
+Matlab:
+
+“LLM ko sirf internet ya training knowledge par rely na karne do,
+balki apne custom data / documents / DB se relevant info do.”
+
+Step 1: Data Collection
+
+Pehle decide karo chatbot ka domain:
+PDFs / Word docs / Excel sheets
+Database (MySQL, PostgreSQL)
+Web pages / APIs
+
+Example: Company internal chatbot → HR docs, Policy PDFs, FAQs
+
+Step 2: Data Preprocessing
+Text nikalna:
+PDF → text
+Excel → rows → text
+Clean karna:
+Extra spaces, headers, formatting remove
+Result: Clean chunks of text
+
+Step 3: Text Chunks & Embeddings
+Text ko chunks mein divide karo
+Reason: LLM context limit hota hai
+Example: 500 tokens per chunk
+Har chunk ka embedding vector generate karo
+Embeddings = numeric representation of text
+Use: OpenAI embeddings / other embeddings model
+Store embeddings in Vector Database
+FAISS / Pinecone / Chroma / Weaviat
+
+Step 4: Query Processing (User Question)
+User chatbot se question poochta hai:
+“Refund policy kya hai?”
+Question ko embedding mein convert karte hain
+Same model jo text chunks ke liye use hua
+
+Step 5: Retrieval
+
+User question embedding → vector DB mein search
+Top-k relevant chunks nikaal lo
+Example: top 3 chunks
+Ye chunks hi chatbot ke liye context banenge
+
+Step 6: LLM Generation
+Prompt create karo:
+Context: [Relevant Chunks]
+User Question: [Your Question]
+Answer in simple language.
+
+
+LLM (GPT / Claude / Gemini) generate karega grounded answer
+
+Output = Response to user
+
+Step 7: Optional — Memory / Conversation
+Agar chatbot long conversation handle kare:
+Previous interactions ko memory mein store karo
+Next response ke liye context mein add karo
+
+Step 8: Return Answer
+
+Chatbot user ko response bhejta hai
+Example:
+
+User: “Refund policy kya hai?”
+Bot: “Aap 30 din ke andar product return kar sakte hain, full refund milega.”
