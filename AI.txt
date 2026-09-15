@@ -2417,6 +2417,32 @@ Steps of machine leanring
 
 
 
+1. Data Collection (Data Akatha Karna)
+Mukhtasir tor par, mukhtelif sources (jaise databases, APIs, ya CSV files) se apne project ke mutabiq data collect karna.
+
+2. Data Preparation & Preprocessing (Data Tayyar Karna)
+Data ki safai karna, misal ke tor par missing values theek karna, duplicate rows hatana, aur categorical data ko numbers mein convert karna taake computer samajh sake.
+
+3. Exploratory Data Analysis - EDA (Data Ko Samjhna)
+Graphs aur charts ki madad se data ke patterns, trends, aur outliers (alag-uthay hue points) ko dekhna taake andaza ho ke data mein kya chal raha hai.
+
+4. Data Splitting (Data Ko Taqseem Karna)
+Data ko do hisson mein baantna: Aik Training Set (model ko sikhane ke liye, aam tor par 70-80%) aur aik Testing Set (model ko test karne ke liye).
+
+5. Choosing the Model (Algorithm Chunna)
+Apne problem ke hisaab se sahi algorithm select karna (jaise agar price predict karni hai toh Regression, aur agar category batani hai toh Classification).
+
+6. Training the Model (Model Ko Sikhana)
+Training data ko algorithm mein feed karna taake model data ke patterns ko seekh kar apnay andar weights adjust kar sakay.
+
+7. Evaluation & Tuning (Check Karna aur Behtar Banana)
+Model ko testing data par check karna ke woh kitni achi predictions de raha hai, aur phir uski settings (hyperparameters) ko mazeed behtar banana.
+
+8. Deployment & Monitoring (Live Karna aur Nazar Rakhna)
+Model ko real-world application mein launch karna aur waqt ke sath uski performance par nazar rakhna taake woh kharab na ho.
+
+Kya aapko ismein se kisi specific step ki mazeed tafseel chahiye?
+
 deep leanign workflow
 
 jo data hai jetan quality wala jitna zayda utna behtr haoi wo
@@ -3002,6 +3028,73 @@ by quality
 by lifecycle
 new data types
 
+
+1. By Annotation (Tagging ke lihaz se)
+Labeled Data: Woh data jiske sath answer ya tag pehle se attached ho (e.g., email ke sath "Spam" ya "Not Spam" likha ho). Yeh Supervised Learning mein use hota hai.
+
+Unlabeled Data: Woh data jisme koi tag ya answer na ho, sirf raw data ho. Yeh Unsupervised Learning mein use hota hai.
+
+2. Quantitative (Numerical / Ginti wala data)
+Aisa data jo numbers ki shakal mein ho aur is par mathematical calculation ki ja sake. Iski mazeed do qismein hain:  
+TutorialsPoint
+
+Discrete: Jo exact counts hon (e.g., gariyon ki tadad: 1, 2, 3).
+
+Continuous: Jo range ya decimals mein ho (e.g., wazan, temperature: 36.5°C).
+
+3. Qualitative (Categorical / Wasf ya Khasiyat wala data)
+Aisa data jo numbers mein na ho balki categories, names ya properties ko zahir kare (e.g., Rang: Lal, Neela; ya Gender: Male, Female). Isko agay Nominal (bina order ke) aur Ordinal (tartib wale jaise Low, Medium, High) mein baanta jata hai.  
+TutorialsPoint
+
+4. By Structure (Saakht ya Banaawat ke lihaz se)  
+unidata.pro
+Structured Data: Jo rows aur columns ki shakal mein ho (jaise SQL database ya Excel spreadsheet).
+
+Unstructured Data: Jiska koi fix format na ho (jaise videos, audio files, images, ya free text).
+
+Semi-Structured Data: Jo fully structured na ho lekin ismein kuch tags ya markers hon (jaise JSON, XML, ya CSV files).
+
+5. By Source (Zariye ke lihaz se)
+Primary Data: Jo data aapne khud ya apni team ne direct collect kiya ho (surveys, sensors ya experiments ke zariye).
+
+Secondary Data: Woh data jo pehle se kisi aur ne collect kiya ho aur aap usko use kar rahe hain (jaise Kaggle datasets ya public reports).
+
+6. By Timeline (Waqt ke lihaz se)
+Time-Series Data: Woh data jo waqt ke sath-sath record kiya gaya ho (jaise rozana ka share market ka bhav ya weather updates).
+
+Cross-Sectional Data: Woh data jo ek hi waqt mein mukhtalif logon ya cheezon ka record le kar banaya jaye (jaise kisi aik din ki alag-alag logon ki salaries ka data).
+
+7. By Purpose (Maqsad ke lihaz se)
+Training Data: Jis par model ko train kiya jata hai (sikhaaya jata hai).
+
+Testing / Validation Data: Woh data jo model ko sikhane ke baad uski accuracy check karne ke liye use hota hai.
+
+8. By Uniqueness (Anokhepan ya Duplicate hone ke lihaz se)
+Unique Data: Bilkul naya aur original data jo redundant na ho.
+
+Redundant / Duplicate Data: Ek hi data ki multiple copies jo memory gherte hain aur ML models ko biased kar sakte hain.
+
+9. By Accessibility (Pahunch ya Dastiyabi ke lihaz se)
+Public Data: Jo sab ke liye internet ya open sources par free available ho.
+
+Private / Proprietary Data: Jo kisi company ka confidential data ho (jaise customer bank records) aur aam access mein na ho.
+
+10. By Quality (Mayaar ke lihaz se)
+Clean Data: Jis mein koi errors, missing values ya noise na ho.
+
+Dirty / Noisy Data: Jis mein galat entries, missing values ya duplicate rows hon (jis ko train karne se pehle preprocess ya clean karna parta hai).
+
+11. By Lifecycle (Zindagi ke safar ke lihaz se)
+Data apne safar mein mukhtalif stages se guzarta hai: Collection (jama karna) → Storage (mehfooz karna) → Processing (saaf karna) → Modeling (ML mein use karna) → Archiving/Deletion (jab kaam khatam ho jaye toh chupana ya delete karna).
+
+12 & 13. New Data Types in Machine Learning (Modern AI ke naye data types)
+Aajkal ke advanced AI aur Machine Learning (jaise Generative AI aur Deep Learning) mein kuch bilkul naye aur complex data types aam ho gaye hain:
+
+Synthetic Data: Woh data jo asli nahi hota balki computer algorithms ya AI khud artificially generate karta hai (training ko behtar banane ke liye).
+
+Multimodal Data: Aisa data jo aik sath mukhtalif types ko mila kar banta hai (jaise ek aisi file jisme Text, Image aur Audio teeno aik sath hon, jo GPT-4 ya Gemini jaise models process karte hain).
+
+Embeddings / Vector Data: Data ko jab numbers ya high-dimensional vectors mein convert kiya jata hai taake Large Language Models (LLMs) usko asani se samajh saken (Semantic Search aur RAG systems ke liye).
 
 
 Qualitative vs Quantitative 
